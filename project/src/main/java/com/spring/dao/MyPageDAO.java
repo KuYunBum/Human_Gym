@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.spring.dto.ExerciseChartDTO;
 import com.spring.dto.InbodyDTO;
+import com.spring.dto.RoutineDTO;
 import com.spring.dto.UserRecordDTO;
 import com.spring.vo.ExerciseChartVO;
 import com.spring.vo.PageMaker;
@@ -31,5 +32,7 @@ public interface MyPageDAO {
 //	public List<UserRecordDTO> listCriteria(PageMaker pm) throws Exception;
 //	  
 //	public int listCount(PageMaker pm) throws Exception;
+	//루틴	
+//	public List<RoutineDTO> routineList(int userNum) throws Exception;
 	
 }

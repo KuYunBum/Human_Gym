@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 	<%@include file="../../include/header.jsp"%>
 	
 	<div class="main">
@@ -43,42 +43,6 @@
 						<div class="ab3t">${inbodyDTO.weight}</div>
 					</div><br><br>
 					<div class="ab3p">
-						<div class="ab3q"><h4>골격근량</h4></div>
-						<div class="ab3t">${inbodyDTO.skeletalMuscleMass}</div>
-					</div><br><br>
-					<div class="ab3p">
-						<div class="ab3q"><h4>체지방량</h4></div>
-						<div class="ab3t">${inbodyDTO.bodyFatMass}</div>
-					</div><br><br>
-					<div class="ab3p">
-						<div class="ab3q"><h4>체수분</h4></div>
-						<div class="ab3t">${inbodyDTO.bodyWater}</div>
-					</div><br><br>
-					<div class="ab3p">
-						<div class="ab3q"><h4>단백질</h4></div>
-						<div class="ab3t">${inbodyDTO.protein}</div>
-					</div><br><br>
-					<div class="ab3p">
-						<div class="ab3q"><h4>근육량</h4></div>
-						<div class="ab3t">${inbodyDTO.muscleMass}</div>
-					</div><br><br>
-					<div class="ab3p">
-						<div class="ab3q"><h4>제지방량</h4></div>
-						<div class="ab3t">${inbodyDTO.leanBodyMass}</div>
-					</div><br><br>
-					<div class="ab3p">
-						<div class="ab3q"><h4>무기질</h4></div>
-						<div class="ab3t">${inbodyDTO.minerals}</div>
-					</div><br><br>
-					<div class="ab3p">
-						<div class="ab3q"><h4>체질량지수(BMI)</h4></div>
-						<div class="ab3t">${inbodyDTO.BMI}</div>
-					</div><br><br>
-					<div class="ab3p">
-						<div class="ab3q"><h4>복부지방률</h4></div>
-						<div class="ab3t">${inbodyDTO.waistHipRatio}</div>
-					</div><br><br>
-					<div class="ab3p">
 						<div class="ab3q"><h4>기초대사량(BMR)</h4></div>
 						<div class="ab3t">${inbodyDTO.BMR}</div>
 					</div><br><br>
@@ -86,10 +50,11 @@
 						<div class="ab3q"><h4>체형</h4></div>
 						<div class="ab3t">${inbodyDTO.bodyShape}</div>
 					</div><br><br>
+					
+					<div style="width: 1000px; height: auto;"><canvas id="bar-chart-horizontal" width="600" height="250"></canvas></div>
 				</div>
 			</div>
 		</div>
-		
 		<hr style="width: 1300px; margin:auto;"><br>
 				
 		<div class="bt_box">
@@ -100,4 +65,37 @@
 		
 	</div>
 	
+	<script>
+    new Chart(document.getElementById("bar-chart-horizontal"), {
+    type: 'horizontalBar',
+    data: {
+        labels: ['골격근량', '체지방률', 'BMI', '복부지방률'],
+      datasets: [
+        {
+          label: "Population (millions)",
+          data: [${inbodyDTO.skeletalMuscleMass},${inbodyDTO.bodyFatMass}, ${inbodyDTO.BMI}, ${inbodyDTO.waistHipRatio}],
+          backgroundColor: [
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderColor: [
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+       
+       
+      }
+    }
+});
+</script>
 	<%@include file="../../include/footer.jsp"%>

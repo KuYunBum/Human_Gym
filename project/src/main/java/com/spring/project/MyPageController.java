@@ -158,5 +158,13 @@ public class MyPageController {
 
 		System.out.println(ms.chartData(userNum));
 	}
+	
+//	루틴
+//	@RequestMapping(value = "/routineBox", method = RequestMethod.GET)
+//	public void routineBox(int userNum, Model model) throws Exception {
+//
+//	model.addAttribute(ms.routineList(userNum));
+//
+//	}
 
 }

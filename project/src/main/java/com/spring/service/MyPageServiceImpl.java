@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.spring.dao.MyPageDAO;
 import com.spring.dto.ExerciseChartDTO;
 import com.spring.dto.InbodyDTO;
+import com.spring.dto.RoutineDTO;
 import com.spring.dto.UserRecordDTO;
 
 @Service
@@ -88,6 +89,11 @@ public class MyPageServiceImpl implements MyPageService{
 //		return dao.listCount(pm);
 //	}
 
-
-
+//	루틴
+//	@Override
+//	public List<RoutineDTO> routineList(int userNum) throws Exception {
+//		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+//		List<RoutineDTO> dtos = dao.routineList(userNum);
+//		return dtos;
+//	}
 }

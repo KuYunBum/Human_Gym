@@ -82,14 +82,14 @@
 							<div class="center_content2">
 								<div class="c_c2_left">
 								<ul style="margin-top:100px; color:#fff;">
-									<h1>한단계 한단계📈</h1><br>
-									<h3><span>처음부터 잘할수는 없죠!</span></h3>
-									<h3><p>기초부터 차근차근 시작 하는 슬기로운 헬스생활!!</p></h3>
+									<h1>청춘은 바로 지금👖</h1><br>
+											<h3><span>고민하는 지금이 바로 운동할때!</span></h3>
+											<h3><p>AI추천! 당신에게 딱 맞는 루틴을 체험해 보세요!</p></h3>
 								</ul>
 							</div>
 							
 							<div class="c_c2_Right">
-								<img src="/project/resources/image/ex/gogo.jpg" style="width:100%; height:100%; display:flex">
+								<img src="/project/resources/image/ex/gymtime.gif" style="width:100%; height:100%; display:flex">
 							</div>
 							</div>
 						</div>
