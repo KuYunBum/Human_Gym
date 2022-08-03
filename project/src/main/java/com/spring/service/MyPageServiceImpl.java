@@ -89,7 +89,7 @@ public class MyPageServiceImpl implements MyPageService{
 //		MyPageDAO dao=sqlSession.getMapper(MyPageDAO.class);
 //		return dao.listCriteria(pm);
 //	}
-
+//
 //	@Override
 //	public int listCount(PageMaker pm) throws Exception {
 //		MyPageDAO dao=sqlSession.getMapper(MyPageDAO.class);

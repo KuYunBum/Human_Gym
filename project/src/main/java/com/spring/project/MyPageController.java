@@ -160,7 +160,6 @@ public class MyPageController {
 		System.out.println(ms.chartData(userNum));
 	}
 	
-<<<<<<< HEAD
 	@RequestMapping(value = "/record/insert", method = RequestMethod.GET)
 	public void recordInsertGET(int userNum, Model model) throws Exception {
 
@@ -176,7 +175,7 @@ public class MyPageController {
 
 		return "redirect:/user/record/record?userNum=" + userNum;
 	}
-=======
+	
 //	루틴
 //	@RequestMapping(value = "/routineBox", method = RequestMethod.GET)
 //	public void routineBox(int userNum, Model model) throws Exception {
@@ -184,6 +183,5 @@ public class MyPageController {
 //	model.addAttribute(ms.routineList(userNum));
 //
 //	}
->>>>>>> refs/remotes/origin/jingyu
 
 }

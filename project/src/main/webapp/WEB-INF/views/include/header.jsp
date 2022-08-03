@@ -194,7 +194,7 @@ section:nth-child(odd) {
 							        <br><li id="rightLi" ><a id="rightLi2"  href="/project/content/membership">멤버쉽</a></li>
 							        <div class="widthLine1" style="margin-top: 8px;"></div>
 							        
-							        <br><li id="rightLi" ><a id="rightLi2"  href="/project/content/trainer">트레이너</a></li>
+							        <br><li id="rightLi" ><a id="rightLi2"  href="/project/content/tr/tr_main">트레이너</a></li>
 							        <div class="widthLine1" style="margin-top: 8px;"></div>
 							        
 							        <br><li id="rightLi" ><a id="rightLi2"  href="/project/board/list">자유게시판</a></li>
