@@ -603,8 +603,6 @@ border-radius: 5px;
 }
 
 
-/* ai 운동 추천 */
-
 .ex_content {
     margin: auto;
     width: 70%;
@@ -701,11 +699,18 @@ border-radius: 5px;
 	padding-top: 3px;
 }
 
-.ex_content_title p:nth-child(4) {
+.ex_content_title p:nth-child(5) {
 	font-size: 15px;
 	width: 300px;
 	height: 40px;
 	border-radius: 10px;
+}
+
+.ex_content_title > p:nth-child(6){
+	width: 50px;
+	margin-left: 330px;
+	margin-top: -40px;
+	font-size: 15px;
 }
 	
 .ex_content_title > button:nth-child(2) {
@@ -717,22 +722,22 @@ border-radius: 5px;
 	margin-top: -30px;
 }
 
-.ex_content_title > p:nth-child(5){
-	width: 50px;
-	margin-left: 330px;
-	margin-top: -40px;
-	font-size: 15px;
+.ex_sub {
+	list-style:none;
+	margin-bottom: 20px;
+}
+
+.ex_sub a {
+	text-decoration: none;
 }
 
 .ex_content_p2 {
 	width: 1000px;
 	height: 500px;
-/* 	border: 1px solid white; */
 	margin: auto;
 	margin-top: 30px;
 	display: flex;
 }
-
 
 .ex_content_p2 > button {
 	position: absolute;	
@@ -802,14 +807,6 @@ border-radius: 5px;
 	margin-top: 30px;
 	display: flex;
 }
-
-/* .ex_content_p6_text { */
-/* 	position: relative;	 */
-/* 	margin: auto; */
-/* 	color: white; */
-/* 	top: 220px; */
-/* 	font-size: 18px; */
-/* } */
 
 
 /* 로그인 */

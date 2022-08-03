@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 
 
 	<%@include file="../../include/header.jsp"%>
@@ -12,6 +11,12 @@
 			<div class="ex_content_title">
 				<p>AI 추천 플랜</p>
 				<button type="button" class="more_bt">...</button><br>
+					<ul class="ex_sub">
+						<li><a href="">Day 1   등 가슴 코어 유산소</a></li>
+						<li><a href="">Day 2   하체 어깨 이두 삼두</a></li>
+						<li><a href="">Day 3   등 가슴 코어 유산소</a></li>
+						<li><a href="">Day 4   하체 어깨 이두 삼두</a></li>
+					</ul>
 				<p>Day 1   등 가슴 코어 유산소</p>
 				<p>55분</p>
 			</div>

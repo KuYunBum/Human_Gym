@@ -74,6 +74,21 @@
 //		function pauseVideo() { 
 //			video.pause(); 
 //		} 
+        
+     	$('.ex_sub').hide();
+
+    	$('.more_bt').mouseover(function(){
+    		$('.ex_sub').slideDown();
+
+    	});
+//    	$('.more_bt').on("click", function(){
+//    		$('.ex_sub').hide();
+//    	});
+       	$('.ex_sub').mouseleave(function(){
+    		$('.ex_sub').hide();
+    	});
+        
+       	
 		
 		
 //		tr_matching
