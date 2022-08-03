@@ -1003,7 +1003,7 @@ border-radius: 5px;
     font-size: 18px;
 }
 
-tesssst
+/* tesssst */
 .myPageNav > ul > li >a:hover{
    color:rgb(0, 177, 56);
 }
@@ -1012,6 +1012,19 @@ tesssst
     margin: auto;
     width: 1300px;
     border: 0.5px solid rgb(0, 0, 0,0.4);
+}
+.widthLine1{
+    margin: auto;
+    width: 100%;
+    border: 0.2px solid rgb(108, 108, 108);
+}
+.widthLine3{
+	margin-top: 30px;
+}
+.widthLine3, .widthLine4{
+	margin: auto;
+	width: 100%;
+	border: 1px solid #fff;
 }
 .heightLine{
   
@@ -1039,6 +1052,23 @@ tesssst
     width: 30%;
     height: 100%;
 }
+.leftContainer >ul{
+    margin-top: 40px;
+}
+.leftContainer >ul >li{
+    margin-top: 5px;
+    width: 100%;
+    height: 40px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.leftContainer > ul > li:hover:not(.active) {
+    background-color: rgb(66, 66, 66);
+    color: white;
+}
 .rightContainer{
     margin-top: 40px;
     width: 70%;
@@ -1048,6 +1078,14 @@ tesssst
 .rcText{
     margin: 70px 5%;
     /* background-color: red; */
+}
+.rcText > ul > label{
+	margin-top: 5px;
+	display: block;
+}
+.rcText > ul > label > a{
+	text-decoration: none;
+	color:black;
 }
 .bottom{
     margin-top: 40px;
