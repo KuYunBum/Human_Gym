@@ -1,0 +1,42 @@
+input[id="menuIcon"] {display: none;}
+
+
+/* header > div {position: relative; width: 1200px; margin: 0 auto;} */
+
+.menubtn {display: block; width: 50px; height: 50px; position: absolute; top: 50%; right: 300px; transform: translateY(-50%); cursor: pointer;}
+.menubtn span {display: block; position: absolute; width: 80%; height: 5px; border-radius: 30px; background: #222; transition: all .35s;}
+.menubtn span:nth-child(1) {top: 20%; left: 50%; transform: translateX(-50%);}
+.menubtn span:nth-child(2) {top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.menubtn span:nth-child(3) {bottom: 20%; left: 50%; transform: translateX(-50%);}
+.container .sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    z-index: 30;
+    transition: .35s;
+}
+
+input[id="menuIcon"]:checked~header .menubtn {z-index: 2;}
+input[id="menuIcon"]:checked~header .menubtn span:nth-child(1) {top: 50%; left: 50%; transform: translate(-50%, -50%); rotate: (135deg);}
+input[id="menuIcon"]:checked~header .menubtn span:nth-child(2) {left: 50%; transform: translate(-50%,-50%) scale(2); opacity: 0; }
+input[id="menuIcon"]:checked~header .menubtn span:nth-child(3) {bottom: 50%; left: 50%; transform: translate(-50%,-50%); rotate: -135deg;}
+input[id="menuIcon"]:checked ~ .container .sidebar {right: 0;}
+
+#rightLi{
+    margin-top: 30px;
+    display: table-header-group;
+}
+#rightLi2{
+    margin-top: 30px;
+    color:#fff;
+}
+#rightLi2:hover{
+	color:rgb(108, 108, 108);
+}
+
+.navi > li{
+	margin-top: 100px;
+}

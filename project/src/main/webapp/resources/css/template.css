@@ -28,11 +28,8 @@
 	margin-top: 100px;
     width: 1300px;
 }
-.widthLine{
-    margin: auto;
-    width: 100%;
-    border: 0.5px solid rgb(0, 0, 0,0.4);
-}
+
+
 .ct-test{
     margin-top: 50px;
     width: 100%;
@@ -61,7 +58,7 @@
     display: flex;
     margin-top: 50px;
     width: auto;
-    height: 300px;
+    height: 400px;
 }
 .ct2-text{
     width: 400px;
@@ -175,7 +172,7 @@
     cursor: pointer;
 }
 
-.leftContainer > ul > li >a:hover:not(.active) {
+.leftContainer > ul > li:hover:not(.active) {
     background-color: rgb(66, 66, 66);
     color: white;
 }
@@ -657,14 +654,15 @@ border-radius: 5px;
 	color: white;
 	width: 350px;
 	height: 50px;
-	background-color: purple; 
+	background-color: gray; 
 	margin-left: -170px;
 	margin-top: 100px;
-	border-radius: 50px;
+	border-radius: 5px 5px;
 }
 
 .ex_content button:hover{
 	background-color: rgba(31,57,141);;
+	background-color: purple;
 	cursor: pointer;
 }
 
@@ -688,7 +686,7 @@ border-radius: 5px;
 	width: 300px;
 	height: 40px;
 	border-radius: 10px;
-	top: 60px;
+	top: 80px;
 	display: inline-block;
 	margin-bottom: 5px;
 	padding-top: 3px;
@@ -730,8 +728,38 @@ border-radius: 5px;
 	width: 1000px;
 	height: 500px;
 	margin: auto;
-	margin-top: 30px;
+	margin-top: 50px;
 	display: flex;
+}
+
+.ex_content_p2_1{
+	width: 500px;
+	height: 500px;
+/* 	border: 1px solid white; */
+}
+
+.ex_content_p2_2{
+	width: 500px;
+	height: 500px;
+/* 	border: 1px solid white; */
+}
+
+.ex_content_p2_1 > img{
+	position: relative;
+	width: 495px;
+	height: 490px;
+	border: 1px solid white;
+	border-radius: 0;
+	top: -65px;
+}
+
+.ex_content_p2_2 > img{
+	position: relative;
+	width: 495px;
+	height: 490px;
+	border: 1px solid white;
+	border-radius: 0;
+	top: -65px;
 }
 
 .ex_content_p2 > button {
@@ -740,9 +768,9 @@ border-radius: 5px;
 	margin: auto;
 	width: 280px;
 	height: 50px;
-	top: 1100px;
+	top: 1330px;
 	left: 820px;
-	border-radius: 50px;
+	border-radius: 10px;
 }
 
 .ex_content_p3 {
@@ -795,6 +823,7 @@ border-radius: 5px;
 	margin: 50px 30px;
 }
 
+<<<<<<< HEAD
 .ex_content_p6 {
 	width: 550px;
 	height: 250px;
@@ -993,7 +1022,7 @@ border-radius: 5px;
     font-size: 18px;
 }
 
-tesssst
+/* tesssst */
 .myPageNav > ul > li >a:hover{
    color:rgb(0, 177, 56);
 }
@@ -1002,6 +1031,19 @@ tesssst
     margin: auto;
     width: 1300px;
     border: 0.5px solid rgb(0, 0, 0,0.4);
+}
+.widthLine1{
+    margin: auto;
+    width: 100%;
+    border: 0.2px solid rgb(108, 108, 108);
+}
+.widthLine3{
+	margin-top: 30px;
+}
+.widthLine3, .widthLine4{
+	margin: auto;
+	width: 100%;
+	border: 1px solid #fff;
 }
 .heightLine{
   
@@ -1038,6 +1080,19 @@ tesssst
 .rcText{
     margin: 70px 5%;
     /* background-color: red; */
+}
+.rcText{
+    margin: 70px 5%;
+    /* background-color: red; */
+}
+
+.rcText > ul > label{
+	margin-top: 5px;
+	display: block;
+}
+.rcText > ul > label > a{
+	text-decoration: none;
+	color:black;
 }
 .bottom{
     margin-top: 40px;
@@ -1145,6 +1200,7 @@ tesssst
 }
 
 
+<<<<<<< HEAD
 /* 트레이너 매칭 */
 .tr_content {
     margin: auto;
@@ -1315,38 +1371,31 @@ tesssst
 
 .trainer_1 {
 	width: 305px;
-	height: 600px;
+	height: 500px;
 	border: 0.5px solid;
 	margin: 10px; 
 } 
 
 .trainer_2 {
 	width: 305px;
-	height: 600px;
+	height: 500px;
 	border: 0.5px solid;
 	margin: 10px;  
 } 
 
 .trainer_3 {
 	width: 305px;
-	height: 600px;
+	height: 500px;
 	border: 0.5px solid;
 	margin: 10px;  
 } 
 
 .trainer_4 {
 	width: 305px;
-	height: 600px;
+	height: 500px;
 	border: 0.5px solid;
 	margin: 10px;  
-}
-
-.re_trainer p{
-	text-align:center;	
-	position:relative;
-	top:50%;
-	font-size:15px;
-}
+} 
 
 .trainer_1 p, 
 .trainer_2 p, 
@@ -1356,6 +1405,7 @@ tesssst
  	top: 50%;
 }
 
+<<<<<<< HEAD
 /*.retr_btn button{
 	margin:auto;
 	margin-top:30px;
@@ -1559,7 +1609,7 @@ tesssst
 	line-height: 3rem;
 	color: #222;
 	font-size: 2.6rem;
-	letter-spacing: -.81px
+	letter-spacing: -.81px;
 }
 
 .help_service_list {
