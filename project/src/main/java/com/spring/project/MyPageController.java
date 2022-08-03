@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.spring.dto.ExerciseChartDTO;
 import com.spring.dto.InbodyDTO;
 import com.spring.dto.UserDTO;
+import com.spring.dto.UserRecordDTO;
 import com.spring.service.MyPageService;
 import com.spring.service.UserService;
 
@@ -157,6 +158,21 @@ public class MyPageController {
 //		model.addAttribute("chartData", list);
 
 		System.out.println(ms.chartData(userNum));
+	}
+	@RequestMapping(value = "/record/insert", method = RequestMethod.GET)
+	public void recordInsertGET(int userNum, Model model) throws Exception {
+
+		model.addAttribute(ms.recordList(userNum));
+	}
+
+	@RequestMapping(value = "/record/insert", method = RequestMethod.POST)
+	public String recordInsertPOST(UserRecordDTO dto,ExerciseChartDTO chartdto, int userNum, RedirectAttributes rttr) throws Exception {
+
+		ms.recordInsert(dto);
+		ms.chartInsert(chartdto);
+		rttr.addFlashAttribute("msg", "success");
+
+		return "redirect:/user/record/record?userNum=" + userNum;
 	}
 
 }

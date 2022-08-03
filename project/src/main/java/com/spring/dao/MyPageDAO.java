@@ -28,6 +28,8 @@ public interface MyPageDAO {
 
 	public List<ExerciseChartDTO> chartData(int userNum) throws Exception;
 	
+	public void chartInsert(ExerciseChartDTO dto) throws Exception;
+	
 //	public List<UserRecordDTO> listCriteria(PageMaker pm) throws Exception;
 //	  
 //	public int listCount(PageMaker pm) throws Exception;
