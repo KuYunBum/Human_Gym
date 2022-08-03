@@ -622,7 +622,7 @@ border-radius: 5px;
 }
 
 .ex_content h1 {
-	position: absolute;
+	position: relative;
 	font-size: 50px;
 	color: white;
 	margin-left: 800px;
@@ -630,11 +630,11 @@ border-radius: 5px;
 }
 
 .ex_content > p {
-	position: absolute;
+	position: relative;
 	font-size: 30px;
 	color: white;
 	margin-left: 750px;
-	margin-top: -250px;
+/* 	margin-top: -250px; */
 }
 
 .ex_content_title > button{
@@ -658,14 +658,14 @@ border-radius: 5px;
 }
 
 .ex_content button {
-	position: absolute;
+	position: relative;
 	font-size: 20px;
 	color: white;
 	width: 350px;
 	height: 50px;
 	background-color: purple; 
-	margin-left: -170px;
-	margin-top: 100px;
+/* 	margin-left: -100px; */
+	margin-top: 270px;
 	border-radius: 50px;
 }
 
@@ -748,7 +748,7 @@ border-radius: 5px;
 	width: 280px;
 	height: 50px;
 	top: 1100px;
-	left: 820px;
+	left: 44%;
 	border-radius: 50px;
 }
 
