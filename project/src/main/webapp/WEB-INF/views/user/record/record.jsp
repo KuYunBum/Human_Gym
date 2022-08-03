@@ -61,8 +61,8 @@
 	<br>
 
 	<div class="bt_box">
-		<button type="submit" class="">입력</button>
-		<button type="submit" class="">수정</button>
+		<button type="submit" class="inbody_insert">입력</button>
+		<button type="button" class="inbody_update">수정</button>
 		<button onclick="location.href='/project/'">홈</button>
 	</div>
 <%-- data 가져오는지 확인용  	

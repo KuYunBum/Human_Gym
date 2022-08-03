@@ -76,6 +76,13 @@ public class MyPageServiceImpl implements MyPageService{
 		return dtos;
 	}
 
+	@Override
+	public void chartInsert(ExerciseChartDTO dto) throws Exception {
+		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+		dao.chartInsert(dto);
+		
+	}
+
 //	@Override
 //	public List<UserRecordDTO> listCriteria(PageMaker pm) throws Exception {
 //		MyPageDAO dao=sqlSession.getMapper(MyPageDAO.class);

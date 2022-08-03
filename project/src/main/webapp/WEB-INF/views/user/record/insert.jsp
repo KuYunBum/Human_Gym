@@ -12,6 +12,8 @@
 		<%@include file="../../include/myPageNav.jsp"%>
 		
 		<hr style="width: 1300px; margin:auto;">
+		
+		<form role="form" method="post">
 
 		<div class="myPageNav2">
 			<div class="leftContainer" >
@@ -27,30 +29,27 @@
 				<div class="rcText" >
 					<table id='record_tb' border="1">
 						<tr>
-						<td><h4>운동 날짜</h4></td>
-						<td><h4>운동 시간</h4></td>
-						<td><h4>시작 시간</h4></td>
-						<td><h4>끝난 시간</h4></td>
-						</tr>
-						<c:forEach items="${list}" var="userRecordDTO">
+							<td><h4>운동 날짜</h4></td>
+							<td><h4>시작 시간</h4></td>
+							<td><h4>끝난 시간</h4></td>
+						</tr>			
 							<tr>
-								<td><fmt:formatDate pattern="yyyy-MM-dd" value="${userRecordDTO.useDate}"/></td>
-								<td><fmt:formatDate pattern="hh:mm:ss" value="${userRecordDTO.totalTime}"/></td>
-								<td><fmt:formatDate pattern="hh:mm:ss" value="${userRecordDTO.startTime}"/></td>
-								<td><fmt:formatDate pattern="hh:mm:ss" value="${userRecordDTO.endTime}"/></td>
-							</tr>
-						</c:forEach>
+								<td><input type="date" name='useDate' placeholder="0000-00-00"></td>
+									<%-- <fmt:formatDate pattern="yyyy-MM-dd" value="${userRecordDTO.useDate}"/> --%>
+								<td><input type="datetime" name='startTime'></td>
+								<td><input type="time" name='endTime'></td>
+							</tr>					
 					</table>
 				</div>
 			</div>
 		</div>
+		</form>
 		
 		<hr style="width: 1300px; margin:auto;"><br>
 				
 		<div class="bt_box">
-			<button type="submit" class="">입력</button>
-			<button type="submit" class="">수정</button>
-			<button onclick="location.href='/project/'">홈</button>
+			<button type="submit" class="bt_save">저장</button>
+			<button type="button" onclick="location.href='/project/user/record/record?userNum=${userNum}'">뒤로</button>
 		</div>
 		
 	</div>
