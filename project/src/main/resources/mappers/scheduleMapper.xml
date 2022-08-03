@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dao.ScheduleDao">
+	<select id="read" resultType="ScheduleDto">
+		select * from userSchedule where
+		userNum = #{userNum} order by
+		day, scNum
+	</select>
+	<insert id="create">
+		insert into userSchedule
+		values(#{userNum}, #{day},
+		#{schedule}, scNum.nextVal)
+	</insert>
+	<select id="userRead" resultType="ScheduleDto">
+		select distinct userNum from
+		userSchedule order by userNum
+	</select>
+	<select id="readSchedule" resultType="ScheduleDto">
+		select * from userSchedule
+		where scNum=#{scNum}
+	</select>
+	<update id="updateSchedule">
+		update userSchedule set day=#{day},
+		schedule=#{schedule}
+		where scNum =
+		#{scNum}
+	</update>
+	<delete id="deleteSchedule">
+		delete userSchedule where scNum = #{scNum}
+	</delete>
+</mapper>
