@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dao.UserDAO">
+
+<insert id="userJoin">
+	insert into 
+		users (userNum, userID, userPW, userName, userGender, userBirth, userPhone, userEmail)
+	values (user_counter.nextval, #{userID}, #{userPW}, #{userName}, #{userGender}, #{userBirth}, #{userPhone}, #{userEmail})
+</insert>
+
+
+<select id="userLogin" resultType="UserDTO"> 
+	select 
+		userNum, userID, userPW
+	from 
+		users
+	where userID=#{userID} and userPW=#{userPW}
+</select>
+
+
+<select id="idCheck" resultType="UserDTO">
+	select
+		userID
+	from
+		users
+	where 
+		userID=#{userID}
+</select>
+
+
+<select id="findAccount" resultType="UserDTO">
+	select
+		userID, userPW
+	from
+		users
+	where 
+		userName=#{userName} and userPhone=#{userPhone}
+</select>
+
+
+<update id="userUpdate"> 
+	update 
+		users 
+	set 
+		userPW = #{userPW}, userName = #{userName}, userGender = #{userGender}, 
+		userBirth = #{userBirth}, userPhone =  #{userPhone}, userEmail = #{userEmail}
+	where 
+		userNum = #{userNum} 
+</update>
+
+
+<select id="userDetail" resultType="com.spring.dto.UserDTO"> 
+	select 
+		* 
+	from 
+		users 
+	where 
+		userNum = #{userNum}
+</select>
+
+
+<delete id="userDelete"> 
+	delete from 
+		users 
+	where 
+		userNum = #{userNum}
+</delete>
+
+
+<select id="userList" resultType="com.spring.dto.UserDTO">
+	<![CDATA[ 
+		select *
+		from
+			users
+		where  
+ 			userNum > 1  
+ 		order by  
+ 			userNum desc  	
+ 	]]> 
+</select>
+
+
+
+</mapper>

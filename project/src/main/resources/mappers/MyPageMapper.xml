@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.dao.MyPageDAO">
+
+<insert id="inbodyInsert">
+	insert into 
+		inbody (userNum, userGender, height,
+			weight, skeletalMuscleMass, bodyFatMass, bodyWater,
+			protein, muscleMass, leanBodyMass, minerals, BMI,
+			waistHipRatio, BMR, bodyShape)
+	values (#{userNum}, #{userGender},
+			#{height}, #{weight}, #{skeletalMuscleMass}, #{bodyFatMass},
+			#{bodyWater}, #{protein}, #{muscleMass}, #{leanBodyMass}, #{minerals},
+			#{BMI}, #{waistHipRatio}, #{BMR}, #{bodyShape})
+</insert>
+
+
+<select id="inbodyDetail" resultType="com.spring.dto.InbodyDTO"> 
+	select 
+		* 
+	from 
+		inbody
+	where 
+		userNum = #{userNum} 
+</select>
+
+<update id="inbodyUpdate"> 
+	update 
+		inbody 
+	set 
+			height = #{height}, weight = #{weight}, skeletalMuscleMass = #{skeletalMuscleMass}, 
+			bodyFatMass= #{bodyFatMass}, bodyWater = #{bodyWater}, protein = #{protein}, 
+			muscleMass = #{muscleMass}, leanBodyMass = #{leanBodyMass}, minerals = #{minerals},
+			BMI = #{BMI}, waistHipRatio = #{waistHipRatio}, BMR = #{BMR}, bodyShape = #{bodyShape}
+	where 
+		userNum = #{userNum} 
+</update>
+
+<delete id="inbodyDelete"> 
+	delete from 
+		inbody 
+	where 
+		userNum = #{userNum} 
+</delete>
+
+
+<!--  insert values 수정 필요 -->
+<insert id="recordInsert">
+	insert into 
+		userrecord (recordNum, userNum, startTime, endTime, totalTime, useDate)
+	values (seq_record.nextval, #{userNum}, #{startTime}, #{endTime}, #{endTime}-#{startTime}, #{useDate})
+</insert>
+
+
+<update id="recordUpdate"> 
+	update 
+		userrecord 
+	set 
+		startTime = #{startTime}, endTime = #{endTime}, totalTime = #{endTime}-#{startTime}
+	where 
+		recordNum = #{recordNum} 
+</update>
+
+
+<delete id="recordDelete"> 
+	delete from 
+		userrecord 
+	where 
+		recordNum = #{recordNum} 
+</delete>
+
+
+<select id="recordList" resultType="com.spring.dto.UserRecordDTO">
+	<![CDATA[select *
+				from
+					userrecord
+				where
+					 userNum = #{userNum}
+				order by
+					recordNum desc
+	]]>				
+</select>
+
+
+<select id="listCriteria" resultType="com.spring.dto.UserRecordDTO">
+	<![CDATA[select recordNum, userNum, startTime, endTime, totalTime, useDate
+			 from (select rownum rn, a.*
+   				 from (
+			        select userrecord.* 
+			        from userrecord 
+			        where 1=1]]> 
+	<![CDATA[order by recordNum desc) a where rownum <= #{page}*(#{perPageNum})) b
+    		 where rn>(#{page}-1)*#{perPageNum}]]> 
+</select>
+
+	<select id="listCount" resultType="int">
+	<![CDATA[
+	select 
+	  count(recordNum) 
+	from 
+	  userrecord
+	where 
+	  userNum =#{userNum} 
+	]]>
+	</select>
+	
+	<!--  차트 데이터 -->
+<select id="chartData" resultType="com.spring.dto.ExerciseChartDTO">
+	SELECT
+	    AA.USERNUM, 
+	    SUM(AA.SETCOUNT) as SETCOUNT,    
+	    AA.EXPART,
+	    (CASE 
+	        WHEN EXPART = '전신' THEN 'userAll'
+	        WHEN EXPART = '삼두' THEN 'userArm'
+	        WHEN EXPART = '이두' THEN 'userArm'
+	        WHEN EXPART = '전완' THEN 'userArm'
+	        WHEN EXPART = '가슴' THEN 'userUpper'
+	        WHEN EXPART = '어깨' THEN 'userUpper'
+	        WHEN EXPART = '등' THEN 'userBack'
+	        WHEN EXPART = '허벅지' THEN 'userLower'
+	        WHEN EXPART = '엉덩이' THEN 'userLower'
+	        WHEN EXPART = '종아리' THEN 'userLower'
+	        WHEN EXPART = '복근' THEN 'userCore'
+	        WHEN EXPART = '코어' THEN 'userCore'
+	        ELSE NULL
+	    END) EXPARTCODE
+	FROM (
+	    select
+	        A.USERNUM,    
+	        A.EXID,
+	        A.EXDATE,
+	        A.SETCOUNT,
+	        B.EXNAME,
+	        B.EXPART
+	    from USEREX A
+	    inner join EXERCISE B on A.EXID = B.EXID
+	) AA
+	WHERE AA.USERNUM = #{userNum}
+	group by AA.USERNUM, AA.SETCOUNT, AA.EXPART
+</select>
+
+
+
+</mapper>
