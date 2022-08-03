@@ -20,11 +20,11 @@
     display: flex;
     margin:auto;
 }
-.navLi{
+/* .navLi{ */
 /* 	text-align: end; */
-    width: 1500px;
-    margin: auto;
-}
+/*     width: 1500px; */
+/*     margin: auto; */
+/* } */
 .navbar1 ul {
     flex: 1;
     height: 120px;
@@ -44,11 +44,10 @@
     position: relative;
     font-size: 20px;
 }
+
 .navbar1 ul li a:hover{
-    color:rgb(0, 177, 56);
+	 color:rgb(0, 177, 56);
 }
-
-
 .navbar1 ul li a:hover::after {
     width: 80%;
 }
@@ -97,7 +96,7 @@
     /* nav a 간의 떨어지는값 일단 30으로 해봤습니다. */
     padding: 0 10px; 
     position: relative;
-    font-size: 25px;
+    font-size: 20px;
 }
 .logNav{
 	display: inline;
@@ -118,7 +117,6 @@
  	margin:auto;
     display: flex;
 }
-
 
 .main {   
   -ms-flex: 75%; IE10
