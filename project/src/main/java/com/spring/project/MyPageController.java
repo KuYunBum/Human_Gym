@@ -159,6 +159,7 @@ public class MyPageController {
 
 		System.out.println(ms.chartData(userNum));
 	}
+	
 	@RequestMapping(value = "/record/insert", method = RequestMethod.GET)
 	public void recordInsertGET(int userNum, Model model) throws Exception {
 

@@ -75,6 +75,7 @@
 
 <%@include file="../../include/footer.jsp"%>
 
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
 	
@@ -84,8 +85,6 @@
 <script type="text/javascript">
 	var context = document.getElementById("myChart")
 	var labelNames = [ "삼두,이두,전완", "가슴,어깨", "등", "허벅지,엉덩이,종아리", "복근,코어" ];
-
-
 
 	var userArm = '${arm}';
 	var userUpper = '${upper}';

@@ -36,7 +36,7 @@
 							<tr>
 								<td><input type="date" name='useDate' placeholder="0000-00-00"></td>
 									<%-- <fmt:formatDate pattern="yyyy-MM-dd" value="${userRecordDTO.useDate}"/> --%>
-								<td><input type="datetime" name='startTime'></td>
+								<td><input type="time" name='startTime'></td>
 								<td><input type="time" name='endTime'></td>
 							</tr>					
 					</table>
