@@ -16,7 +16,7 @@
 				당신의 부족한 부분을 채워줄<br>휴먼 헬스 트레이너
 			</p>
 			<form method="post">
-				<button>매칭하기</button>
+				<button>MATCHING</button>
 			</form>
 		</div>
 	</div>

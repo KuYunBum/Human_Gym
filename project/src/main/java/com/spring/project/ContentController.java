@@ -96,7 +96,22 @@ public class ContentController {
 	public void trainer() throws Exception {
 		
 	}
-	
+	@RequestMapping(value = "/trainer", method = RequestMethod.POST)
+	public String trainerPOST(HttpServletRequest request, RedirectAttributes rttr) throws Exception {
+		
+		HttpSession session = request.getSession();
+		System.out.println(session.getAttribute("user"));
+		
+		if(session.getAttribute("user")!= null) {
+			return "/content/tr/tr_consult";
+		}
+		rttr.addFlashAttribute("msg", "LoginRequired");
+		return "redirect:/user/loginForm";
+	}
+	@RequestMapping(value = "/tr/tr_consult", method = RequestMethod.GET)
+	public void tr_consult() throws Exception {
+		
+	}
 	@RequestMapping(value = "/gym", method = RequestMethod.GET)
 	public void gym() throws Exception {
 		
