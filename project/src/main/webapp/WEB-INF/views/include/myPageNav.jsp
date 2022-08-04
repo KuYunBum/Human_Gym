@@ -12,7 +12,7 @@
 					<a href="/project/user/inbody/detail?userNum=${userNum }">인바디</a>
 				</li>
 				<li>
-					<a href="/project/user/routineBox?userNum=${userNum }">내 루틴 커스텀</a>
+					<a href="/project/user/routine/routineBox?userNum=${userNum }">내 루틴 커스텀</a>
 				</li>
 				<li>
 					<a href="/project/user/record/record?userNum=${userNum }">운동기록</a>

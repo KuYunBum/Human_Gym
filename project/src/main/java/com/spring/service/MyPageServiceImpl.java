@@ -97,10 +97,16 @@ public class MyPageServiceImpl implements MyPageService{
 //	}
 
 //	루틴
-//	@Override
-//	public List<RoutineDTO> routineList(int userNum) throws Exception {
-//		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
-//		List<RoutineDTO> dtos = dao.routineList(userNum);
-//		return dtos;
-//	}
+	@Override
+	public List<RoutineDTO> routineList(int userNum) throws Exception {
+		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+		List<RoutineDTO> dtos = dao.routineList(userNum);
+		return dtos;
+	}
+	
+	@Override
+	public void routineInsert(RoutineDTO dto) throws Exception {
+		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+		dao.routineInsert(dto);
+	}
 }

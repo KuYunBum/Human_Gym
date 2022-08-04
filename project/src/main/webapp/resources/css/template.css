@@ -160,12 +160,15 @@
 .main h1, .bt_box {
 	text-align: center;
 }
-
-.bt_box button {
-	font-size: 15px;
-	width:80px;
-	height: 40px;
-}
+/* ---------------------------------버튼 박스 수정--------------------------------- */
+/* ---------------------------------버튼 박스 수정--------------------------------- */
+/* ---------------------------------버튼 박스 수정--------------------------------- */
+/* ---------------------------------버튼 박스 수정--------------------------------- */
+/* .bt_box button { */
+/* 	font-size: 15px; */
+/* 	width:80px; */
+/* 	height: 40px; */
+/* } */
 .leftContainer >ul{
     margin-top: 40px;
 }
@@ -1046,10 +1049,15 @@ border-radius: 5px;
     display: flex;
     text-align: center;
 }
-
+.myPageNav3 {
+    margin: auto;
+    width: 1300px;
+    display: flex;
+    text-align: center;
+}
 .leftContainer{
     margin-top: 40px;
-    width: 30%;
+    width: 390px;
     height: 100%;
 }
 .leftContainer >ul{
@@ -1070,13 +1078,13 @@ border-radius: 5px;
     color: white;
 }
 .rightContainer{
-    margin-top: 40px;
-    width: 70%;
+    width: 910px;
     height: 100%;
     text-align:left;
+    margin-top:40px;
 }
 .rcText{
-    margin: 70px 5%;
+    margin: 20px;
     /* background-color: red; */
 }
 .rcText > ul > label{

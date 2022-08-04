@@ -48,9 +48,9 @@
 		<hr style="width: 1300px; margin:auto;"><br>
 				
 		<div class="bt_box">
-			<button type="submit" class="">입력</button>
-			<button type="submit" class="">수정</button>
-			<button onclick="location.href='/project/'">홈</button>
+			<button id="btn1" type="submit" class="">입력</button>
+			<button id="btn1" type="submit" class="">수정</button>
+			<button id="btn1" onclick="location.href='/project/'">홈</button>
 		</div>
 		
 	</div>

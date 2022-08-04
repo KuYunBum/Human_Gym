@@ -143,5 +143,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	group by AA.USERNUM, AA.SETCOUNT, AA.EXPART
 </select>
 
+<select id="routineList" resultType="routineDTO">
+<!-- 	<![CDATA[ -->
+	select * 
+	from
+		routineBox
+	where 
+		userNum = #{userNum}
+<!-- 	and  -->
+<!-- 		routineName = #{routineName} -->
+<!-- 	]]> -->
+</select>
+
+<insert id="routineInsert">
+	insert into 
+		routineBox (userNum, routineName, routineEx)
+	values (#{userNum}, #{routineName},
+			#{routineEx})
+</insert>
 
 </mapper>
