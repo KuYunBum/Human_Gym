@@ -94,8 +94,8 @@
 			<hr style="width: 1300px; margin:auto;">
 			
 		<div class="bt_box">
-			<button type="submit" class="bt_save">저장</button>
-			<button type="button" onclick="location.href='/project/user/inbody/detail?userNum=${userNum}'">뒤로</button>
+			<button id="btn1" type="submit" class="bt_save">저장</button>
+			<button id="btn1" type="button" onclick="location.href='/project/user/inbody/detail?userNum=${userNum}'">뒤로</button>
 		</div>
 	</div>
 	

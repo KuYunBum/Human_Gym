@@ -34,7 +34,10 @@ public interface MyPageDAO {
 //	public List<UserRecordDTO> listCriteria(PageMaker pm) throws Exception;
 //	  
 //	public int listCount(PageMaker pm) throws Exception;
+	
 	//루틴	
-//	public List<RoutineDTO> routineList(int userNum) throws Exception;
+	public List<RoutineDTO> routineList(int userNum) throws Exception;
+	
+	public void routineInsert(RoutineDTO dto) throws Exception;
 	
 }

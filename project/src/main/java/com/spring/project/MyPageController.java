@@ -13,10 +13,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.dto.ExerciseChartDTO;
 import com.spring.dto.InbodyDTO;
+import com.spring.dto.RoutineDTO;
 import com.spring.dto.UserDTO;
 import com.spring.dto.UserRecordDTO;
 import com.spring.service.MyPageService;
@@ -88,6 +90,7 @@ public class MyPageController {
 
 		ms.inbodyInsert(dto);
 		rttr.addFlashAttribute("msg", "success");
+		System.out.println(dto);
 
 		return "redirect:/user/inbody/detail?userNum=" + userNum;
 	}
@@ -108,12 +111,33 @@ public class MyPageController {
 
 		return "redirect:/user/inbody/detail?userNum=" + userNum;
 	}
+	
+	
+//	루틴
+	@RequestMapping(value = "/routine/routineBox", method = RequestMethod.GET)
+	public void routineBox(@RequestParam("userNum")int userNum, Model model) throws Exception {
 
-	@RequestMapping(value = "/routineBox", method = RequestMethod.GET)
-	public void routineBox() throws Exception {
+	model.addAttribute("list",ms.routineList(userNum));
+	System.out.println(ms.routineList(userNum));
 
 	}
+//	루틴 insert
+	@RequestMapping(value = "/routine/insert", method = RequestMethod.GET)
+	public void routineInsertGET(int userNum, Model model) throws Exception {
 
+		model.addAttribute(ms.routineList(userNum));
+	}
+	
+	@RequestMapping(value = "/routine/insert", method = RequestMethod.POST)
+	public String routineInsertPOST(RoutineDTO dto,  RedirectAttributes rttr) throws Exception {
+
+		ms.routineInsert(dto);
+		rttr.addFlashAttribute("msg", "success");
+
+		return "redirect:/user/routine/routineBox?userNum=" + dto.getUserNum();
+	}
+	
+	
 	@RequestMapping(value = "/record/record", method = RequestMethod.GET)
 	public void record(int userNum, Model model) throws Exception {
 		model.addAttribute("list", ms.recordList(userNum));
@@ -175,13 +199,5 @@ public class MyPageController {
 
 		return "redirect:/user/record/record?userNum=" + userNum;
 	}
-	
-//	루틴
-//	@RequestMapping(value = "/routineBox", method = RequestMethod.GET)
-//	public void routineBox(int userNum, Model model) throws Exception {
-//
-//	model.addAttribute(ms.routineList(userNum));
-//
-//	}
 
 }
