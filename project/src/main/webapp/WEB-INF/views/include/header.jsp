@@ -211,17 +211,17 @@ section:nth-child(odd) {
 					        
 					         <div class="slideNav-container2">
 					         	<div class="widthLine4"></div>
-							    <h2 style="color:#fff;">AUBOT US</h2>
+							    <h2 style="color:#fff;">ABOUT US</h2>
 					         </div>
 					        
 					        <div class="slideNav-container3">
 						      	<li id="rightLi" >
-							      	<a id="rightLi2"  href="https://www.instagram.com/">
+							      	<a id="rightLi2"  href="https://about.facebook.com/">
 							      		<img src="/project/resources/image/ex/icon-facebook.jpg" style="width: 50px;height: 50px;">
 							      	</a>
 						      	</li>
 						      	<li id="rightLi" >
-							      	<a id="rightLi2"  href="https://about.facebook.com/">
+							      	<a id="rightLi2"  href="https://www.instagram.com/">
 							      		<img src="/project/resources/image/ex/icon-instagram.png" style="width: 50px;height: 50px;">
 							      	</a>
 						      	</li>
