@@ -36,6 +36,14 @@ public class ScheduleController {
 
 	@RequestMapping(value = "/insertSchedule", method = RequestMethod.POST)
 	public String insertEnd(ScheduleDto dto, RedirectAttributes rttr) throws Exception {
+		if (dto.getDay() == null) {
+			rttr.addFlashAttribute("msg", "noDate");
+			return "redirect:/user/schedule/insertSchedule?userNum=" + dto.getUserNum();
+		}
+		if (dto.getSchedule().equals("")) {
+			rttr.addFlashAttribute("msg", "noSchedule");
+			return "redirect:/user/schedule/insertSchedule?userNum=" + dto.getUserNum();
+		}
 		service.create(dto);
 		rttr.addFlashAttribute("msg", "success");
 		System.out.println(dto.getUserNum());
@@ -49,10 +57,14 @@ public class ScheduleController {
 
 	@RequestMapping(value = "/editSchedule", method = RequestMethod.POST)
 	public String editEnd(ScheduleDto dto, RedirectAttributes rttr) throws Exception {
+		int scNum = dto.getScNum();
+		if (dto.getSchedule().equals("")) {
+			rttr.addFlashAttribute("msg", "noSchedule");
+			return "redirect:/user/schedule/editSchedule?scNum=" + scNum;
+		}
 		service.updateSchedule(dto);
-		int userNum = dto.getUserNum();
 		rttr.addFlashAttribute("msg", "success");
-		return "redirect:/user/schedule/editSchedule?scNum=" + userNum;
+		return "redirect:/user/schedule/editSchedule?scNum=" + scNum;
 	}
 
 	@RequestMapping(value = "/deleteSchedule", method = RequestMethod.GET)

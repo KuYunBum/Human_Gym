@@ -11,14 +11,19 @@
 		alert("등록 완료 되었습니다.");
 		opener.parent.document.location.reload();
 		window.close();
+	} else if (msg == "noDate") {
+		alert("날짜을 입력하지 않으셨습니다.");
+	} else if (msg == "noSchedule") {
+		alert("일정을 입력하지 않으셨습니다.");
 	}
 </script>
 </head>
 <body>
 	<form method="post">
-		<input type="hidden" name="${userNum}"> 날짜 : <input
-			type="date" name="day"> <br> 할 일 : <input type="text"
-			name="schedule"> <br> <input type="submit" value="등록">
+		<input type="hidden" name="${userNum}"> 
+		날짜 : <input type="date" name="day">
+		<br>
+		할 일 : <input type="text" name="schedule"> <br> <input type="submit" value="등록">
 	</form>
 </body>
 </html>

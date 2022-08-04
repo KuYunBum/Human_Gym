@@ -24,7 +24,7 @@
 		<div class="heightLine"></div>
 
 		<div class="rightContainer">
-		
+
 			<!-- 달력 출력 부분 -->
 			<div class="rcText">
 				<form name="calendarFrm" id="calendarFrm" action="" method="GET">
@@ -39,9 +39,8 @@
 							</a> <a class="before_after_month"
 								href="./schedule?userNum=${userNum}&year=${today_info.before_year}&month=${today_info.before_month}">
 								&lt; <!-- 이전달 -->
-							</a> <span class="this_month">
-								&nbsp;${today_info.search_year}. <c:if
-									test="${today_info.search_month<10}">0</c:if>${today_info.search_month}
+							</a> <span class="this_month"> &nbsp;${today_info.search_year}.
+							<c:if test="${today_info.search_month<10}">0</c:if>${today_info.search_month}
 							</span> <a class="before_after_month"
 								href="./schedule?userNum=${userNum}&year=${today_info.after_year}&month=${today_info.after_month}">
 								<!-- 다음달 --> &gt;
@@ -106,7 +105,7 @@
 				</form>
 			</div>
 			<!-- 달력 출력 부분 끝-->
-			
+
 		</div>
 	</div>
 
@@ -116,9 +115,7 @@
 	<div class="bt_box">
 		<script>
 			function insertSchedule() {
-				window
-						.open(
-								"/project/user/schedule/insertSchedule?userNum=${userNum}",
+				window.open("/project/user/schedule/insertSchedule?userNum=${userNum}",
 								"스케줄 추가하기", "width=500px, height=500px");
 			}
 		</script>
