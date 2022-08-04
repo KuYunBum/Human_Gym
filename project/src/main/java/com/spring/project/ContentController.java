@@ -32,8 +32,8 @@ public class ContentController {
 
 	}
 	
-	@RequestMapping(value = "/ex_recomm/ex_recomm", method = RequestMethod.POST)
-	public String ex_recommPOST(HttpServletRequest request, RedirectAttributes rttr) throws Exception {
+	@RequestMapping(value = "/ex_recomm/ex_recomm_start", method = RequestMethod.GET)
+	public String ex_recomm_start(HttpServletRequest request, RedirectAttributes rttr) throws Exception {
 		
 		HttpSession session = request.getSession();
 		System.out.println(session.getAttribute("user"));
@@ -43,11 +43,6 @@ public class ContentController {
 		}
 		rttr.addFlashAttribute("msg", "LoginRequired");
 		return "redirect:/user/loginForm";
-	}
-	
-	@RequestMapping(value = "/ex_recomm/ex_recomm_start", method = RequestMethod.GET)
-	public void ex_recomm_start() throws Exception {
-		
 	}
 	
 	@RequestMapping(value = "/ex_recomm/ex_recomm2", method = RequestMethod.GET)
