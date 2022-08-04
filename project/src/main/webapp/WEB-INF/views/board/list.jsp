@@ -9,7 +9,7 @@
 
 	<div class="main">
 		<h1>게 시 판</h1><br><br>
-		<div>
+		<div class="board_top">
     	<select name="searchType">
     		<option value="n" <c:out value="${pageMaker.searchType==null?'selected':'' }"/>>----</option>
     		<!-- <option value="n" selected>----</option>

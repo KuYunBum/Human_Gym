@@ -40,7 +40,6 @@ public class BoardController {
 	public void insertGET(BoardDTO dto) throws Exception {
 		
 	}
-	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public String insertPOST(BoardDTO dto, RedirectAttributes rttr) throws Exception {
 		

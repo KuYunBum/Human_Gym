@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.spring.dto.BoardDTO;
+import com.spring.service.BoardService;
 import com.spring.service.ContentService;
 
 
@@ -24,7 +26,7 @@ public class ContentController {
 	private static final Logger logger = LoggerFactory.getLogger(ContentController.class);
 	
 	@Inject
-	private ContentService service;
+	private BoardService service;
 	
 	
 	@RequestMapping(value = "/ex_recomm/ex_recomm", method = RequestMethod.GET)
@@ -75,6 +77,7 @@ public class ContentController {
 	public void tr_main() throws Exception {
 		
 	}
+	
 	@RequestMapping(value = "/tr/tr_main", method = RequestMethod.POST)
 	public String tr_mainPOST(HttpServletRequest request, RedirectAttributes rttr) throws Exception {
 		
@@ -92,10 +95,12 @@ public class ContentController {
 	public void tr_loading() throws Exception {
 		
 	}
+	
 	@RequestMapping(value = "/trainer", method = RequestMethod.GET)
 	public void trainer() throws Exception {
 		
 	}
+	
 	@RequestMapping(value = "/trainer", method = RequestMethod.POST)
 	public String trainerPOST(HttpServletRequest request, RedirectAttributes rttr) throws Exception {
 		
@@ -108,10 +113,34 @@ public class ContentController {
 		rttr.addFlashAttribute("msg", "LoginRequired");
 		return "redirect:/user/loginForm";
 	}
+	
+	@RequestMapping(value = "/consult_insert", method = RequestMethod.POST)
+	public String consult_insertPOST(BoardDTO dto, RedirectAttributes rttr) throws Exception {
+		
+		logger.info(dto.toString());
+		
+		service.insert(dto);
+		
+		rttr.addFlashAttribute("msg", "success");
+		return "redirect:/board/list";
+	}
+	
+	@RequestMapping(value = "/tr/tr_consult", method = RequestMethod.POST)
+	public String tr_consultPOST(BoardDTO dto, RedirectAttributes rttr) throws Exception {
+		
+		logger.info(dto.toString());
+		
+		service.insert(dto);
+		
+		rttr.addFlashAttribute("msg", "success");
+		return "redirect:/board/list";
+	}
+	
 	@RequestMapping(value = "/tr/tr_consult", method = RequestMethod.GET)
 	public void tr_consult() throws Exception {
 		
 	}
+	
 	@RequestMapping(value = "/gym", method = RequestMethod.GET)
 	public void gym() throws Exception {
 		
