@@ -6,7 +6,7 @@
 }
 
 .header {
- 	width: 100%;
+    width: 100%;
     position: sticky;
     top:0;
     background-color:#fff;
@@ -21,7 +21,7 @@
     margin:auto;
 }
 /* .navLi{ */
-/* 	text-align: end; */
+/*    text-align: end; */
 /*     width: 1500px; */
 /*     margin: auto; */
 /* } */
@@ -100,22 +100,22 @@
     font-size: 25px;
 }
 .logNav{
-	display: inline;
-	float: right;
-	margin-top: 57px;
+   display: inline;
+   float: right;
+   margin-top: 57px;
 }
 .slideNav-container1{
-	width:80%;
-	margin:auto;
+   width:80%;
+   margin:auto;
 }
 .slideNav-container2{
-	width:80%;
-	margin:auto;
-	margin-top: 330px;
+   width:80%;
+   margin:auto;
+   margin-top: 330px;
 }
 .slideNav-container3{
-	width:100%;
- 	margin:auto;
+   width:100%;
+    margin:auto;
     display: flex;
 }
 

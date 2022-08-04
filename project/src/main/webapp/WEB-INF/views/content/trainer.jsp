@@ -19,9 +19,8 @@
 							<p><h4>대한민국 최고의 헬스 유튜버</h4></p>
 							<p><h4>대한민국 UDT/SEAL 전역</h4></p>
 							
-							<form class="retr_btn" method="post">
-								<button>상담하기</button>
-							</form>
+							<button class="retr_btn" onclick="location.href='/project/content/tr/tr_consult'">상담하기</button>
+							
 						</div>
 			</div>
 		</div>
@@ -38,9 +37,7 @@
 					<p>1969 미스터유니버스 우승</p>
 					<p>1970 미스터올림피아 우승</p>
 					
-					<form class="tr_btn" method="post">
-						<button>상담하기</button>
-					</form>
+					<button class="tr_btn" onclick="location.href='/project/content/tr/tr_consult'">상담하기</button>
 				</div>
 			</div>	
 			<div class="trainer_2">
@@ -52,9 +49,7 @@
 					<p>2020 아놀드 클래식 오하이오 – 3위</p>
 					<p>2020 미스터 올림피아 – 1위</p>
 					
-					<form class="tr_btn" method="post">
-						<button>상담하기</button>
-					</form>
+					<button class="tr_btn" onclick="location.href='/project/content/tr/tr_consult'">상담하기</button>
 				</div>
 			</div>	
 			<div class="trainer_3">
@@ -66,9 +61,7 @@
 					<p>2017 미스터 올림피아 – 3위</p>
 					<p>2018 아놀드 클래식 오하이오 – 2위</p>
 					
-					<form class="tr_btn" method="post">
-						<button>상담하기</button>
-					</form>
+					<button class="tr_btn" onclick="location.href='/project/content/tr/tr_consult'">상담하기</button>
 				</div>
 			</div>	
 			<div class="trainer_4">
@@ -80,9 +73,7 @@
 					<p>2005 미스터 올림피아 - 1위</p>
 					<p>2004 미스터 올림피아 - 1위</p>
 					
-					<form class="tr_btn" method="post">
-						<button>상담하기</button>
-					</form>
+					<button class="tr_btn" onclick="location.href='/project/content/tr/tr_consult'">상담하기</button>
 				</div>
 			</div>	
 		</div>
