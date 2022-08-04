@@ -47,11 +47,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </delete>
 
 
-<!--  insert values 수정 필요 -->
+<!--  insert values 수정 필요 db table>> 시간입력받지못함;;-->
 <insert id="recordInsert">
-	insert into 
-		userrecord (recordNum, userNum, startTime, endTime, totalTime, useDate)
-	values (seq_record.nextval, #{userNum}, #{startTime}, #{endTime}, #{endTime}-#{startTime}, #{useDate})
+		insert into
+		userrecord (recordNum, userNum, useDate)
+		values (seq_record.nextval,#{userNum}, #{useDate})
 </insert>
 
 
