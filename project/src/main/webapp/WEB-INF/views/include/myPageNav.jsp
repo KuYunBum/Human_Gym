@@ -25,7 +25,7 @@
 			<li><a id="schedule" href="">스케줄 관리하기</a></li>
 		</ul>
 	</div>
-=======
+
 
 		<div class="myPageNav">
 			<ul>
