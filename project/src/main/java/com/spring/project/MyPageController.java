@@ -191,13 +191,14 @@ public class MyPageController {
 	}
 
 	@RequestMapping(value = "/record/insert", method = RequestMethod.POST)
-	public String recordInsertPOST(UserRecordDTO dto,ExerciseChartDTO chartdto, int userNum, RedirectAttributes rttr) throws Exception {
-
+	public String recordInsertPOST(UserRecordDTO dto) throws Exception {
+		
+		System.out.println(ms.recordList(dto.getUserNum()));
+		
+		
 		ms.recordInsert(dto);
-		ms.chartInsert(chartdto);
-		rttr.addFlashAttribute("msg", "success");
 
-		return "redirect:/user/record/record?userNum=" + userNum;
+		return "redirect:/user/record/record?userNum=" + dto.getUserNum();
 	}
 
 }
