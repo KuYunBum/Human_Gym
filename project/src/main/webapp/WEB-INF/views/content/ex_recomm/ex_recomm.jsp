@@ -9,13 +9,15 @@
 
 	<div class="main">
 		<div class="ex_content">
-			<img src="/project/resources/image/ex/health_1.jpg">
+			<div class="ex_content_img">
+				<img src="/project/resources/image/ex/health_1.jpg">
+			</div>
 			<h1>AI 추천 플랜</h1>
 			<br>
 			<p>
 				사용자의 정보 신체 조건운동,<br> 장소 등을 고려한 맞춤 운동
 			</p><br>
-				<button type="button" onclick="location.href='/project/content/ex_recomm/ex_recomm_start'">시작하기</button>
+				<button class="ex_content_bt" type="button" onclick="location.href='/project/content/ex_recomm/ex_recomm_start'">시작하기</button>
 		</div>
 	</div>
 

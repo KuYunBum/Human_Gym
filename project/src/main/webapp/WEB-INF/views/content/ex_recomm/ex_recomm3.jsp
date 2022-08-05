@@ -26,9 +26,10 @@
 				</table>
 			</div>
 			<div class="ex_content_p5">
-				<img src="/project/resources/image/ex/skip_button.jpg">
-				<img src="/project/resources/image/ex/play_button.jpg">
-				<a href="/project/content/ex_recomm/ex_recomm4"><img src="/project/resources/image/ex/skip2_button.jpg"></a>
+				<img style="width:50px; height:50px;" src="/project/resources/image/ex/skip_button.jpg">
+				<img style="width:50px; height:50px;" src="/project/resources/image/ex/play_button.jpg">
+				<a href="/project/content/ex_recomm/ex_recomm4"><img style="width:50px; height:50px;"
+					 src="/project/resources/image/ex/skip2_button.jpg"></a>
 			</div>
 		</div>
 	</div>

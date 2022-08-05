@@ -51,12 +51,6 @@
 						</a>
 					</div>
 				</div>
-<!-- 				<div class=ex_content_p2_1> -->
-<!-- 					<img src="/project/resources/image/ex/health_2.JPG"><br> -->
-<!-- 				</div> -->
-<!-- 				<div class=ex_content_p2_2> -->
-<!-- 					<img src="/project/resources/image/ex/health_3.JPG"><br> -->
-<!-- 				</div> -->
 				<button onclick="location.href='/project/content/ex_recomm/ex_recomm3'">시작하기</button>
 			</div>
 		</div>
