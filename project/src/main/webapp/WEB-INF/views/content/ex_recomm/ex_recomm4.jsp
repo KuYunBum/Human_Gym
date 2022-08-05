@@ -12,10 +12,10 @@
 				<p>AI 추천 플랜</p>
 				<button type="button" class="more_bt">...</button><br>
 					<ul class="ex_sub">
-						<li><a href="">Day 1   등 가슴 코어 유산소</a></li>
-						<li><a href="">Day 2   하체 어깨 이두 삼두</a></li>
-						<li><a href="">Day 3   등 가슴 코어 유산소</a></li>
-						<li><a href="">Day 4   하체 어깨 이두 삼두</a></li>
+						<li><button id="day1">Day 1   등 가슴 코어 유산소</button></li>
+						<li><button id="day2">Day 2   하체 어깨 이두 삼두</button></li>
+						<li><button id="day3">Day 3   등 가슴 코어 유산소</button></li>
+						<li><button id="day4">Day 4   하체 어깨 이두 삼두</button></li>
 					</ul>
 				<p>Day 1   등 가슴 코어 유산소</p>
 				<p>55분</p>

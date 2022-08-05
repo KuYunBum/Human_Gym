@@ -51,12 +51,7 @@
 			alert("ID : "+ID+"  PW : "+PW);
 		}
 		
-	
-		
 		$('#searchBtn').on("click",function(event){
-// 		  alert("select"+'${pageMaker.makePage(1)}'
-// 				  +'&searchType='+$("select option:selected").val()
-// 				  +"&keyword="+$('#keywordInput').val());
 		  
 		  self.location="select"+'${pageMaker.makePage(1)}'
 		  +'&searchType='+$("select option:selected").val()
@@ -86,6 +81,28 @@
 		$(".routine_insert").on("click", function() {
 			self.location = "insert?userNum=${userNum}"
 		});
+	
+		$( '.ex_content_p1_1' ).animate( {
+		    opacity: '1'
+		  }, 1000, function() {
+		    $( '.ex_content_p1_2' ).animate( {
+		      opacity: '1'
+		    }, 1000, function() {
+		      $( '.ex_content_p1_3' ).animate( {
+		        opacity: '1'
+		      }, 1000, function() {
+		        $( '.ex_content_p1_4' ).animate( {
+		      	opacity: '1'
+		        }, 1000, function(){
+		      	  $( '.ex_content_p1' ).animate( {
+			        	opacity: '0'
+			          }, 1000, function(){ 
+			        	  self.location = "/project/content/ex_recomm/ex_recomm2?userNum=${userNum}"
+			          });
+		        });
+		      });
+		    });
+		  });
 	});
 </script>
 
@@ -192,7 +209,7 @@ section:nth-child(odd) {
 							    
 						        <ul class="navi">
 						        
-						          	<br><li id="rightLi" ><a id="rightLi2"  href="/project/content/ex_recomm/ex_recomm">AI 운동 추천</a></li>
+						          	<br><li id="rightLi" ><a id="rightLi2"  href="/project/content/ex_recomm/ex_recomm?userNum=${userNum }">AI 운동 추천</a></li>
 						          	<div class="widthLine1" style="margin-top: 8px;"></div>
 						          	
 							        <br><li id="rightLi" ><a id="rightLi2"  href="/project/content/membership">멤버쉽</a></li>
