@@ -67,11 +67,11 @@
 				</div>
 		</form>
 		
-		<hr style="width: 1300px; margin:auto;">
+		<hr style="width: 1300px; margin:auto;"><br>
 		
 		<div class="bt_box">
-			<button type="submit" class="bt_save">저장</button>
-			<button onclick="location.href='/project/user/myPage?userNum=${userDTO.userNum }'">취소</button>
+			<button id="btn1" type="submit" class="bt_save">저장</button>
+			<button id="btn1" onclick="location.href='/project/user/myPage?userNum=${userDTO.userNum }'">취소</button>
 		</div>
 		
 	</div>
