@@ -35,17 +35,14 @@
 						<td><h4>시작 시간</h4></td>
 						<td><h4>끝난 시간</h4></td>
 					</tr>
-					<c:forEach items="${list}" var="userRecordDTO">
+					<c:forEach items="${list}" var="RecordDTO">
 						<tr>
-							<td>${userRecordDTO.recordNum }</td>
+							<td>${RecordDTO.recordNum }</td>
 							<td><fmt:formatDate pattern="yyyy-MM-dd"
-									value="${userRecordDTO.useDate}" /></td>
-							<td><fmt:formatDate pattern="hh:mm:ss"
-									value="${userRecordDTO.totalTime}" /></td>
-							<td><fmt:formatDate pattern="hh:mm:ss"
-									value="${userRecordDTO.startTime}" /></td>
-							<td><fmt:formatDate pattern="hh:mm:ss"
-									value="${userRecordDTO.endTime}" /></td>
+									value="${RecordDTO.useDate}" /></td>
+							<td>${RecordDTO.playTime}</td>
+							<td>${RecordDTO.startHour}시 ${RecordDTO.endHour}분</td>
+							<td>${RecordDTO.startMinute}시 ${RecordDTO.endMinute}분</td>
 						</tr>
 					</c:forEach>
 				</table>

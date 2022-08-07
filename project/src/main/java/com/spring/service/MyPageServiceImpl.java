@@ -10,7 +10,7 @@ import com.spring.dao.MyPageDAO;
 import com.spring.dto.ExerciseChartDTO;
 import com.spring.dto.InbodyDTO;
 import com.spring.dto.RoutineDTO;
-import com.spring.dto.UserRecordDTO;
+import com.spring.dto.RecordDTO;
 
 @Service
 public class MyPageServiceImpl implements MyPageService{
@@ -42,14 +42,14 @@ public class MyPageServiceImpl implements MyPageService{
 	
 	//운동기록
 	@Override
-	public void recordInsert(UserRecordDTO dto) throws Exception{
+	public void recordInsert(RecordDTO dto) throws Exception{
 		
 		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
 		dao.recordInsert(dto);
 	};
 
 	@Override
-	public void recordUpdate(UserRecordDTO dto) throws Exception{
+	public void recordUpdate(RecordDTO dto) throws Exception{
 		
 		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
 		dao.recordUpdate(dto);
@@ -63,10 +63,10 @@ public class MyPageServiceImpl implements MyPageService{
 	}
 
 	@Override
-	public List<UserRecordDTO> recordList(int userNum) throws Exception {
+	public List<RecordDTO> recordList(int userNum) throws Exception {
 		
 		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
-		List<UserRecordDTO> dtos = dao.recordList(userNum);
+		List<RecordDTO> dtos = dao.recordList(userNum);
 		return dtos;
 	};
 	

@@ -47,11 +47,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </delete>
 
 
-<!--  insert values 수정 필요 db table>> 시간입력받지못함;;-->
+<!--  insert values 수정 필요 db table
+>> 음수로 계산되는 시간표시하는방법을 생각해볼것-->
 <insert id="recordInsert">
 		insert into
-		userrecord (recordNum, userNum, useDate)
-		values (seq_record.nextval,#{userNum}, #{useDate})
+		record (recordNum, userNum, useDate, startHour, startMinute, endHour, endMinute)
+		values (seq_record.nextval,#{userNum}, #{useDate}, #{startHour}, #{startMinute}, #{endHour}, #{endMinute})
 </insert>
 
 
