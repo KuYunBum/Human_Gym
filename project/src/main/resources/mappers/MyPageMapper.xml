@@ -87,7 +87,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	        , ENDHOUR
 	        , ENDMINUTE
 	        , CONCAT(
-	            CONCAT((((ENDHOUR*60+ENDMINUTE)-(STARTHOUR*60+STARTMINUTE))/60),'시간 '), CONCAT((ENDMINUTE-STARTMINUTE),'분')
+	           CONCAT(TRUNC(((ENDHOUR*60+ENDMINUTE-STARTHOUR*60-STARTMINUTE)/60),0),'시간 '),
+	        	CONCAT( MOD((ENDHOUR*60+ENDMINUTE -STARTHOUR*60-STARTMINUTE),60),'분 ')
 	          ) as PLAYTIME
 		from record
 		where 
