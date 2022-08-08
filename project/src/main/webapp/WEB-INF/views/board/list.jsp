@@ -44,7 +44,7 @@
 	    	</div> -->
 	    	<div class="board_main">
 				<table id='customers' border="1">
-					<tr>
+					<tr class="board_title">
 						<th style="width: 80px">번호</th>
 						<th>제목</th>
 						<th style="width: 200px">작성자</th>
@@ -64,16 +64,8 @@
 					</c:forEach>
 				</table>
 			</div>
-		</div>
-		<%
-			if(session.getAttribute("user")!=null){
-		%>	       
-		<div class="bt_box">
-		<button class="board_insert">글쓰기</button>
-		</div><br>
-		<%
-			}
-		%>
+		
+			
 			<div class="pagination"><!-- 게시판 갯수 -->
 		    	<c:if test="${pageMaker.page !=1}">
 		    		<a href='list${pageMaker.makeSearch(1)}'>&laquo;</a>
@@ -97,8 +89,26 @@
 		    	<c:if test="${pageMaker.page != pageMaker.totalEndPage}">
 		    		<a href='list${pageMaker.makeSearch(pageMaker.totalEndPage)}'>&raquo;</a>
 		    	</c:if>
-		    	
+		    	<%
+				if(session.getAttribute("user")==null){
+				%>	       
+				<div class="nolog_msg">
+					<p>글 작성을 원하시면 로그인 해주세요.</p>
+				</div><br>
+				<%
+				}
+				%>
+		    	<%
+				if(session.getAttribute("user")!=null){
+				%>	       
+				<div class="board_btn">
+					<button class="board_insert">글쓰기</button>
+				</div><br>
+				<%
+				}
+				%>
 		    </div>
-	</div>
+		    
+		</div>
 
 	<%@include file="../include/footer.jsp"%>
