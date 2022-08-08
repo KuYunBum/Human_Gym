@@ -12,10 +12,19 @@
 			<div class="ex_content_img">
 				<img src="/project/resources/image/ex/health_1.jpg">
 			</div>
-			<h1>AI 추천 플랜</h1>
+			<h1>AI 추천 운동</h1>
 			<br>
 			<p>
-				사용자의 정보 신체 조건운동,<br> 장소 등을 고려한 맞춤 운동
+			<%
+				if(session.getAttribute("user")==null){
+			%>	  
+				사용자의
+			<%
+				}else{
+					out.print(String.valueOf(session.getAttribute("user"))+" 님의"); 
+				}
+			%>					
+				신체 및 인바디 데이터,<br> 운동 데이터 분석한 맞춤 운동
 			</p><br>
 				<button class="ex_content_bt" type="button" onclick="location.href='/project/content/ex_recomm/ex_recomm_start'">시작하기</button>
 		</div>

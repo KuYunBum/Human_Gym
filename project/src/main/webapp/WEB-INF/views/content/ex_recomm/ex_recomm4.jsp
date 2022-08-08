@@ -24,9 +24,9 @@
 				<div class="container">
 					<div id="myCarousel" class="carousel slide" >
 						<ol class="carousel-indicators">
+							<li data-target="#myCarousel" data-slide-to="0"></li>
 							<li data-target="#myCarousel" data-slide-to="1"></li>
 							<li data-target="#myCarousel" data-slide-to="2"></li>
-							<li data-target="#myCarousel" data-slide-to="3"></li>
 						</ol>
 						<div class="carousel-inner">
 							<div class="item active">
