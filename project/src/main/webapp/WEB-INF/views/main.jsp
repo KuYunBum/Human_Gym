@@ -138,8 +138,8 @@
 		            <div class="media_content2">
 		            	<span style="height:45%; width:1px; border:1px solid black; display:flex;"></span>
 						<div class="content_m_right2">
-							<span style="color:red;">강조될 부분 에베베베베</span> 그 후의 들어갈
-							내용 에베베베베베베베베베베
+							<span style="color:rgb(0, 177, 56);">혼자하기 두려웠는데 많은 도움을 받았습니다!!</span> 헬스는 처음이라
+							막연했는데 덕분에 꾸준히 열심히 하고있습니다!
 							 <p>⭐⭐⭐⭐⭐</p>
 							 <p>GooglePlay, 김*진</p>
 						</div>
@@ -149,7 +149,7 @@
 							<span style="color:rgb(0, 177, 56);">처음 운동 시작하려는 분들한테 좋아요!!</span> 기초부터 차근차근
 							알려주다보니 너무 만족스럽습니다!
 							 <p>⭐⭐⭐⭐⭐</p>
-							 <p>GooglePlay, 박*혜</p>
+							 <p>GooglePlay, 박*희</p>
 						</div>
 					</div>
 					
@@ -267,8 +267,40 @@
 						<p>설명글  (없어도 될거같음)</p>
 					</div>
 				</div>
+				
+				<div class="center-text_M">
+				<h1>휴먼짐 제휴 업체</h1><br><br>
+		    </div>
+			<div class="widthLine" style="margin-top: 30px;"></div>
+			
 			<!-- 		미디어 컨텐츠 -->
 			</div>
+			
+			<div class="media_main">
+			
+				<!-- 		미디어 컨텐츠 -->
+				<div class="media_content">
+					<div class="content_m_right">
+					
+					</div>
+					
+					<div class="content_m_left">
+						
+					</div>
+				</div>
+				
+				<div class="media_content">
+					<div class="content_m_right">
+						
+					</div>
+					
+					<div class="content_m_left">
+						
+					</div>
+				</div>
+			<!-- 		미디어 컨텐츠 -->
+			</div>
+			
 		</div>
 	
 	

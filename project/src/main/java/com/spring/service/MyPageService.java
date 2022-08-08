@@ -2,6 +2,7 @@ package com.spring.service;
 
 import java.util.List;
 
+import com.spring.dto.BoardDTO;
 import com.spring.dto.ExerciseChartDTO;
 import com.spring.dto.InbodyDTO;
 import com.spring.dto.RoutineDTO;
@@ -38,5 +39,9 @@ public interface MyPageService {
 	
 	public List<RoutineDTO> routineList(int userNum) throws Exception;
 	
-
+	public List<RoutineDTO> routineDelete(int routineNum) throws Exception;
+	
+	public void routineUpdate(RoutineDTO dto) throws Exception;
+	
+	public RoutineDTO routineDetail(int routineNum) throws Exception;
 }

@@ -27,5 +27,8 @@
 				<li>
 					<a href="/project/user/record/record?userNum=${userNum }">운동기록</a>
 				</li>
+				<li>
+					<a href="/project/user/schedule/schedule?scNum=${scNum }">스케줄러</a>
+				</li>
 			</ul>
 		</div>

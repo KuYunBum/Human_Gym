@@ -96,10 +96,10 @@
 				</div>
 			</div>
 		</form>
-			<hr style="width: 1300px; margin:auto;">
+			<hr style="width: 1300px; margin:auto;"><br>
 		<div class="bt_box">
-			<button id="btn1" type="submit" class="bt_save">저장</button>
-			<button id="btn1" type="button" onclick="location.href='/project/user/inbody/detail?userNum=${userNum}'">뒤로</button>
+			<button id="myBtn1" type="submit" class="bt_save">저장</button>
+			<button id="myBtn1" type="button" onclick="location.href='/project/user/inbody/detail?userNum=${userNum}'">뒤로</button>
 		</div>
 	</div>
 	

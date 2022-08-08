@@ -6,11 +6,17 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class RoutineDTO {
 	
-	
+	private int routineNum;
 	private int userNum;
 	private String routineName;
 	private String routineEx;
 	
+	public int getRoutineNum() {
+		return routineNum;
+	}
+	public void setRoutineNum(int routineNum) {
+		this.routineNum = routineNum;
+	}
 	public String getRoutineName() {
 		return routineName;
 	}
@@ -32,7 +38,8 @@ public class RoutineDTO {
 	
 @Override
 public String toString() {
-	return "RoutineDTO [userNum=" + userNum + ", routineName=" + routineName + ", routineEx=" + routineEx + "]";
+	return "RoutineDTO [routineNum=" + routineNum + ", userNum=" + userNum + ", routineName=" + routineName
+			+ ", routineEx=" + routineEx + "]";
 }
 
 	

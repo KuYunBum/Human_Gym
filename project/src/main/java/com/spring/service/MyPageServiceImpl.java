@@ -6,7 +6,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.spring.dao.BoardDAO;
 import com.spring.dao.MyPageDAO;
+import com.spring.dto.BoardDTO;
 import com.spring.dto.ExerciseChartDTO;
 import com.spring.dto.InbodyDTO;
 import com.spring.dto.RoutineDTO;
@@ -108,5 +110,26 @@ public class MyPageServiceImpl implements MyPageService{
 	public void routineInsert(RoutineDTO dto) throws Exception {
 		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
 		dao.routineInsert(dto);
+	}
+	
+	@Override
+	public List<RoutineDTO> routineDelete(int routineNum) throws Exception{
+		
+		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+		dao.routineDelete(routineNum);
+		return dao.routineDelete(routineNum);
+	}
+		
+	@Override
+	public void routineUpdate(RoutineDTO dto) throws Exception {
+		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+		dao.routineUpdate(dto);
+	}
+	
+	@Override
+	public RoutineDTO routineDetail(int routineNum) throws Exception {
+		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+		RoutineDTO dto = dao.routineDetail(routineNum);
+		return dto;
 	}
 }

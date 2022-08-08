@@ -1,5 +1,5 @@
 /* btn1 css */
-   #btn1 {
+   #myBtn1 {
       margin-left: 20px;
       font-family: roboto;
       letter-spacing: 1px;
@@ -18,7 +18,7 @@
       overflow: hidden;
     }
 
-    #btn1:after {
+    #myBtn1:after {
       content: "";
       position: absolute;
       top: var(--top);
@@ -41,16 +41,16 @@
     
     
 /*     Ex list css */
-    .item > input{
+    .routineItem > input{
 	width: 15px;
     height: 15px;
     }
-    .item {
+    .routineItem {
       display: flex;
       align-items: center;
       border-bottom: 1px solid #F1F1F1;
     }
-    .item:last-child {
+    .routineItem-child {
       border-bottom: 0;
     }
     input:checked + p {
@@ -61,7 +61,7 @@
     input[type="checkbox"] {
       margin: 20px;
     }
-    p {
+    #checkP {
       margin: 0;
       padding: 10px;
       transition: background 0.2s;
