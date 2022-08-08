@@ -160,12 +160,15 @@
 .main h1, .bt_box {
 	text-align: center;
 }
-
-.bt_box button {
-	font-size: 15px;
-	width:80px;
-	height: 40px;
-}
+/* ---------------------------------버튼 박스 수정--------------------------------- */
+/* ---------------------------------버튼 박스 수정--------------------------------- */
+/* ---------------------------------버튼 박스 수정--------------------------------- */
+/* ---------------------------------버튼 박스 수정--------------------------------- */
+/* .bt_box button { */
+/* 	font-size: 15px; */
+/* 	width:80px; */
+/* 	height: 40px; */
+/* } */
 .leftContainer >ul{
     margin-top: 40px;
 }
@@ -862,15 +865,15 @@ img {
     margin: auto;
     width: 70%;
     height: 900px;
-    background-color: black;
-    border-radius: 60px 60px;
+/*     background-color: black; */
+    border-radius: 0 60px;
 }
 
-.ex_content img {
+.ex_content_img img:nth-child(1) {
 /* 	position: absolute; */
 	width: 100%;
 	height: 70%;
-	margin-top: 70px;
+/* 	margin-top: 70px; */
 	border-radius: 60px 60px;
 }
 
@@ -910,7 +913,7 @@ img {
 	margin-top: -100px;
 }
 
-.ex_content button {
+.ex_content_bt {
 	position: relative;
 	font-size: 20px;
 	color: white;
@@ -918,7 +921,7 @@ img {
 	height: 50px;
 	background-color: purple; 
 /* 	margin-left: -100px; */
-	margin-top: 270px;
+	margin-top: 230px;
 	border-radius: 50px;
 }
 
@@ -929,10 +932,10 @@ img {
 }
 
 .ex_content_p1 p{
-	color: white;
+	color: black;
 	position: relative;
 	margin: auto;
-	top: 250px;
+	top: 200px;
 	margin-bottom: 50px;
 }
 
@@ -948,13 +951,14 @@ img {
 	width: 300px;
 	height: 40px;
 	border-radius: 10px;
-	top: 60px;
+/* 	top: 60px; */
 	display: inline-block;
 	margin-bottom: 5px;
 	padding-top: 3px;
 }
 
 .ex_content_title p:nth-child(5) {
+	color: black;
 	font-size: 15px;
 	width: 300px;
 	height: 40px;
@@ -962,6 +966,7 @@ img {
 }
 
 .ex_content_title > p:nth-child(6){
+	color: black;
 	width: 50px;
 	margin-left: 330px;
 	margin-top: -40px;
@@ -970,11 +975,14 @@ img {
 	
 .ex_content_title > button:nth-child(2) {
 	background-color: #0B1907;
+	color: white;
+	font-size: 20px;
 	position: absolute;
 	width: 60px;
 	height: 40px;
 	margin-left: 170px;
 	margin-top: -30px;
+	border-radius: 50px;
 }
 
 .ex_sub {
@@ -982,27 +990,32 @@ img {
 	margin-bottom: 20px;
 }
 
-.ex_sub a {
-	color: white;
-	text-decoration: none;
-}
+/* .ex_sub a { */
+/* 	color: black; */
+/* 	text-decoration: none; */
+/* } */
 
 .ex_content_p2 {
-	width: 1000px;
+	width: 900px;
 	height: 500px;
 	margin: auto;
 	margin-top: 30px;
-	display: flex;
 }
 
+.ex_content_p2 img:nth-child(1) {
+	width: 100%;
+	height: 70%;
+}	
+	
 .ex_content_p2 > button {
-	position: absolute;	
+	position: relative;	
+	font-size: 20px;
 	color: white;
 	margin: auto;
 	width: 280px;
 	height: 50px;
-	top: 1100px;
-	left: 44%;
+	top: 50px;
+	background-color: purple; 
 	border-radius: 50px;
 }
 
@@ -1010,7 +1023,7 @@ img {
 	width: 700px;
 	height: 400px;
 	margin: auto;
-	margin-top: 100px;
+	margin-top: 50px;
 	display: flex;
 }
 
@@ -1019,19 +1032,10 @@ img {
 	height: auto;
 }
 
-/* .ex_content_p3 > img{ */
-/* 	position: relative; */
-/* 	width: 350px; */
-/* 	height: 250px; */
-/* 	border: 1px solid white; */
-/* 	border-radius: 0; */
-/* 	top: -65px; */
-/* } */
-
 .ex_content_p4 {
 	width: 700px;
 	margin: auto;
-	color: white;
+	color: black;
 	margin-top: 50px;
 }
 
@@ -1053,7 +1057,7 @@ img {
 .ex_content_p5 img {
 	width: 50px;
 	height: 50px;
-	margin: 50px 30px;
+	margin: 40px 30px;
 }
 
 .ex_content_p6 {
@@ -1257,7 +1261,7 @@ img {
     font-size: 18px;
 }
 
-tesssst
+/* tesssst */
 .myPageNav > ul > li >a:hover{
    color:rgb(0, 177, 56);
 }
@@ -1266,6 +1270,19 @@ tesssst
     margin: auto;
     width: 1300px;
     border: 0.5px solid rgb(0, 0, 0,0.4);
+}
+.widthLine1{
+    margin: auto;
+    width: 100%;
+    border: 0.2px solid rgb(108, 108, 108);
+}
+.widthLine3{
+	margin-top: 30px;
+}
+.widthLine3, .widthLine4{
+	margin: auto;
+	width: 100%;
+	border: 1px solid #fff;
 }
 .heightLine{
   
@@ -1287,21 +1304,51 @@ tesssst
     display: flex;
     text-align: center;
 }
-
+.myPageNav3 {
+    margin: auto;
+    width: 1300px;
+    display: flex;
+    text-align: center;
+}
 .leftContainer{
     margin-top: 40px;
-    width: 30%;
+    width: 390px;
     height: 100%;
+}
+.leftContainer >ul{
+    margin-top: 40px;
+}
+.leftContainer >ul >li{
+    margin-top: 5px;
+    width: 100%;
+    height: 40px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.leftContainer > ul > li:hover:not(.active) {
+    background-color: rgb(66, 66, 66);
+    color: white;
 }
 .rightContainer{
-    margin-top: 40px;
-    width: 70%;
+    width: 910px;
     height: 100%;
     text-align:left;
+    margin-top:40px;
 }
 .rcText{
-    margin: 70px 5%;
+    margin: 20px;
     /* background-color: red; */
+}
+.rcText > ul > label{
+	margin-top: 5px;
+	display: block;
+}
+.rcText > ul > label > a{
+	text-decoration: none;
+	color:black;
 }
 .bottom{
     margin-top: 40px;

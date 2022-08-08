@@ -27,6 +27,7 @@
 
 		<div class="rightContainer">
 			<div class="rcText">
+			<p style="text-align: right;">※ 번호를 누르면 수정가능합니다.</p>
 				<table id='record_tb' border="1">
 					<tr>
 						<td><h4>번호</h4></td>
@@ -35,17 +36,14 @@
 						<td><h4>시작 시간</h4></td>
 						<td><h4>끝난 시간</h4></td>
 					</tr>
-					<c:forEach items="${list}" var="userRecordDTO">
+					<c:forEach items="${list}" var="RecordDTO">
 						<tr>
-							<td>${userRecordDTO.recordNum }</td>
+							<td><a class="inbody_update">${RecordDTO.recordNum }</a></td>
 							<td><fmt:formatDate pattern="yyyy-MM-dd"
-									value="${userRecordDTO.useDate}" /></td>
-							<td><fmt:formatDate pattern="hh:mm:ss"
-									value="${userRecordDTO.totalTime}" /></td>
-							<td><fmt:formatDate pattern="hh:mm:ss"
-									value="${userRecordDTO.startTime}" /></td>
-							<td><fmt:formatDate pattern="hh:mm:ss"
-									value="${userRecordDTO.endTime}" /></td>
+									value="${RecordDTO.useDate}" /></td>
+							<td>${RecordDTO.playTime}</td>
+							<td>${RecordDTO.startHour}시 ${RecordDTO.startMinute}분</td>
+							<td>${RecordDTO.endHour}시 ${RecordDTO.endMinute}분</td>
 						</tr>
 					</c:forEach>
 				</table>
@@ -61,9 +59,8 @@
 	<br>
 
 	<div class="bt_box">
-		<button type="submit" class="inbody_insert">입력</button>
-		<button type="button" class="inbody_update">수정</button>
-		<button onclick="location.href='/project/'">홈</button>
+		<button id="btn1" type="submit" class="inbody_insert">입력</button>
+		<button id="btn1" onclick="location.href='/project/'">홈</button>
 	</div>
 <%-- data 가져오는지 확인용  	
 	${arm}

@@ -56,7 +56,7 @@ public class UserController {
 			return  "redirect:/user/loginForm";
 		}
 		
-		return "redirect:/";
+		return "redirect:/?userNum="+dtos.getUserNum();
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)

@@ -13,10 +13,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.dto.ExerciseChartDTO;
 import com.spring.dto.InbodyDTO;
+import com.spring.dto.RecordDTO;
+import com.spring.dto.RoutineDTO;
 import com.spring.dto.UserDTO;
 import com.spring.dto.UserRecordDTO;
 import com.spring.service.MyPageService;
@@ -88,6 +91,7 @@ public class MyPageController {
 
 		ms.inbodyInsert(dto);
 		rttr.addFlashAttribute("msg", "success");
+		System.out.println(dto);
 
 		return "redirect:/user/inbody/detail?userNum=" + userNum;
 	}
@@ -108,12 +112,33 @@ public class MyPageController {
 
 		return "redirect:/user/inbody/detail?userNum=" + userNum;
 	}
+	
+	
+//	루틴
+	@RequestMapping(value = "/routine/routineBox", method = RequestMethod.GET)
+	public void routineBox(@RequestParam("userNum")int userNum, Model model) throws Exception {
 
-	@RequestMapping(value = "/routineBox", method = RequestMethod.GET)
-	public void routineBox() throws Exception {
+	model.addAttribute("list",ms.routineList(userNum));
+	System.out.println(ms.routineList(userNum));
 
 	}
+//	루틴 insert
+	@RequestMapping(value = "/routine/insert", method = RequestMethod.GET)
+	public void routineInsertGET(int userNum, Model model) throws Exception {
 
+		model.addAttribute(ms.routineList(userNum));
+	}
+	
+	@RequestMapping(value = "/routine/insert", method = RequestMethod.POST)
+	public String routineInsertPOST(RoutineDTO dto,  RedirectAttributes rttr) throws Exception {
+
+		ms.routineInsert(dto);
+		rttr.addFlashAttribute("msg", "success");
+
+		return "redirect:/user/routine/routineBox?userNum=" + dto.getUserNum();
+	}
+	
+	
 	@RequestMapping(value = "/record/record", method = RequestMethod.GET)
 	public void record(int userNum, Model model) throws Exception {
 		model.addAttribute("list", ms.recordList(userNum));
@@ -157,7 +182,7 @@ public class MyPageController {
 		}
 //		model.addAttribute("chartData", list);
 
-		System.out.println(ms.chartData(userNum));
+//		System.out.println(ms.chartData(userNum));
 	}
 	
 	@RequestMapping(value = "/record/insert", method = RequestMethod.GET)
@@ -167,21 +192,26 @@ public class MyPageController {
 	}
 
 	@RequestMapping(value = "/record/insert", method = RequestMethod.POST)
-	public String recordInsertPOST(UserRecordDTO dto,ExerciseChartDTO chartdto, int userNum, RedirectAttributes rttr) throws Exception {
-
+	public String recordInsertPOST(RecordDTO dto) throws Exception {
+		
 		ms.recordInsert(dto);
-		ms.chartInsert(chartdto);
-		rttr.addFlashAttribute("msg", "success");
 
-		return "redirect:/user/record/record?userNum=" + userNum;
+		return "redirect:/user/record/record?userNum=" + dto.getUserNum();
 	}
 	
-//	루틴
-//	@RequestMapping(value = "/routineBox", method = RequestMethod.GET)
-//	public void routineBox(int userNum, Model model) throws Exception {
-//
-//	model.addAttribute(ms.routineList(userNum));
-//
-//	}
+	@RequestMapping(value = "/record/update", method = RequestMethod.GET)
+	public void recordUpdateGET(int userNum, Model model) throws Exception {
+
+		if ((ms.recordList(userNum)) != null) {
+			model.addAttribute(ms.recordList(userNum));
+		} // 한개가 아니니까 1,null값인지 확인후에 null이 아니라면 >> model객체에 담는다.
+	}
+
+	@RequestMapping(value = "/record/update", method = RequestMethod.POST)
+	public String recordUpdatePOST(RecordDTO dto, int userNum, RedirectAttributes rttr) throws Exception {
+		ms.recordUpdate(dto);
+		rttr.addFlashAttribute("msg", "success");
+		return "redirect:/user/record/record?userNum=" + dto.getUserNum();
+	}
 
 }

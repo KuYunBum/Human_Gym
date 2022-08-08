@@ -47,42 +47,55 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </delete>
 
 
-<!--  insert values 수정 필요 -->
 <insert id="recordInsert">
-	insert into 
-		userrecord (recordNum, userNum, startTime, endTime, totalTime, useDate)
-	values (seq_record.nextval, #{userNum}, #{startTime}, #{endTime}, #{endTime}-#{startTime}, #{useDate})
+		insert into
+		record (recordNum, userNum, useDate, startHour, startMinute, endHour, endMinute)
+		values (seq_record.nextval,#{userNum}, #{useDate}, #{startHour}, #{startMinute}, #{endHour}, #{endMinute})
 </insert>
 
 
 <update id="recordUpdate"> 
 	update 
-		userrecord 
+		record 
 	set 
-		startTime = #{startTime}, endTime = #{endTime}, totalTime = #{endTime}-#{startTime}
+		useDate = #{useDate}, startHour = #{startHour}, startMinute = #{startMinute},
+		endHour = #{endHour}, endMinute = #{endMinute}
 	where 
-		recordNum = #{recordNum} 
+		userNum = #{userNum} 
 </update>
 
 
 <delete id="recordDelete"> 
 	delete from 
-		userrecord 
+		record 
 	where 
 		recordNum = #{recordNum} 
 </delete>
 
 
-<select id="recordList" resultType="com.spring.dto.UserRecordDTO">
-	<![CDATA[select *
-				from
-					userrecord
-				where
-					 userNum = #{userNum}
-				order by
-					recordNum desc
+<select id="recordList" resultType="com.spring.dto.RecordDTO">
+	<![CDATA[
+	select *
+	from (
+		select 
+			RECORDNUM
+	        , USERNUM
+	        , USEDATE
+	        , STARTHOUR
+	        , STARTMINUTE
+	        , ENDHOUR
+	        , ENDMINUTE
+	        , CONCAT(
+	           CONCAT(TRUNC(((ENDHOUR*60+ENDMINUTE-STARTHOUR*60-STARTMINUTE)/60),0),'시간 '),
+	        	CONCAT( MOD((ENDHOUR*60+ENDMINUTE -STARTHOUR*60-STARTMINUTE),60),'분 ')
+	          ) as PLAYTIME
+		from record
+		where 
+			 userNum = #{userNum}
+		order by recordNum desc
+	) where rownum <= 10
 	]]>				
-</select>
+</select>	
 
 
 <select id="listCriteria" resultType="com.spring.dto.UserRecordDTO">
@@ -143,5 +156,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	group by AA.USERNUM, AA.SETCOUNT, AA.EXPART
 </select>
 
+<select id="routineList" resultType="routineDTO">
+<!-- 	<![CDATA[ -->
+	select * 
+	from
+		routineBox
+	where 
+		userNum = #{userNum}
+<!-- 	and  -->
+<!-- 		routineName = #{routineName} -->
+<!-- 	]]> -->
+</select>
+
+<insert id="routineInsert">
+	insert into 
+		routineBox (userNum, routineName, routineEx)
+	values (#{userNum}, #{routineName},
+			#{routineEx})
+</insert>
 
 </mapper>

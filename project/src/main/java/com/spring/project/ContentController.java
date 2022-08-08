@@ -8,13 +8,14 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.dto.BoardDTO;
 import com.spring.service.BoardService;
-import com.spring.service.ContentService;
+import com.spring.service.UserService;
 
 
 
@@ -27,6 +28,8 @@ public class ContentController {
 	
 	@Inject
 	private BoardService service;
+	@Inject
+	private UserService us;
 	
 	
 	@RequestMapping(value = "/ex_recomm/ex_recomm", method = RequestMethod.GET)
@@ -48,8 +51,8 @@ public class ContentController {
 	}
 	
 	@RequestMapping(value = "/ex_recomm/ex_recomm2", method = RequestMethod.GET)
-	public void ex_recomm2() throws Exception {
-		
+	public void ex_recomm2(int userNum, Model model) throws Exception {
+		model.addAttribute("userDTO", us.userDetail(userNum));
 	}
 	
 	@RequestMapping(value = "/ex_recomm/ex_recomm3", method = RequestMethod.GET)
@@ -60,6 +63,10 @@ public class ContentController {
 
 	@RequestMapping(value = "/ex_recomm/ex_recomm4", method = RequestMethod.GET)
 	public void ex_recomm4() throws Exception {
+		
+	}
+	@RequestMapping(value = "/ex_recomm/ex_recomm5", method = RequestMethod.GET)
+	public void ex_recomm5() throws Exception {
 		
 	}
 	
