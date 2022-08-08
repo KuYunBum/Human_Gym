@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-	var msg = "${msg}"
+	var msg = "${msg}";
 	if (msg == "success") {
 		alert("등록 완료 되었습니다.");
 		opener.parent.document.location.reload();
@@ -17,13 +17,17 @@
 		alert("일정을 입력하지 않으셨습니다.");
 	}
 </script>
+<link rel="stylesheet" href="/project/resources/css/btn1.css" />
 </head>
 <body>
+
 	<form method="post">
 		<input type="hidden" name="${userNum}"> 
 		날짜 : <input type="date" name="day">
 		<br>
-		할 일 : <input type="text" name="schedule"> <br> <input type="submit" value="등록">
+		할 일 : <input type="text" name="schedule">
+		<br>
+		<input id="btn1" type="submit" value="등록">
 	</form>
 </body>
 </html>
