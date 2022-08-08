@@ -47,8 +47,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </delete>
 
 
-<!--  insert values 수정 필요 db table
->> 음수로 계산되는 시간표시하는방법을 생각해볼것-->
 <insert id="recordInsert">
 		insert into
 		record (recordNum, userNum, useDate, startHour, startMinute, endHour, endMinute)
@@ -60,9 +58,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	update 
 		record 
 	set 
-		startTime = #{startTime}, endTime = #{endTime}, totalTime = #{endTime}-#{startTime}
+		useDate = #{useDate}, startHour = #{startHour}, startMinute = #{startMinute},
+		endHour = #{endHour}, endMinute = #{endMinute}
 	where 
-		recordNum = #{recordNum} 
+		userNum = #{userNum} 
 </update>
 
 

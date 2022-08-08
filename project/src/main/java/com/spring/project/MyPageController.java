@@ -194,10 +194,23 @@ public class MyPageController {
 	@RequestMapping(value = "/record/insert", method = RequestMethod.POST)
 	public String recordInsertPOST(RecordDTO dto) throws Exception {
 		
-		System.out.println(ms.recordList(dto.getUserNum()));
-		
 		ms.recordInsert(dto);
 
+		return "redirect:/user/record/record?userNum=" + dto.getUserNum();
+	}
+	
+	@RequestMapping(value = "/record/update", method = RequestMethod.GET)
+	public void recordUpdateGET(int userNum, Model model) throws Exception {
+
+		if ((ms.recordList(userNum)) != null) {
+			model.addAttribute(ms.recordList(userNum));
+		} // 한개가 아니니까 1,null값인지 확인후에 null이 아니라면 >> model객체에 담는다.
+	}
+
+	@RequestMapping(value = "/record/update", method = RequestMethod.POST)
+	public String recordUpdatePOST(RecordDTO dto, int userNum, RedirectAttributes rttr) throws Exception {
+		ms.recordUpdate(dto);
+		rttr.addFlashAttribute("msg", "success");
 		return "redirect:/user/record/record?userNum=" + dto.getUserNum();
 	}
 
