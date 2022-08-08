@@ -47,17 +47,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </delete>
 
 
-<!--  insert values 수정 필요 db table>> 시간입력받지못함;;-->
+<!--  insert values 수정 필요 db table
+>> 음수로 계산되는 시간표시하는방법을 생각해볼것-->
 <insert id="recordInsert">
 		insert into
-		userrecord (recordNum, userNum, useDate)
-		values (seq_record.nextval,#{userNum}, #{useDate})
+		record (recordNum, userNum, useDate, startHour, startMinute, endHour, endMinute)
+		values (seq_record.nextval,#{userNum}, #{useDate}, #{startHour}, #{startMinute}, #{endHour}, #{endMinute})
 </insert>
 
 
 <update id="recordUpdate"> 
 	update 
-		userrecord 
+		record 
 	set 
 		startTime = #{startTime}, endTime = #{endTime}, totalTime = #{endTime}-#{startTime}
 	where 
@@ -67,22 +68,35 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <delete id="recordDelete"> 
 	delete from 
-		userrecord 
+		record 
 	where 
 		recordNum = #{recordNum} 
 </delete>
 
 
-<select id="recordList" resultType="com.spring.dto.UserRecordDTO">
-	<![CDATA[select *
-				from
-					userrecord
-				where
-					 userNum = #{userNum}
-				order by
-					recordNum desc
+<select id="recordList" resultType="com.spring.dto.RecordDTO">
+	<![CDATA[
+	select *
+	from (
+		select 
+			RECORDNUM
+	        , USERNUM
+	        , USEDATE
+	        , STARTHOUR
+	        , STARTMINUTE
+	        , ENDHOUR
+	        , ENDMINUTE
+	        , CONCAT(
+	           CONCAT(TRUNC(((ENDHOUR*60+ENDMINUTE-STARTHOUR*60-STARTMINUTE)/60),0),'시간 '),
+	        	CONCAT( MOD((ENDHOUR*60+ENDMINUTE -STARTHOUR*60-STARTMINUTE),60),'분 ')
+	          ) as PLAYTIME
+		from record
+		where 
+			 userNum = #{userNum}
+		order by recordNum desc
+	) where rownum <= 10
 	]]>				
-</select>
+</select>	
 
 
 <select id="listCriteria" resultType="com.spring.dto.UserRecordDTO">
