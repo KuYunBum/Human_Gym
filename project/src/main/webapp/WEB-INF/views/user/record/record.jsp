@@ -27,6 +27,7 @@
 
 		<div class="rightContainer">
 			<div class="rcText">
+			<p style="text-align: right;">※ 번호를 누르면 수정가능합니다.</p>
 				<table id='record_tb' border="1">
 					<tr>
 						<td><h4>번호</h4></td>
@@ -37,12 +38,12 @@
 					</tr>
 					<c:forEach items="${list}" var="RecordDTO">
 						<tr>
-							<td>${RecordDTO.recordNum }</td>
+							<td><a class="inbody_update">${RecordDTO.recordNum }</a></td>
 							<td><fmt:formatDate pattern="yyyy-MM-dd"
 									value="${RecordDTO.useDate}" /></td>
 							<td>${RecordDTO.playTime}</td>
-							<td>${RecordDTO.startHour}시 ${RecordDTO.endHour}분</td>
-							<td>${RecordDTO.startMinute}시 ${RecordDTO.endMinute}분</td>
+							<td>${RecordDTO.startHour}시 ${RecordDTO.startMinute}분</td>
+							<td>${RecordDTO.endHour}시 ${RecordDTO.endMinute}분</td>
 						</tr>
 					</c:forEach>
 				</table>
@@ -59,7 +60,6 @@
 
 	<div class="bt_box">
 		<button id="btn1" type="submit" class="inbody_insert">입력</button>
-		<button id="btn1" type="button" class="inbody_update">수정</button>
 		<button id="btn1" onclick="location.href='/project/'">홈</button>
 	</div>
 <%-- data 가져오는지 확인용  	
