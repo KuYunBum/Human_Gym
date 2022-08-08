@@ -514,6 +514,7 @@ img {
 
 
 /* 게시판 */
+
 /* 게시판 이름 */
 .board_name {
 	position:sticky;
@@ -574,15 +575,14 @@ img {
                  0 50px 25px rgba(0, 0, 0, .2);
   }
 }
-/* 게시판 메인 이미지 */
 
-
-/* 게시판 주제선택 */
+/* 게시판 상단메뉴 */
 .board_nav{
+	max-width:1300px;
 	position:relative;
-	top:20px;
-	bottom:20px;
-	left:29%;
+	top:30px;
+	bottom:35px;
+	left:15%;
 }
 .board_nav select{
 	width:200px;
@@ -610,13 +610,15 @@ img {
 	padding: 3px 0;
 	font-size: 18px;
 }
+.search_sel:hover{
+	color:yellow;
+}
 
-.board_nav select option::placeholder{
+.board_nav select::placeholder{
 	color:white;
 	font-style:italic;
 }
 
-/* 게시판 검색창 */
 #keywordInput{
 	width:250px;
 	padding: .8em .5em;
@@ -629,11 +631,14 @@ img {
 	animation: fadein 2s;
  	-webkit-animation: fadein 2s; /* Safari and Chrome */
 }
+#keywordInput:hover{
+	color:yellow;
+}
 #keywordInput::placeholder {
   color: white;
   font-style: italic;
 }
-/* 게시판 버튼 */
+
 #searchBtn{
 	width:100px;
 	padding: .8em .5em;
@@ -646,17 +651,20 @@ img {
  	-webkit-animation: fadein 2s; /* Safari and Chrome */
  	cursor:pointer;
 }
+#searchBtn:hover{
+	color:yellow;
+}
 /***/
 
 /* 메인 게시판 */
+
 #customers {
 	margin: 50px auto;
 	font-family: Arial, Helvetica, sans-serif;
 	border:none;
-	width: 90%;
+	width: 75%;
 	animation: fadein 3.3s;
  	-webkit-animation: fadein 3.3s; /* Safari and Chrome */
-  
 }
 
 #customers textarea {
@@ -667,9 +675,9 @@ img {
 #customers th{
 	padding-top: 15px;
 	padding-bottom: 15px;
-	border: none;
-	background-color:black;
-	color:white;
+	border: none;	
+	color:black;
+	background:transparernts;
 	text-align:center;
 	font-size: 17px;
 }
@@ -684,36 +692,137 @@ img {
 /*#customers tr:nth-child(even){
 	background-color:#78ccfe;
 }*/
+#customers .board_title th{
+	background-color:#808080;
+	box-sizing:border-box;
+	border:1px solid black;
+	border-radius: 4px;
+	color:white;
+	font-size:22px;
+	font-style:italic;
+}
 
 #customers tr:hover {
 	background-color: #5e86c4;
+	color:white;
 }
 
+.nolog_msg{
+	color:gray;
+	margin-top:60px;
+	font-size:18px;
+	font-style:italic;
+	font-weight:300;
+	animation: fadein 7s;
+ 	-webkit-animation: fadein 7s; /* Safari and Chrome */
+}
+
+.board_btn button{
+	background-color:#647cbd;
+	color:white;
+	min-width: 130px;
+    min-height: 50px;
+	border:none;
+	border-radius: 1000px;
+	font-size:18px;
+	font-style:italic;
+	font-weight:600;
+	padding: auto;
+	margin:auto;
+	cursor:pointer;
+	position:relative;
+	left:31%;
+	transition: 0.3s;
+	
+}
+.board_btn button:hover{
+    transform: scale(1.2);
+	background-color:royalblue;
+	color:yellow;
+}
+.board_btn button:hover::after{
+}
 
 /*pagination 게시판 갯수 */
 
 .pagination {
-  display: inline-block;
+	position:relative;
+	top:20px;
+	bottom:20px;
+	font-size: 30px;
 }
 
 .pagination a {
-  border-radius: 5px;
-  color: black;
-  float: left;
-  padding: 5px 10px;
-  text-decoration: none;
-  transition: background-color .3s;
-  border: 1px solid #ddd;
+	color: black;
+	padding: 10px 25px;
+	font-size: 20px;
+	text-decoration: none;
+	transition: background-color .3s;
+	border: none;
 }
 
 .pagination a.active {
-border-radius: 5px;
-  background-color: blue;
-  color: white;
-  border: 1px solid blue;
+	color: black;
+	border-bottom:4px solid royalblue;
+}
+.pagination a:hover{
+    transform: scale(1.2);
+}
+.pagination a:hover:not(.active) {background-color: transparent;}
+/* 게시판 글쓰기 */
+.ins_page h1{
+	color:white;
+	text-align:center;
+	margin:30px;
+	padding-top:150px;
+	height: 200px;
+ 	border-radius: 100px;
+ 	background-image:url('/project/resources/image/board/board_back.jpg');
+ 	background-repeat:no-repeat;
+ 	background-position: 30% 60%;
+ 	background-size: 100% 700px;
+ 	position: relative;
+    animation: fadeInUp 2s;
 }
 
-.pagination a:hover:not(.active) {background-color: #ddd;}
+#write_main {
+	margin: 50px auto;
+	font-family: Arial, Helvetica, sans-serif;
+	border:none;
+	width: 70%;
+	position: relative;
+    animation: fadeInUp 3.3s;
+}
+
+#write_main textarea {
+	padding-top:175px;
+	height: 250px;
+	font-size: 30px;
+	text-align:center;
+}
+#write_main th{
+	width:400px;
+	border: none;	
+	color:black;
+	background-color:yellow;
+	text-align:center;
+	font-size: 30px;
+	font-weight:600;
+}
+	
+#write_main td{
+	border: none;
+	padding:28px;
+	margin:auto;
+	font-size:24px;
+}
+#write_main input[type=text]{
+	border: none;
+	margin:auto;
+	font-size:24px;
+	text-align:center;
+}
+
 
 
 /* 댓글 관련 */
@@ -1423,14 +1532,7 @@ tesssst
  	-webkit-animation: fadein 5s; /* Safari and Chrome */
 
 }
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+
 .re_tr{
 	text-align:center;
 	font-size:25px;
@@ -1650,7 +1752,6 @@ tesssst
  	-webkit-animation: fadein 3s; /* Safari and Chrome
  	border:none;
  	border-radius:50px; */
-}
 .consult_page1 textarea:hover {
     transform: scale(1.2);
 }
@@ -1788,3 +1889,23 @@ tesssst
 	color: #222;
 	letter-spacing: -.5px
 }
+
+/*애니메이션 효과 적용*/
+@-webkit-keyframes fadein { /* 페이드인 설정 */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeInUp { /* 아래에서 위로 */
+        0% {
+            opacity: 0;
+            transform: translate3d(0, 50%, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translateZ(0);
+        }
+    }
