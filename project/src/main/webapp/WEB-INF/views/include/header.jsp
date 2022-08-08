@@ -103,6 +103,14 @@
 		      });
 		    });
 		  });
+		
+    	
+    	$('#day1,#day3').on("click", function() {
+			self.location = "ex_recomm4";
+		});
+    	$('#day2,#day4').on("click", function() {
+    		self.location = "ex_recomm5";
+    	});
 	});
 </script>
 

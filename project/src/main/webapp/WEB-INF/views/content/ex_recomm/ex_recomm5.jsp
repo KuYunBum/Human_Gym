@@ -25,18 +25,10 @@
 					<div id="myCarousel" class="carousel slide" >
 						<ol class="carousel-indicators">
 							<li data-target="#myCarousel" data-slide-to="1"></li>
-							<li data-target="#myCarousel" data-slide-to="2"></li>
-							<li data-target="#myCarousel" data-slide-to="3"></li>
 						</ol>
 						<div class="carousel-inner">
 							<div class="item active">
-								<img src="/project/resources/image/ex/p3.jpg">
-							</div>
-							<div class="item">
-								<img src="/project/resources/image/ex/p4.jpg">
-							</div>
-							<div class="item">
-								<img src="/project/resources/image/ex/p5.jpg">
+								<img src="/project/resources/image/ex/p2.jpg">
 							</div>
 						</div>
 						<a class="left carousel-control" href="#myCarousel" data-slide="prev">
