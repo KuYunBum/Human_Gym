@@ -157,22 +157,50 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
 
 <select id="routineList" resultType="routineDTO">
-<!-- 	<![CDATA[ -->
 	select * 
 	from
 		routineBox
 	where 
 		userNum = #{userNum}
-<!-- 	and  -->
-<!-- 		routineName = #{routineName} -->
-<!-- 	]]> -->
 </select>
 
 <insert id="routineInsert">
 	insert into 
-		routineBox (userNum, routineName, routineEx)
-	values (#{userNum}, #{routineName},
+		routineBox (routineNum, userNum, routineName, routineEx)
+	values (seq_routineBox.nextval, #{userNum}, #{routineName},
 			#{routineEx})
 </insert>
 
+<delete id="routineDelete"> 
+	delete * 
+	from 
+		routineBox
+	where 
+		routineNum = #{routineNum} 
+</delete>
+
+<update id="routineUpdate"> 
+	update 
+		routineBox 
+	set 
+			routineName = #{routineName}, routineEx = #{routineEx}
+	where 
+		routineNum = #{routineNum} 
+</update>
+
+<select id="routineDetail" resultType="com.spring.dto.RoutineDTO"> 
+	select 
+		* 
+	from 
+		routineBox
+	where 
+		routineNum = #{routineNum}
+</select>
+
+<select id="routineAI" resultType="com.spring.dto.InbodyDTO"> 
+	select 
+		bodyfatmass = #{bodyfatmass},skeletalmusclemass = #{skeletalmusclemass} 
+	from 
+		inbody
+</select>
 </mapper>

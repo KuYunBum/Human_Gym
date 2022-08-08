@@ -59,8 +59,8 @@
 	<br>
 
 	<div class="bt_box">
-		<button id="btn1" type="submit" class="inbody_insert">입력</button>
-		<button id="btn1" onclick="location.href='/project/'">홈</button>
+		<button id="myBtn1" type="submit" class="inbody_insert">입력</button>
+		<button id="myBtn1" onclick="location.href='/project/'">홈</button>
 	</div>
 <%-- data 가져오는지 확인용  	
 	${arm}

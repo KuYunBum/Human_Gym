@@ -17,7 +17,6 @@ import com.spring.dto.BoardDTO;
 import com.spring.project.BoardController;
 import com.spring.service.BoardService;
 
-
 @Controller
 @RequestMapping("/board/*")
 public class BoardController {

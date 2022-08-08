@@ -58,9 +58,9 @@
 		<hr style="width: 1300px; margin:auto;"><br>
 				
 		<div class="bt_box">
-			<button id="btn1" type="submit" class="inbody_insert">입력</button>
-			<button id="btn1" type="button" class="inbody_update">수정</button>
-			<button id="btn1" onclick="location.href='/project/user/myPage'">뒤로</button>
+			<button id="myBtn1" type="submit" class="inbody_insert">입력</button>
+			<button id="myBtn1" type="button" class="inbody_update">수정</button>
+			<button id="myBtn1" onclick="location.href='/project/user/myPage?userNum=${userNum}'">뒤로</button>
 		</div>
 		
 	</div>

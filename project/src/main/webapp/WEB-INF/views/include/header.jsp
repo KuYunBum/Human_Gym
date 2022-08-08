@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/project/resources/css/include_template.css">
 <link rel="stylesheet" href="/project/resources/css/template.css" />
 <link rel="stylesheet" href="/project/resources/css/slidenav.css" />
-<link rel="stylesheet" href="/project/resources/css/btn1.css" />
+<link rel="stylesheet" href="/project/resources/css/myBtn1.css" />
 <!-- <link rel="stylesheet" href="/project/resources/css/bootstrap.css"> -->
 <script src="/project/resources/js/bootstrap.js"></script>
 <script src="/project/resources/js/include.js"></script>
@@ -80,6 +80,7 @@
 		$(".routine_insert").on("click", function() {
 			self.location = "insert?userNum=${userNum}"
 		});
+
 	
 		$( '.ex_content_p1_1' ).animate( {
 		    opacity: '1'
@@ -110,6 +111,14 @@
     	$('#day2,#day4').on("click", function() {
     		self.location = "ex_recomm5";
     	});
+
+		$(".routine_update").on("click", function(){
+			self.location = "update?routineNum=${routineNum}";
+		});
+		$(".routine_delete").on("click", function(){
+			self.location = "delete?routineNum=${routineNum}";
+		});
+
 	});
 </script>
 
@@ -200,7 +209,6 @@ section:nth-child(odd) {
 					</label>
 				</div>
 				</div>
-				
 				
 
 				<div class="container">
