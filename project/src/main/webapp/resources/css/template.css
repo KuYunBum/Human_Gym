@@ -1237,7 +1237,8 @@ border-radius: 5px;
 	margin-top: 5px;
 	display: block;
 }
-.rcText > ul > label > a{
+.rcText > ul > label > a,
+.rcText table tr td a	{
 	text-decoration: none;
 	color:black;
 }
