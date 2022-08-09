@@ -24,6 +24,9 @@
 					<div id="myCarousel" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
 							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarousel" data-slide-to="1"></li>
+							<li data-target="#myCarousel" data-slide-to="2"></li>
+							<li data-target="#myCarousel" data-slide-to="3"></li>
 						</ol>
 						<div class="carousel-inner">
 						<c:choose>
@@ -31,9 +34,27 @@
 								<div class="item active">
 									<img src="/project/resources/image/ex/health_2.jpg">
 								</div>
+								<div class="item">
+									<img src="/project/resources/image/ex/health_6.jpg">
+								</div>
+								<div class="item">
+									<img src="/project/resources/image/ex/health_7.jpg">
+								</div>
+								<div class="item">
+									<img src="/project/resources/image/ex/health_9.jpg">
+								</div>
 							</c:when>
 							<c:otherwise>
 								<div class="item active">
+									<img src="/project/resources/image/ex/health_9.jpg">
+								</div>
+								<div class="item">
+									<img src="/project/resources/image/ex/health_7.jpg">
+								</div>
+								<div class="item">
+									<img src="/project/resources/image/ex/health_6.jpg">
+								</div>
+								<div class="item">
 									<img src="/project/resources/image/ex/health_2.jpg">
 								</div>
 							</c:otherwise>

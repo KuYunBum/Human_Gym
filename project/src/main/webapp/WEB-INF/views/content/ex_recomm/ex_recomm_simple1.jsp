@@ -25,6 +25,10 @@
 						<ol class="carousel-indicators">
 							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 							<li data-target="#myCarousel" data-slide-to="1"></li>
+							<li data-target="#myCarousel" data-slide-to="2"></li>
+							<li data-target="#myCarousel" data-slide-to="3"></li>
+							<li data-target="#myCarousel" data-slide-to="4"></li>
+							<li data-target="#myCarousel" data-slide-to="5"></li>
 						</ol>
 						<div class="carousel-inner">
 						<c:choose>
@@ -35,9 +39,33 @@
 								<div class="item">
 									<img src="/project/resources/image/ex/health_4.jpg">
 								</div>
+								<div class="item">
+									<img src="/project/resources/image/ex/health_5.jpg">
+								</div>
+								<div class="item">
+									<img src="/project/resources/image/ex/health_8.jpg">
+								</div>
+								<div class="item">
+									<img src="/project/resources/image/ex/health_10.jpg">
+								</div>
+								<div class="item">
+									<img src="/project/resources/image/ex/health_11.jpg">
+								</div>
 							</c:when>
 							<c:otherwise>
 								<div class="item active">
+									<img src="/project/resources/image/ex/health_11.jpg">
+								</div>
+								<div class="item">
+									<img src="/project/resources/image/ex/health_10.jpg">
+								</div>
+								<div class="item">
+									<img src="/project/resources/image/ex/health_8.jpg">
+								</div>
+								<div class="item">
+									<img src="/project/resources/image/ex/health_5.jpg">
+								</div>
+								<div class="item">
 									<img src="/project/resources/image/ex/health_4.jpg">
 								</div>
 								<div class="item">

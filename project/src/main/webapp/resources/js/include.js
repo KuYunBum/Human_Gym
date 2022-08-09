@@ -60,6 +60,9 @@
         
     	
     	var video = document.getElementById("myVideo");
+    	
+    	$("#videoStop").hide();
+    	
     	 $("#videoPlay").on("click", function() {
     		 video.play();
     		 $(this).hide();

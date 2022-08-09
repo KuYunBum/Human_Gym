@@ -116,6 +116,9 @@
     	$('#day2_2,#day4_2').on("click", function() {
     		self.location = "ex_recomm_detail2?userNum=${userDTO.userNum}";
     	});
+    	$('#stretching1').on("click", function() {
+    		self.location = "ex_recomm_stretching?userNum=${userDTO.userNum}";
+    	});
     	
 
 		$(".routine_update").on("click", function(){
