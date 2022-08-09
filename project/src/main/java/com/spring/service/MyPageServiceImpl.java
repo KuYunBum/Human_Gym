@@ -42,6 +42,12 @@ public class MyPageServiceImpl implements MyPageService{
 	
 	//운동기록
 	@Override
+	public RecordDTO recordDetail(RecordDTO getDTO) throws Exception {
+		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+		RecordDTO dto = dao.recordDetail(getDTO);
+		return dto;
+	};
+	@Override
 	public void recordInsert(RecordDTO dto) throws Exception{
 		
 		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
