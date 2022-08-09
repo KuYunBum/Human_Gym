@@ -42,7 +42,7 @@ public interface MyPageDAO {
 	
 	public void routineInsert(RoutineDTO dto) throws Exception;
 	
-	public List<RoutineDTO> routineDelete(int routineNum) throws Exception;
+	public void  routineDelete(int routineNum) throws Exception;
 	
 	public void routineUpdate(RoutineDTO dto) throws Exception;
 	

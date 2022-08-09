@@ -154,17 +154,9 @@
 
 
 .main h1, .bt_box {
+	margin-top:30px;
 	text-align: center;
 }
-/* ---------------------------------버튼 박스 수정--------------------------------- */
-/* ---------------------------------버튼 박스 수정--------------------------------- */
-/* ---------------------------------버튼 박스 수정--------------------------------- */
-/* ---------------------------------버튼 박스 수정--------------------------------- */
-/* .bt_box button { */
-/* 	font-size: 15px; */
-/* 	width:80px; */
-/* 	height: 40px; */
-/* } */
 .leftContainer >ul{
     margin-top: 40px;
 }
@@ -685,7 +677,7 @@ img {
 }*/
 
 #customers tr:hover {
-	background-color: #5e86c4;
+	background-color: #CED8F6;
 }
 
 
@@ -1226,7 +1218,6 @@ border-radius: 5px;
 }
 .rcText{
     margin: 20px;
-    /* background-color: red; */
 }
 .rcText > ul > label{
 	margin-top: 5px;

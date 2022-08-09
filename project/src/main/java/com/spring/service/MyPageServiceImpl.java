@@ -111,13 +111,10 @@ public class MyPageServiceImpl implements MyPageService{
 		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
 		dao.routineInsert(dto);
 	}
-	
 	@Override
-	public List<RoutineDTO> routineDelete(int routineNum) throws Exception{
-		
+	public void routineDelete(int routineNum) throws Exception{
 		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
 		dao.routineDelete(routineNum);
-		return dao.routineDelete(routineNum);
 	}
 		
 	@Override

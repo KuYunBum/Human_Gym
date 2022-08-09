@@ -98,17 +98,15 @@ checkboxes.forEach(item => item.addEventListener('click', handleCheck));
 <%@include file="../../include/header.jsp"%>
 <div class="main">
 	<h1>내 루틴 커스텀</h1>
-	<br>
-	<br>
+	<br> <br>
 	<%@include file="../../include/myPageNav.jsp"%>
 
 	<hr style="width: 1300px; margin: auto;">
 
-	<form role="form" method="post">
+	<form role="form" method="post" style="height:500px">
 		<input type="hidden" name="userNum" value="${userNum}">
-
-		<div class="myPageNav2" style="height: 40%;">
-			<div class="leftContainer" style="height: 800px;">
+		<div class="myPageNav2">
+			<div class="leftContainer">
 				<h3>운동 부위</h3>
 				<ul>
 					<li id="cheast">가슴</li>
@@ -123,7 +121,7 @@ checkboxes.forEach(item => item.addEventListener('click', handleCheck));
 
 			<div class="heightLine"></div>
 
-			<div class="rightContainer" style="height: 800px;">
+			<div class="rightContainer">
 				<h3 style="margin: 0 5%;">운동 정보</h3>
 				<div class="rcText">
 					<ul id="inputCheast">
@@ -263,8 +261,7 @@ checkboxes.forEach(item => item.addEventListener('click', handleCheck));
 							<p id="checkP">레그 레이즈</p>
 						</div>
 					</ul>
-					<br>
-					<br> Routine Name : <input class="ab3t" type="text"
+					<br> <br> Routine Name : <input class="ab3t" type="text"
 						name='routineName' value="${routineDTO.routineName}">
 
 
@@ -277,8 +274,8 @@ checkboxes.forEach(item => item.addEventListener('click', handleCheck));
 	<br>
 
 	<div class="bt_box">
-	
-	<script>
+
+<script>
 	$(document).ready(function() {
 		var formObj = $("form[role='form']");
 		$(".submit").on("click", function() {
@@ -291,26 +288,6 @@ checkboxes.forEach(item => item.addEventListener('click', handleCheck));
 		<button id="myBtn1" type="button"
 			onclick="location.href='/project/user/routine/routineBox?userNum=${userNum}'">뒤로</button>
 	</div>
-	<script>
-				    const btn = document.getElementById('btn1')
-				
-				    const onclick = e => {
-				      const { x, y, width, height } = btn.getBoundingClientRect()
-				      const radius = Math.sqrt(width * width + height * height)
-				      btn.style.setProperty('--diameter', radius * 2 + 'px')
-				      const { clientX, clientY  } = e
-				      const left = (clientX - x - radius) /width * 100 + '%'
-				      const top = (clientY - y -radius) / height * 100 + '%'
-				
-				      btn.style.setProperty('--left',left)
-				      btn.style.setProperty('--top',top)
-				      btn.style.setProperty('--a','')
-				      setTimeout(() => {
-				        btn.style.setProperty('--a', 'ripple-effect 500ms linear')
-				      })
-				    }
-				    btn.addEventListener('click', onclick)
-  				</script>
 </div>
 
 <%@include file="../../include/footer.jsp"%>

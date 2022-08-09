@@ -39,7 +39,7 @@ public interface MyPageService {
 	
 	public List<RoutineDTO> routineList(int userNum) throws Exception;
 	
-	public List<RoutineDTO> routineDelete(int routineNum) throws Exception;
+	public void routineDelete(int routineNum) throws Exception;
 	
 	public void routineUpdate(RoutineDTO dto) throws Exception;
 	
