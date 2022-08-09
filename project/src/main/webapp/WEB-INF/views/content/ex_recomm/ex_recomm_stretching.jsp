@@ -19,7 +19,7 @@
 					</ul>
 			</div>
 			<div class="ex_content_p3">
-				<video muted autoplay loop>
+				<video id='myVideo' autoplay loop>
 					<source src="/project/resources/videos/test1.mp4" type="video/mp4">
 				</video>
 			</div>
@@ -33,7 +33,8 @@
 			<div class="ex_content_p5">
 				<a href="/project/content/ex_recomm/ex_recomm_simple1?userNum=${userNum }"><img style="width:50px; height:50px;" 
 					src="/project/resources/image/ex/skip_button.jpg"></a>
-				<img style="width:50px; height:50px;" src="/project/resources/image/ex/play_button.jpg">
+				<img src="/project/resources/image/ex/play_button.jpg" id="videoPlay">
+				<img src="/project/resources/image/ex/pause_button.jpg" id="videoStop">
 				<a href="/project/content/ex_recomm/ex_recomm_detail1?userNum=${userNum }"><img style="width:50px; height:50px;"
 					 src="/project/resources/image/ex/skip2_button.jpg"></a>
 			</div>
