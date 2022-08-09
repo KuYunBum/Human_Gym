@@ -1354,6 +1354,14 @@ img {
     text-align:left;
     margin-top:40px;
 }
+
+.scheduleContainer {
+	width: 910px;
+	height: 100%;
+	text-align: left;
+	margin-top: -30px;
+}
+
 .rcText{
     margin: 20px;
     /* background-color: red; */

@@ -146,7 +146,7 @@ public class ScheduleController {
 			String day = Integer.toString(int_day);
 
 			String dtsd = "<a href=\"./editSchedule?scNum=" + service.read(userNum).get(i).getScNum()
-					+ "\" onclick=\"window.open(this.href, '_blank', 'width=500, height=500'); return false;\">"
+					+ "\" onclick=\"window.open(this.href, '_blank', 'width=600, height=500'); return false;\">"
 					+ sdList.get(i).getSchedule() + "</a>";
 
 			schdto = new ScheduleDetailDto(service.read(userNum).get(i).getScNum(), userNum, year, month, day, dtsd);
