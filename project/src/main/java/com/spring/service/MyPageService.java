@@ -25,6 +25,8 @@ public interface MyPageService {
 	
 	public void recordDelete(int userNum) throws Exception;
 	
+	public RecordDTO recordDetail(RecordDTO dto) throws Exception;
+	
 	public List<RecordDTO> recordList(int userNum) throws Exception;
 	
 	public List<ExerciseChartDTO> chartData(int userNum) throws Exception;

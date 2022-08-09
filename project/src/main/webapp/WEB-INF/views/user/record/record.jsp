@@ -38,7 +38,8 @@
 					</tr>
 					<c:forEach items="${list}" var="RecordDTO">
 						<tr>
-							<td><a class="inbody_update">${RecordDTO.recordNum }</a></td>
+							<td><a href="/project/user/record/update?userNum=${RecordDTO.userNum}&recordNum=${RecordDTO.recordNum}">
+								${RecordDTO.recordNum }</a></td>
 							<td><fmt:formatDate pattern="yyyy-MM-dd"
 									value="${RecordDTO.useDate}" /></td>
 							<td>${RecordDTO.playTime}</td>
