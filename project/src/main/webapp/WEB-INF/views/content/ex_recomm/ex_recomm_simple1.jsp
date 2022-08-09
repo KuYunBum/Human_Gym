@@ -11,12 +11,12 @@
 				<p>AI 추천 플랜</p>
 				<button type="button" class="more_bt">...</button><br>
 					<ul class="ex_sub">
-						<li><button id="day1">Day 1   등 가슴 코어 유산소</button></li>
-						<li><button id="day2">Day 2   하체 어깨 이두 삼두</button></li>
-						<li><button id="day3">Day 3   등 가슴 코어 유산소</button></li>
-						<li><button id="day4">Day 4   하체 어깨 이두 삼두</button></li>
+						<li><button id="day1_1">Day 1   등 가슴 코어 유산소</button></li>
+						<li><button id="day2_1">Day 2   하체 어깨 이두 삼두</button></li>
+						<li><button id="day3_1">Day 3   등 가슴 코어 유산소</button></li>
+						<li><button id="day4_1">Day 4   하체 어깨 이두 삼두</button></li>
 					</ul>
-				<p>Day 1   등 가슴 코어 유산소</p>
+				<p>등 가슴 코어 유산소</p>
 				<p>55분</p>
 			</div>
 			<div class="ex_content_p2">
@@ -25,15 +25,11 @@
 						<ol class="carousel-indicators">
 							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 							<li data-target="#myCarousel" data-slide-to="1"></li>
-							<li data-target="#myCarousel" data-slide-to="2"></li>
 						</ol>
 						<div class="carousel-inner">
 						<c:choose>
 							<c:when test="${userDTO.userGender=='남자'}">
 								<div class="item active">
-									<img src="/project/resources/image/ex/health_2.jpg">
-								</div>
-								<div class="item">
 									<img src="/project/resources/image/ex/health_3.jpg">
 								</div>
 								<div class="item">
@@ -47,9 +43,6 @@
 								<div class="item">
 									<img src="/project/resources/image/ex/health_3.jpg">
 								</div>
-								<div class="item">
-									<img src="/project/resources/image/ex/health_2.jpg">
-								</div>
 							</c:otherwise>
 						</c:choose>
 						</div>
@@ -61,7 +54,7 @@
 						</a>
 					</div>
 				</div>
-				<button onclick="location.href='/project/content/ex_recomm/ex_recomm3'">시작하기</button>
+				<button onclick="self.location='ex_recomm_stretching?userNum=${userNum}'">시작하기</button>
 			</div>
 		</div>
 	</div>

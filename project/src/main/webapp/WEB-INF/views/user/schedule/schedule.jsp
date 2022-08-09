@@ -119,7 +119,7 @@
 								"스케줄 추가하기", "width=500px, height=500px");
 			}
 		</script>
-		<button id="btn1" onclick="insertSchedule()">추가</button>
+		<button id="myBtn1" onclick="insertSchedule()">추가</button>
 		<!-- 추가 버튼 만들기  -->
 
 	</div>

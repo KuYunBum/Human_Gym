@@ -58,9 +58,9 @@
     		$('.ex_sub').slideToggle();
     	});
         
-       	
 		
 		
+    	
 //		tr_matching
 		 $( '.tr_content_p1_1' ).animate( {
 	          opacity: '1'

@@ -52,7 +52,7 @@
 		
 		$('#searchBtn').on("click",function(event){
 		  
-		  self.location="select"+'${pageMaker.makePage(1)}'
+		  self.location="list"+'${pageMaker.makePage(1)}'
 		  +'&searchType='+$("select option:selected").val()
 		  +"&keyword="+$('#keywordInput').val();
 		  
@@ -97,20 +97,26 @@
 		      	  $( '.ex_content_p1' ).animate( {
 			        	opacity: '0'
 			          }, 1000, function(){ 
-			        	  self.location = "/project/content/ex_recomm/ex_recomm2?userNum=${userNum}"
+			        	  self.location = "ex_recomm_simple1?userNum=${userNum}"
 			          });
 		        });
 		      });
 		    });
 		  });
 		
-    	
-    	$('#day1,#day3').on("click", function() {
-			self.location = "ex_recomm4";
-		});
-    	$('#day2,#day4').on("click", function() {
-    		self.location = "ex_recomm5";
+    	$('#day1_1,#day3_1').on("click", function() {
+    		self.location = "ex_recomm_simple1?userNum=${userDTO.userNum}";
     	});
+    	$('#day2_1,#day4_1').on("click", function() {
+    		self.location = "ex_recomm_simple2?userNum=${userDTO.userNum}";
+    	});
+    	$('#day1_2,#day3_2').on("click", function() {
+			self.location = "ex_recomm_detail1?userNum=${userDTO.userNum}";
+		});
+    	$('#day2_2,#day4_2').on("click", function() {
+    		self.location = "ex_recomm_detail2?userNum=${userDTO.userNum}";
+    	});
+    	
 
 		$(".routine_update").on("click", function(){
 			self.location = "update?routineNum=${routineNum}";
@@ -143,31 +149,6 @@ document.addEventListener('scroll', function() => {
   }
 })
 </script>
-<style>
-.progress {
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 10px;
-	background-color: #a38678;
-	z-index: 2;
-}
-
-section {
-	min-height: 100vh;
-	width: 100%;
-}
-
-section:first-of-type {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-section:nth-child(odd) {
-	background-color: lightblue;
-}
-</style>
 </head>
 
 <body>

@@ -11,7 +11,12 @@
 		<div class="ex_content">
 			<div class="ex_content_title">
 				<p>운동 전 스트레칭</p>
-				<button type="button">...</button><br>
+				<button type="button" class="more_bt">...</button><br>
+					<ul class="ex_sub">
+						<li><button id="stretching1">다리 근육 스트레칭</button></li>
+						<li><button id="stretching2">목 주변 근육 스트레칭</button></li>
+						<li><button id="stretching3">트레드밀 러닝</button></li>
+					</ul>
 			</div>
 			<div class="ex_content_p3">
 				<video muted autoplay loop>
@@ -26,10 +31,10 @@
 				</table>
 			</div>
 			<div class="ex_content_p5">
-				<a href="/project/content/ex_recomm/ex_recomm2?userNum=${userNum }"><img style="width:50px; height:50px;" 
+				<a href="/project/content/ex_recomm/ex_recomm_simple1?userNum=${userNum }"><img style="width:50px; height:50px;" 
 					src="/project/resources/image/ex/skip_button.jpg"></a>
 				<img style="width:50px; height:50px;" src="/project/resources/image/ex/play_button.jpg">
-				<a href="/project/content/ex_recomm/ex_recomm4?userNum=${userNum }"><img style="width:50px; height:50px;"
+				<a href="/project/content/ex_recomm/ex_recomm_detail1?userNum=${userNum }"><img style="width:50px; height:50px;"
 					 src="/project/resources/image/ex/skip2_button.jpg"></a>
 			</div>
 		</div>
