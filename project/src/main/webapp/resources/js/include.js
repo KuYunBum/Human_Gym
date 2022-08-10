@@ -58,9 +58,25 @@
     		$('.ex_sub').slideToggle();
     	});
         
-       	
+    	
+    	var video = document.getElementById("myVideo");
+    	
+    	$("#videoStop").hide();
+    	
+    	 $("#videoPlay").on("click", function() {
+    		 video.play();
+    		 $(this).hide();
+    		 $("#videoStop").show();
+    	 });    
+    	 $("#videoStop").on("click", function() {
+    		 video.pause();
+    		 $(this).hide();
+    		 $("#videoPlay").show();
+    	 });
 		
-		
+    	
+    	 
+    	 
 //		tr_matching
 		 $( '.tr_content_p1_1' ).animate( {
 	          opacity: '1'

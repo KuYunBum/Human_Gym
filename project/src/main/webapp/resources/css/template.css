@@ -28,11 +28,7 @@
 	margin-top: 100px;
     width: 1300px;
 }
-.widthLine{
-    margin: auto;
-    width: 100%;
-    border: 0.5px solid rgb(0, 0, 0,0.4);
-}
+
 .ct-test{
     margin-top: 50px;
     width: 100%;
@@ -881,7 +877,7 @@ img {
 	position: relative;
 	font-size: 50px;
 	color: white;
-	margin-left: 800px;
+	margin-left: 700px;
 	margin-top: -400px;
 }
 
@@ -889,7 +885,7 @@ img {
 	position: relative;
 	font-size: 30px;
 	color: white;
-	margin-left: 750px;
+	margin-left: 700px;
 /* 	margin-top: -250px; */
 }
 
@@ -1050,7 +1046,7 @@ img {
 
 .ex_content_p5 {
 	margin: auto;
-	width: 400px;
+	width: 500px;
 	display: inline-block;
 }
 
@@ -1065,9 +1061,29 @@ img {
 	height: 250px;
 	margin: auto;
 	margin-top: 30px;
-	display: flex;
+/* 	display: flex; */
 }
 
+.ex_content_p6 > button {
+	position: relative;	
+	font-size: 20px;
+	color: white;
+	margin: auto;
+	width: 280px;
+	height: 50px;
+	top: 50px;
+	background-color: purple; 
+	border-radius: 50px;
+}
+
+.ex_sub button {
+	width: 200px;
+	height: 25px;
+	border-radius: 50px;
+	color: white;
+	background-color: purple; 
+	margin-bottom: 5px;
+}
 
 
 
@@ -1269,7 +1285,7 @@ img {
 .widthLine{
     margin: auto;
     width: 1300px;
-    border: 0.5px solid rgb(0, 0, 0,0.4);
+    border: 0.5px solid rgb(0, 0, 0,1);
 }
 .widthLine1{
     margin: auto;
@@ -1338,6 +1354,14 @@ img {
     text-align:left;
     margin-top:40px;
 }
+
+.scheduleContainer {
+	width: 910px;
+	height: 100%;
+	text-align: left;
+	margin-top: -30px;
+}
+
 .rcText{
     margin: 20px;
     /* background-color: red; */
@@ -1346,7 +1370,8 @@ img {
 	margin-top: 5px;
 	display: block;
 }
-.rcText > ul > label > a{
+.rcText > ul > label > a,
+.rcText table tr td a	{
 	text-decoration: none;
 	color:black;
 }

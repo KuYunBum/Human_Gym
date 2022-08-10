@@ -64,9 +64,9 @@
 		<hr style="width: 1300px; margin:auto;"><br>
 				
 		<div class="bt_box">
-			<button id="btn1" type="submit" class="user_update">수정</button>
-			<button id="btn1" onclick="location.href='/project/'">홈</button>
-			<button id="btn1" type="button" class="user_delete">회원탈퇴</button>
+			<button id="myBtn1" type="submit" class="user_update">수정</button>
+			<button id="myBtn1" onclick="location.href='/project/'">홈</button>
+			<button id="myBtn1" type="button" class="user_delete">회원탈퇴</button>
 		</div>
 		
 	</div>

@@ -24,9 +24,9 @@
 					out.print(String.valueOf(session.getAttribute("user"))+" 님의"); 
 				}
 			%>					
-				신체 및 인바디 데이터,<br> 운동 데이터 분석한 맞춤 운동
+				신체 및 인바디 데이터,<br> 운동 데이터 분석을 통한 맞춤 운동
 			</p><br>
-				<button class="ex_content_bt" type="button" onclick="location.href='/project/content/ex_recomm/ex_recomm_start'">시작하기</button>
+				<button class="ex_content_bt" type="button" onclick="self.location='ex_recomm_start?userNum=${userNum}'">시작하기</button>
 		</div>
 	</div>
 

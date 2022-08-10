@@ -16,14 +16,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.spring.dto.BoardDTO;
 import com.spring.dto.ExerciseChartDTO;
 import com.spring.dto.InbodyDTO;
 import com.spring.dto.RecordDTO;
 import com.spring.dto.RoutineDTO;
 import com.spring.dto.UserDTO;
 import com.spring.dto.UserRecordDTO;
+import com.spring.service.BoardService;
 import com.spring.service.MyPageService;
 import com.spring.service.UserService;
+import com.spring.vo.PageMaker;
 
 @Controller
 @RequestMapping("/user/*")
@@ -115,6 +118,7 @@ public class MyPageController {
 	
 	
 //	루틴
+	
 	@RequestMapping(value = "/routine/routineBox", method = RequestMethod.GET)
 	public void routineBox(@RequestParam("userNum")int userNum, Model model) throws Exception {
 
@@ -122,6 +126,13 @@ public class MyPageController {
 	System.out.println(ms.routineList(userNum));
 
 	}
+	
+	@RequestMapping(value = "/routine/routineAI", method = RequestMethod.GET)
+	public void routineAI(@RequestParam("userNum")int userNum, Model model) throws Exception {
+
+	model.addAttribute("list",ms.routineList(userNum));
+	}
+	
 //	루틴 insert
 	@RequestMapping(value = "/routine/insert", method = RequestMethod.GET)
 	public void routineInsertGET(int userNum, Model model) throws Exception {
@@ -132,12 +143,42 @@ public class MyPageController {
 	@RequestMapping(value = "/routine/insert", method = RequestMethod.POST)
 	public String routineInsertPOST(RoutineDTO dto,  RedirectAttributes rttr) throws Exception {
 
+		System.out.println(dto);
 		ms.routineInsert(dto);
+		rttr.addFlashAttribute("msg", "success");
+		return "redirect:/user/routine/routineBox?userNum=" + dto.getUserNum();
+	}
+	
+	@RequestMapping(value = "/routine/delete", method = RequestMethod.GET)
+	public String delete(@RequestParam("routineNum") int routineNum, RoutineDTO dto, RedirectAttributes rttr) throws Exception {
+		
+		ms.routineDelete(routineNum);
+		return "redirect:/user/routine/routineBox?userNum=" + dto.getUserNum();
+	}
+	
+	
+	@RequestMapping(value = "/routine/detail", method = RequestMethod.GET)
+	public void detail(@RequestParam("routineNum")int routineNum, Model model) throws Exception {
+		System.out.println(ms.routineDetail(routineNum).getRoutineNum());
+		model.addAttribute("list", ms.routineDetail(routineNum));
+		System.out.println(ms.routineDetail(routineNum));
+	}
+
+//	routine update
+	@RequestMapping(value = "/routine/update", method = RequestMethod.GET)
+	public void routineUpdateGET(@RequestParam("routineNum")int routineNum, Model model) throws Exception {
+
+			model.addAttribute(ms.routineList(routineNum));
+	}
+
+	@RequestMapping(value = "/routine/update", method = RequestMethod.POST)
+	public String routineUpdatePOST(RoutineDTO dto, int userNum, RedirectAttributes rttr) throws Exception {
+
+		ms.routineUpdate(dto);
 		rttr.addFlashAttribute("msg", "success");
 
 		return "redirect:/user/routine/routineBox?userNum=" + dto.getUserNum();
 	}
-	
 	
 	@RequestMapping(value = "/record/record", method = RequestMethod.GET)
 	public void record(int userNum, Model model) throws Exception {
@@ -200,15 +241,28 @@ public class MyPageController {
 	}
 	
 	@RequestMapping(value = "/record/update", method = RequestMethod.GET)
-	public void recordUpdateGET(int userNum, Model model) throws Exception {
+	public void recordUpdateGET(int userNum, int recordNum, Model model) throws Exception {
 
-		if ((ms.recordList(userNum)) != null) {
-			model.addAttribute(ms.recordList(userNum));
-		} // 한개가 아니니까 1,null값인지 확인후에 null이 아니라면 >> model객체에 담는다.
+		RecordDTO getDTO = new RecordDTO();
+		getDTO.setRecordNum(recordNum);
+		getDTO.setUserNum(userNum);
+		System.out.println(getDTO);
+//		RecordDTO aaa = ms.recordDetail(getDTO);
+//		System.out.println(aaa);
+		model.addAttribute(ms.recordDetail(getDTO));
+		
 	}
 
 	@RequestMapping(value = "/record/update", method = RequestMethod.POST)
-	public String recordUpdatePOST(RecordDTO dto, int userNum, RedirectAttributes rttr) throws Exception {
+	public String recordUpdatePOST(RecordDTO dto, RedirectAttributes rttr) throws Exception {
+//		System.out.println(dto.getUserNum());
+//		System.out.println(dto.getRecordNum());
+//		System.out.println(dto.getStartHour());
+//		System.out.println(dto.getStartMinute());
+//		System.out.println(dto.getEndHour());
+//		System.out.println(dto.getEndMinute());
+		
+		
 		ms.recordUpdate(dto);
 		rttr.addFlashAttribute("msg", "success");
 		return "redirect:/user/record/record?userNum=" + dto.getUserNum();

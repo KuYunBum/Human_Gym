@@ -50,24 +50,28 @@ public class ContentController {
 		return "redirect:/user/loginForm";
 	}
 	
-	@RequestMapping(value = "/ex_recomm/ex_recomm2", method = RequestMethod.GET)
-	public void ex_recomm2(int userNum, Model model) throws Exception {
+	@RequestMapping(value = "/ex_recomm/ex_recomm_simple1", method = RequestMethod.GET)
+	public void ex_recomm_simple1(int userNum, Model model) throws Exception {
 		model.addAttribute("userDTO", us.userDetail(userNum));
 	}
 	
-	@RequestMapping(value = "/ex_recomm/ex_recomm3", method = RequestMethod.GET)
-	public void ex_recomm3() throws Exception {
-		
+	@RequestMapping(value = "/ex_recomm/ex_recomm_simple2", method = RequestMethod.GET)
+	public void ex_recomm_simple2(int userNum, Model model) throws Exception {
+		model.addAttribute("userDTO", us.userDetail(userNum));
 	}
 	
-
-	@RequestMapping(value = "/ex_recomm/ex_recomm4", method = RequestMethod.GET)
-	public void ex_recomm4() throws Exception {
-		
+	@RequestMapping(value = "/ex_recomm/ex_recomm_stretching", method = RequestMethod.GET)
+	public void ex_recomm_stretching(int userNum, Model model) throws Exception {
+		model.addAttribute("userDTO", us.userDetail(userNum));
 	}
-	@RequestMapping(value = "/ex_recomm/ex_recomm5", method = RequestMethod.GET)
-	public void ex_recomm5() throws Exception {
-		
+
+	@RequestMapping(value = "/ex_recomm/ex_recomm_detail1", method = RequestMethod.GET)
+	public void ex_recomm_detail1(int userNum, Model model) throws Exception {
+		model.addAttribute("userDTO", us.userDetail(userNum));
+	}
+	@RequestMapping(value = "/ex_recomm/ex_recomm_detail2", method = RequestMethod.GET)
+	public void ex_recomm_detail2(int userNum, Model model) throws Exception {
+		model.addAttribute("userDTO", us.userDetail(userNum));
 	}
 	
 	@RequestMapping(value = "/membership", method = RequestMethod.GET)
