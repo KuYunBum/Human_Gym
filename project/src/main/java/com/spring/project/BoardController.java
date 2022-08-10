@@ -16,6 +16,7 @@ import com.spring.vo.PageMaker;
 import com.spring.dto.BoardDTO;
 import com.spring.project.BoardController;
 import com.spring.service.BoardService;
+import com.spring.service.UserService;
 
 @Controller
 @RequestMapping("/board/*")
@@ -25,6 +26,8 @@ public class BoardController {
 	
 	@Inject
 	private BoardService service;
+	@Inject
+	private UserService us;
 
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -36,8 +39,8 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
-	public void insertGET(BoardDTO dto) throws Exception {
-		
+	public void myPage(int userNum, Model model) throws Exception {
+		model.addAttribute(us.userDetail(userNum));
 	}
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public String insertPOST(BoardDTO dto, RedirectAttributes rttr) throws Exception {

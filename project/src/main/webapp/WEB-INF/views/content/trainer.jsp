@@ -12,7 +12,7 @@
 		<div class="re_tr_box">
 			<div class="re_trainer">
 				<img src="/project/resources/image/kimegg.jpeg" style="width: 390px;height: 400px;">
-						<br><br><h2>Kim Egg</h2>
+						<br><br><h2><i>Kim Egg</i></h2>
 						<div class="trainer_info"><br>
 							<p><h4>💪 3대 600</h4></p>
 							<p><h4>300만 구독자를 보유한</h4></p>

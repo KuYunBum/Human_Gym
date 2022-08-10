@@ -12,9 +12,7 @@
 			self.location = "/project/board/list";
 		});
 		
-		$(".board_insert").on("click", function() {
-			location.href = "/project/board/insert"
-		});
+		
 		
 		$(".board_delete").on("click", function(){
 			formObj.attr("action", "/project/board/delete");

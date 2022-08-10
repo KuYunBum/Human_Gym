@@ -12,7 +12,7 @@
 				<div class="consult_ment">
 					 <%out.print(String.valueOf(session.getAttribute("user"))+" 님"); %> 궁금한게 있으신가요 ?</div>
 				<form role="form" method="post">
-					<table id='customers' border="1">
+					<table id="write_main" border="1">
 						<tr>
 							<th>작성자</th>
 						</tr>
