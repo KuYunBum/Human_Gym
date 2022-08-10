@@ -19,11 +19,11 @@
 			<form role="form" method="post">
 				<input type="hidden" name="userNum" value="${routineDTO.userNum }">
 			</form>
-			<table id="customers" style="width: 1000px;">
+			<table id="customers" style="width: 1000px; color:black;">
 				<tr>
 					<th>Routine Number</th>
-					<th>Routine Name</th>
-					<th>Selected Exercise</th>
+					<th style="width:200px;">Routine Name</th>
+		            <th style="width:700px;">Selected Exercise</th>
 				</tr>
 
 				<tr>
@@ -44,7 +44,7 @@
 
 	<button id="myBtn1" type="button"
 		onclick="location.href='/project/user/routine/update?routineNum=${list.routineNum}'">수정</button>
-	<button id="myBtn1" type="submit" class="routine_delete">삭제</button>
+	<button id="myBtn1" type="submit" onclick="location.href='/project/user/routine/delete?userNum=${userNum}&routineNum=${list.routineNum}'">삭제</button>
 	<button id="myBtn1" type="button"
 		onclick="location.href='/project/user/routine/routineBox?userNum=${userNum}'">뒤로</button>
 </div>
