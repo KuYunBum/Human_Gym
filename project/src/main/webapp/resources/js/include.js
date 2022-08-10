@@ -1,8 +1,6 @@
 /**
  * 
  */
-	$(document).ready(function(){
-		
 
 		var formObj = $("form[role='form']");
 
@@ -79,18 +77,9 @@
 			$("#videoProgress").html(playtime + " / " + total);
 			}, false);
 		};
-			
-	    function start_time() {
-	    	SetTime = 60;
-	    	tid=setInterval('msg_time()',1000);
-	    	$("#ViewTimer").show();
-	    };
-	    function stop_time() {
-	    	clearInterval(tid);
-	    	$("#ViewTimer").hide();
-	    };
-    	 
- 		
+
+		
+		
     	 
 //		tr_matching
 		 $( '.tr_content_p1_1' ).animate( {
@@ -114,4 +103,3 @@
 		        });
 	          });
 	        });
-	});

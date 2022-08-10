@@ -16,7 +16,6 @@
 <link rel="stylesheet" href="/project/resources/css/myBtn1.css" />
 <!-- <link rel="stylesheet" href="/project/resources/css/bootstrap.css"> -->
 <script src="/project/resources/js/bootstrap.js"></script>
-<script src="/project/resources/js/include.js"></script>
 <script>
 	$(document).ready(function(){
 		var result = '${msg}';
@@ -256,4 +255,3 @@ document.addEventListener('scroll', function() => {
 		</div>
 	</div>
 
-</body>
