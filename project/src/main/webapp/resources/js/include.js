@@ -58,36 +58,37 @@
     	
     	$("#videoStop").hide();
     	
-    	 $("#videoPlay").on("click", function() {
-    		 video.play();
-    		 $(this).hide();
-    		 $("#videoStop").show();
-    	 });    
-    	 $("#videoStop").on("click", function() {
-    		 video.pause();
-    		 $(this).hide();
-    		 $("#videoPlay").show();
-    	 });
-    	 
-    	 video.addEventListener('timeupdate', function(e){
-    		 // 현재 재생 시간 (초 단위 절삭)     
-    		 var playtime = Math.floor(video.currentTime);
-    		 // 전체 재생 시간 (초 단위 절삭)      
-    		 var total = Math.floor(video.duration); 
-    		 // 상태 표시    
-    		 $("#videoProgress").html(playtime + " / " + total);
-    		 }, false);
-    	 
-
-    		function start_time() {
-    			SetTime = 60;
-    			tid=setInterval('msg_time()',1000);
-    			$("#ViewTimer").show();
-    		};
-    		function stop_time() {
-    			clearInterval(tid);
-    			$("#ViewTimer").hide();
-    		};
+		$("#videoPlay").on("click", function() {
+			video.play();
+			$(this).hide();
+			$("#videoStop").show();
+		});    
+		$("#videoStop").on("click", function() {
+			video.pause();
+			$(this).hide();
+			$("#videoPlay").show();
+		});
+		 
+		window.onload = function(){
+			video.addEventListener('timeupdate', function(e){
+			// 현재 재생 시간 (초 단위 절삭)     
+			var playtime = Math.floor(video.currentTime);
+			// 전체 재생 시간 (초 단위 절삭)      
+			var total = Math.floor(video.duration); 
+			// 상태 표시    
+			$("#videoProgress").html(playtime + " / " + total);
+			}, false);
+		};
+			
+	    function start_time() {
+	    	SetTime = 60;
+	    	tid=setInterval('msg_time()',1000);
+	    	$("#ViewTimer").show();
+	    };
+	    function stop_time() {
+	    	clearInterval(tid);
+	    	$("#ViewTimer").hide();
+	    };
     	 
  		
     	 
@@ -113,5 +114,4 @@
 		        });
 	          });
 	        });
-        
 	});
