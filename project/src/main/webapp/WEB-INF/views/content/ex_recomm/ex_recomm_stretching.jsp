@@ -25,7 +25,7 @@
 			</div>
 			<div class="ex_content_p4">
 				<table>
-					<tr><td><p>다리 근육 스트레칭</p></td><td><p>&emsp;&emsp;0:00 / 5:00</p></td></tr>
+					<tr><td><p>다리 근육 스트레칭</p></td><td><p><span id="videoProgress">0 / 0</span></p></td></tr>
 					<tr><td><p>목 주변 근육 스트레칭</p></td><td><p>&emsp;&emsp;0:00 / 5:00</p></td></tr>
 					<tr><td><p>트레드밀 러닝</p></td><td><p>&emsp;&emsp;0:00 / 10:00</p></td></tr>
 				</table>

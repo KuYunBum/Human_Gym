@@ -21,5 +21,6 @@
     </div>
 
 </body>
+<script src="/project/resources/js/include.js"></script>
 
 </html>

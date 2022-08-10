@@ -51,27 +51,23 @@ public class ContentController {
 	}
 	
 	@RequestMapping(value = "/ex_recomm/ex_recomm_simple1", method = RequestMethod.GET)
-	public void ex_recomm_simple1(int userNum, Model model) throws Exception {
-		model.addAttribute("userDTO", us.userDetail(userNum));
+	public void ex_recomm_simple1() throws Exception {
 	}
 	
 	@RequestMapping(value = "/ex_recomm/ex_recomm_simple2", method = RequestMethod.GET)
-	public void ex_recomm_simple2(int userNum, Model model) throws Exception {
-		model.addAttribute("userDTO", us.userDetail(userNum));
+	public void ex_recomm_simple2() throws Exception {
 	}
 	
 	@RequestMapping(value = "/ex_recomm/ex_recomm_stretching", method = RequestMethod.GET)
-	public void ex_recomm_stretching(int userNum, Model model) throws Exception {
-		model.addAttribute("userDTO", us.userDetail(userNum));
+	public void ex_recomm_stretching() throws Exception {
 	}
 
 	@RequestMapping(value = "/ex_recomm/ex_recomm_detail1", method = RequestMethod.GET)
-	public void ex_recomm_detail1(int userNum, Model model) throws Exception {
-		model.addAttribute("userDTO", us.userDetail(userNum));
+	public void ex_recomm_detail1() throws Exception {
 	}
+	
 	@RequestMapping(value = "/ex_recomm/ex_recomm_detail2", method = RequestMethod.GET)
-	public void ex_recomm_detail2(int userNum, Model model) throws Exception {
-		model.addAttribute("userDTO", us.userDetail(userNum));
+	public void ex_recomm_detail2() throws Exception {
 	}
 	
 	@RequestMapping(value = "/membership", method = RequestMethod.GET)

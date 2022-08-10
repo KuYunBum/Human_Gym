@@ -4,8 +4,6 @@
 
 
 	<%@include file="../../include/header.jsp"%>
-	
-
 	<div class="main">
 		<div class="ex_content">
 			<div class="ex_content_title">
@@ -22,15 +20,7 @@
 			</div>
 			<div class="ex_content_p6">
 				<div class="container">
-					<div id="myCarousel" class="carousel slide" >
-<!-- 						<ol class="carousel-indicators"> -->
-<!-- 							<li data-target="#myCarousel" data-slide-to="0"></li> -->
-<!-- 							<li data-target="#myCarousel" data-slide-to="1"></li> -->
-<!-- 							<li data-target="#myCarousel" data-slide-to="2"></li> -->
-<!-- 							<li data-target="#myCarousel" data-slide-to="3"></li> -->
-<!-- 							<li data-target="#myCarousel" data-slide-to="4"></li> -->
-<!-- 							<li data-target="#myCarousel" data-slide-to="5"></li> -->
-<!-- 						</ol> -->
+					<div id="myCarousel" class="carousel slide" data-interval="false">
 						<div class="carousel-inner">
 								<div class="item active">
 									<img src="/project/resources/image/ex/health_3.jpg"><br>
@@ -79,18 +69,42 @@
 											5. 15~20회의 1세트를 실시한 후 5세트 반복합니다.</p><br>
 								</div>
 						</div>
-						<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-							<span class="glyphicon glyphicon-chevron-left"></span>
-						</a>
-						<a class="right carousel-control" href="#myCarousel" data-slide="next">
-							<span class="glyphicon glyphicon-chevron-right"></span>
-						</a>
+						<a class="left carousel-control" href="#myCarousel" data-slide="prev"></a>
+						<a class="right carousel-control" href="#myCarousel" data-slide="next"></a>
 					</div>
-				</div>
+				</div><br><br>
+				<div id="ViewTimer"></div>
+				<button onclick="start_time();">타이머 시작</button>
+				<button onclick="stop_time();">타이머 종료</button>
 				<button onclick="self.location='ex_recomm_stretching?userNum=${userNum}'">뒤로</button>
 			</div>
 		</div>
 	</div>
 
+
+<script>
+	var SetTime = 0;		// 최초 설정 시간(기본 : 초)
+	function msg_time() {	// 1초씩 카운트
+		m = (Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초");	// 남은 시간 계산
+		var msg = "<h2>" + m + "</h2>";
+		document.all.ViewTimer.innerHTML = msg;		// div 영역에 보여줌 
+		SetTime--;					// 1초씩 감소
+		if (SetTime < 0) {			// 시간이 종료 되었으면..
+			clearInterval(tid);		// 타이머 해제
+// 			$("#ViewTimer").hide();
+//				alert("종료");
+		}
+	};
+
+	function start_time() {
+		SetTime = 60;
+		tid=setInterval('msg_time()',1000);
+		$("#ViewTimer").show();
+	};
+	function stop_time() {
+		clearInterval(tid);
+		$("#ViewTimer").hide();
+	};
+</script>
 
 	<%@include file="../../include/footer.jsp"%>

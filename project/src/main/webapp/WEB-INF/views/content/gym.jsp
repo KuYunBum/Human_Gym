@@ -9,7 +9,7 @@
 	<img src="/project/resources/image/marker.png" style="width: 50px; height: 50px;"> <span style="font-size: 30px;">: 현재 고객님의 위치</span>
 </div>
 <br>
-<div id="map" style="width: 700px; height: 500px;" class="gym"></div>
+<div id="map" style="width: 850px; height: 600px;" class="gym"></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=964433123d090e91b3e53363b41a330a&libraries=services"></script>
 <script>
