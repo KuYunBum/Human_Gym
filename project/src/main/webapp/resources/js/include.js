@@ -45,20 +45,15 @@
 
 		
 //		ex_recomm
-		
-//		var video = document.getElementById("video"); 
-//
-//		function pauseVideo() { 
-//			video.pause(); 
-//		} 
         
+		//ex 서브메뉴
      	$('.ex_sub').hide();
 
     	$('.more_bt').on("click", function(){
     		$('.ex_sub').slideToggle();
     	});
         
-    	
+    	//ex 비디오 start / stop
     	var video = document.getElementById("myVideo");
     	
     	$("#videoStop").hide();
@@ -73,9 +68,28 @@
     		 $(this).hide();
     		 $("#videoPlay").show();
     	 });
-		
-    	
     	 
+    	 video.addEventListener('timeupdate', function(e){
+    		 // 현재 재생 시간 (초 단위 절삭)     
+    		 var playtime = Math.floor(video.currentTime);
+    		 // 전체 재생 시간 (초 단위 절삭)      
+    		 var total = Math.floor(video.duration); 
+    		 // 상태 표시    
+    		 $("#videoProgress").html(playtime + " / " + total);
+    		 }, false);
+    	 
+
+    		function start_time() {
+    			SetTime = 60;
+    			tid=setInterval('msg_time()',1000);
+    			$("#ViewTimer").show();
+    		};
+    		function stop_time() {
+    			clearInterval(tid);
+    			$("#ViewTimer").hide();
+    		};
+    	 
+ 		
     	 
 //		tr_matching
 		 $( '.tr_content_p1_1' ).animate( {

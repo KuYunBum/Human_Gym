@@ -105,19 +105,19 @@
 		  });
 		
     	$('#day1_1,#day3_1').on("click", function() {
-    		self.location = "ex_recomm_simple1?userNum=${userDTO.userNum}";
+    		self.location = "ex_recomm_simple1?userNum=${userNum}";
     	});
     	$('#day2_1,#day4_1').on("click", function() {
-    		self.location = "ex_recomm_simple2?userNum=${userDTO.userNum}";
+    		self.location = "ex_recomm_simple2?userNum=${userNum}";
     	});
     	$('#day1_2,#day3_2').on("click", function() {
-			self.location = "ex_recomm_detail1?userNum=${userDTO.userNum}";
+			self.location = "ex_recomm_detail1?userNum=${userNum}";
 		});
     	$('#day2_2,#day4_2').on("click", function() {
-    		self.location = "ex_recomm_detail2?userNum=${userDTO.userNum}";
+    		self.location = "ex_recomm_detail2?userNum=${userNum}";
     	});
     	$('#stretching1').on("click", function() {
-    		self.location = "ex_recomm_stretching?userNum=${userDTO.userNum}";
+    		self.location = "ex_recomm_stretching?userNum=${userNum}";
     	});
     	
 
