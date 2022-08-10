@@ -57,8 +57,11 @@
 		  +"&keyword="+$('#keywordInput').val();
 		  
 		});
-		
-		
+
+
+		$(".board_insert").on("click", function() {
+			location.href = "/project/board/insert?userNum=${userNum}";
+		});
 		$(".board_update").on("click", function(){
 			self.location = "update?bno=${boardDTO.bno}";
 		});

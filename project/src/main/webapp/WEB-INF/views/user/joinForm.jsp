@@ -10,7 +10,7 @@
 	    <div class="joinBox">
 	        <div class="joinInput">
 		        <a href="/project/">
-	                <img src="/project/resources/image/logo.png" style="width:200px;height:150px;"> <!-- 로고 -->
+	                <img src="/project/resources/image/logo.png" style="width:200px;height:200px;"> <!-- 로고 -->
 	            </a>
 		        <form  action="/project/user/joinForm" method="post">
 		            <label id="labelID" for="userID"> 아이디 </label><br>
@@ -67,8 +67,9 @@
 <!-- 			                <input type="checkbox" value="list5"> 종아리  -->
 <!-- 			            </div> -->
 <!-- 		            </div> -->
-
-		                <input type="submit" value="가입하기" >
+						<div class="logBtn">
+		                	<input type="submit" value="가입하기" >
+		                </div>
 		        </form>
 	        </div>
 	    </div>

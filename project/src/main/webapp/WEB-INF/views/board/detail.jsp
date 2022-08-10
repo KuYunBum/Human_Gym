@@ -164,12 +164,12 @@ function getPageList(page){
 }
 </script>
 	
-	<div class="main">
+	<div class="detail_page">
 		<h1>상세 내용</h1>
 		<form role="form" method="post">
 			<input type='hidden' name='bno' value="${boardDTO.bno}">
 		</form>
-			<table id='customers' border="1">
+			<table id='detail_main' border="1">
 				<tr>
 					<th>번호</th>
 				</tr>
@@ -180,7 +180,7 @@ function getPageList(page){
 					<th>작성자</th>
 				</tr>
 				<tr>
-					<td>${boardDTO.writer}</td>
+					<td>${userDTO.userName}</td>
 				</tr>
 				<tr>
 					<th>제목</th>
@@ -211,7 +211,7 @@ function getPageList(page){
 		<div id='modDiv' style="display:none">
 			<div class="modal-title"></div><br>내용
 			<div>
-				<input type='text' id='replytext2'>
+					<input type='text' id='replytext2'>
 			</div><br>
 			<div>
 				<button type="button" id="replyModBtn">수정</button>
@@ -219,29 +219,30 @@ function getPageList(page){
 				<button type="button" id="closeBtn">닫기</button>
 			</div>
 		</div>
-		<div>
-			<h2>Reply</h2><br>
-			<div>
-		<%
-			if(session.getAttribute("user")!=null){
-		%>
-				<div>
-					작성자 <input type='text' name='replyer' id='replyer'>
+		<div class=widthLine></div>
+		<div class=reply_page>
+			<fieldset>
+				<legend>Reply</legend>
+				<div class=rep_box>
+			<%
+				if(session.getAttribute("user")!=null){
+			%>
+					<div>
+						작성자 <input type='text' name='replyer' id='replyer'>
+					</div>
+					<div>
+						내용  &nbsp;&nbsp;&nbsp;<input type='text' name="replytext" id='replytext'>
+					</div><br>
+					<button id="replyAddBtn">확인</button>
+			<%
+				}
+			%>
 				</div>
-				<div>
-					내용  &nbsp;&nbsp;&nbsp;<input type='text' name="replytext" id='replytext'>
-				</div><br>
-				<button id="replyAddBtn">확인</button>
-		<%
-			}
-		%>
+			<div class="reply_box">
+				<ul id="replies"></ul>
 			</div>
-		</div><br>
-		<div class="reply_box">
-			<ul id="replies"></ul>
+			<div class="pagination"></div>
+			</fieldset>
 		</div>
-		<div class="pagination"></div>
 		
-	</div>
-	
 	<%@include file="../include/footer.jsp"%>
