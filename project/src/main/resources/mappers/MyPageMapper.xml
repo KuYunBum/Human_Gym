@@ -164,16 +164,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <insert id="chartInsert" >
 		insert into
-		userEX ( userNum, exDate, exid , exname, setCount)
-		values (#{userNum}, #{useDate}, #{exid}, #{exname}, #{setCount})
+		userEX ( userNum, exDate, exid , exname, setCount,recordNum)
+		values (#{userNum}, #{useDate}, #{exid}, #{exname}, #{setCount},#{recordNum})
 </insert>
 
 <update id="chartUpdate">
 	update 
 		userEx 
 	set 
-		exDate = #{useDate}, exid= #{exid},
-		exname = #{exname}, setCount = #{setCount}
+		exid= #{exid}, exname = #{exname}, setCount = #{setCount}
 	where 
 		userNum = #{userNum} and recordNum=#{recordNum}
 </update>

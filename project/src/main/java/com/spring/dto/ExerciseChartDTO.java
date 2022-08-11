@@ -14,6 +14,15 @@ public class ExerciseChartDTO {
 	private String exname;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date useDate;
+	private int recordNum;
+
+	public int getRecordNum() {
+		return recordNum;
+	}
+
+	public void setRecordNum(int recordNum) {
+		this.recordNum = recordNum;
+	}
 
 	public Date getUseDate() {
 		return useDate;
@@ -74,7 +83,8 @@ public class ExerciseChartDTO {
 	@Override
 	public String toString() {
 		return "ExerciseChartDTO [userNum=" + userNum + ", setCount=" + setCount + ", expart=" + expart
-				+ ", expartCode=" + expartCode + ", exid=" + exid + ", exname=" + exname + ", useDate=" + useDate + "]";
+				+ ", expartCode=" + expartCode + ", exid=" + exid + ", exname=" + exname + ", useDate=" + useDate
+				+ ", recordNum=" + recordNum + "]";
 	}	
 	
 	

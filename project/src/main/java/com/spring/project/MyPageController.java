@@ -258,26 +258,31 @@ public class MyPageController {
 		RecordDTO getDTO = new RecordDTO();
 		getDTO.setRecordNum(recordNum);
 		getDTO.setUserNum(userNum);
-		System.out.println(getDTO);
+//		System.out.println(getDTO);
 //		RecordDTO aaa = ms.recordDetail(getDTO);
 //		System.out.println(aaa);
 		model.addAttribute(ms.recordDetail(getDTO));
 		
+		model.addAttribute(ms.chartData(userNum));
+		
 	}
 
 	@RequestMapping(value = "/record/update", method = RequestMethod.POST)
-	public String recordUpdatePOST(RecordDTO dto, RedirectAttributes rttr) throws Exception {
-//		System.out.println(dto.getUserNum());
-//		System.out.println(dto.getRecordNum());
-//		System.out.println(dto.getStartHour());
-//		System.out.println(dto.getStartMinute());
-//		System.out.println(dto.getEndHour());
-//		System.out.println(dto.getEndMinute());
+	public String recordUpdatePOST(RecordDTO dto, ExerciseChartDTO chartdto, String exname, int recordNum, RedirectAttributes rttr) throws Exception {
+//		System.out.println(exname);
+		ExerciseChartDTO getExID = (ms.exidSelect(exname));
+		int exid = getExID.getExid();
+//		System.out.println(exid);
+		chartdto.setExid(exid);
+//		System.out.println(chartdto);
+//		System.out.println(recordNum);
 		
 		
 		ms.recordUpdate(dto);
+		ms.chartUpdate(chartdto);
 		rttr.addFlashAttribute("msg", "success");
 		return "redirect:/user/record/record?userNum=" + dto.getUserNum();
 	}
+
 
 }
