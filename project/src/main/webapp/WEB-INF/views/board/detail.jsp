@@ -149,7 +149,7 @@ function getPageList(page){
 			str+="<a href='"+(data.pageMaker.startPage-1)+"'> << </a>";
 		}
 		
-		for(var i=data.pageMaker.startPage;i<data.pageMaker.endPage;i++){
+		for(var i=data.pageMaker.startPage;i<=data.pageMaker.endPage;i++){
 			var strClass=data.pageMaker.page==i?'class=active':'';
 			
 			str+="<a "+strClass+" href='"+i+"'>"+i+"</a>";
@@ -180,7 +180,7 @@ function getPageList(page){
 					<th>작성자</th>
 				</tr>
 				<tr>
-					<td>${userDTO.userName}</td>
+					<td>${boardDTO.writer}</td>
 				</tr>
 				<tr>
 					<th>제목</th>

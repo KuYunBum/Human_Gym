@@ -16,7 +16,7 @@
 					<th>작성자</th>
 				</tr>
 				<tr>
-					<td>${userDTO.userName}</td>
+					<td><input type="text" name='writer' value="${userDTO.userName}"></td>
 				</tr>
 				<tr>
 					<th>제목</th>
