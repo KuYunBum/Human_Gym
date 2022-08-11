@@ -31,6 +31,10 @@ public interface MyPageDAO {
 	
 	public void chartInsert(ExerciseChartDTO dto) throws Exception;
 	
+	public ExerciseChartDTO exidSelect(String exname) throws Exception;
+	
+	public void chartUpdate(ExerciseChartDTO dto)throws Exception;
+	
 //	public List<UserRecordDTO> listCriteria(PageMaker pm) throws Exception;
 //	  
 //	public int listCount(PageMaker pm) throws Exception;

@@ -230,12 +230,22 @@ public class MyPageController {
 	public void recordInsertGET(int userNum, Model model) throws Exception {
 
 		model.addAttribute(ms.recordList(userNum));
+		model.addAttribute(ms.chartData(userNum));
+//		System.out.println(ms.chartData(userNum));
 	}
 
 	@RequestMapping(value = "/record/insert", method = RequestMethod.POST)
-	public String recordInsertPOST(RecordDTO dto) throws Exception {
+	public String recordInsertPOST(RecordDTO dto,ExerciseChartDTO chartdto, String exname) throws Exception {
+//		System.out.println("post 들어옴");
 		
+		ExerciseChartDTO getExID = ms.exidSelect(exname);
+		int exid=(getExID.getExid());
+//		System.out.println(exid);
+		chartdto.setExid(exid); 
+		
+//		System.out.println(chartdto);
 		ms.recordInsert(dto);
+		ms.chartInsert(chartdto);
 
 		return "redirect:/user/record/record?userNum=" + dto.getUserNum();
 	}
