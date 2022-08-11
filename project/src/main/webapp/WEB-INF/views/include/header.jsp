@@ -16,7 +16,6 @@
 <link rel="stylesheet" href="/project/resources/css/myBtn1.css" />
 <!-- <link rel="stylesheet" href="/project/resources/css/bootstrap.css"> -->
 <script src="/project/resources/js/bootstrap.js"></script>
-<script src="/project/resources/js/include.js"></script>
 <script>
 	$(document).ready(function(){
 		var result = '${msg}';
@@ -57,8 +56,11 @@
 		  +"&keyword="+$('#keywordInput').val();
 		  
 		});
-		
-		
+
+
+		$(".board_insert").on("click", function() {
+			location.href = "/project/board/insert?userNum=${userNum}";
+		});
 		$(".board_update").on("click", function(){
 			self.location = "update?bno=${boardDTO.bno}";
 		});
@@ -256,4 +258,3 @@ document.addEventListener('scroll', function() => {
 		</div>
 	</div>
 
-</body>

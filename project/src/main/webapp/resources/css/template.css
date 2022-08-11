@@ -154,17 +154,9 @@
 
 
 .main h1, .bt_box {
+	margin-top:30px;
 	text-align: center;
 }
-/* ---------------------------------버튼 박스 수정--------------------------------- */
-/* ---------------------------------버튼 박스 수정--------------------------------- */
-/* ---------------------------------버튼 박스 수정--------------------------------- */
-/* ---------------------------------버튼 박스 수정--------------------------------- */
-/* .bt_box button { */
-/* 	font-size: 15px; */
-/* 	width:80px; */
-/* 	height: 40px; */
-/* } */
 .leftContainer >ul{
     margin-top: 40px;
 }
@@ -769,62 +761,141 @@ img {
 }
 .pagination a:hover:not(.active) {background-color: transparent;}
 /* 게시판 글쓰기 */
-.ins_page h1{
-	color:white;
+.ins_page h1,.detail_page h1{
+	color:black;
 	text-align:center;
-	margin:30px;
 	padding-top:150px;
-	height: 200px;
+	height: 130px;
  	border-radius: 100px;
- 	background-image:url('/project/resources/image/board/board_back.jpg');
- 	background-repeat:no-repeat;
- 	background-position: 30% 60%;
- 	background-size: 100% 700px;
+/*  	background-image:url('/project/resources/image/board/board_back.jpg'); */
+/*  	background-repeat:no-repeat; */
+/*  	background-position: 30% 60%; */
+/*  	background-size: 100% 700px; */
  	position: relative;
     animation: fadeInUp 2s;
 }
 
-#write_main {
+#write_main,#detail_main {
 	margin: 50px auto;
 	font-family: Arial, Helvetica, sans-serif;
 	border:none;
-	width: 70%;
 	position: relative;
     animation: fadeInUp 3.3s;
 }
 
-#write_main textarea {
-	padding-top:175px;
-	height: 250px;
-	font-size: 30px;
-	text-align:center;
-}
-#write_main th{
-	width:400px;
+#write_main th,#detail_main th{
 	border: none;	
 	color:black;
-	background-color:yellow;
+	background-color:transparents;
 	text-align:center;
 	font-size: 30px;
 	font-weight:600;
+	
+	border-top:2px solid royalblue;
+	border-bottom:2px solid royalblue; 
 }
 	
-#write_main td{
+#write_main td,#detail_main td{
 	border: none;
 	padding:28px;
 	margin:auto;
 	font-size:24px;
+	width: 55%;
+	text-align:center;
 }
 #write_main input[type=text]{
 	border: none;
-	margin:auto;
 	font-size:24px;
 	text-align:center;
+	margin-top:10px;
+	
+}
+#write_main input[type=text]:focus{
+	animation-name: border-focus;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes border-focus {
+        from {
+          border-radius: 0;
+        }
+        to {
+          border-radius: 30px;
+        }
+      }
+#write_main textarea {
+	padding-top:100px;
+	height: 250px;
+	font-size: 30px;
+	text-align:center;
+	box-sizing:border-box;
+	border:none;
+}
+#detail_main textarea{
+	padding:auto;
+	width:400px;
+	height: 250px;
+	font-size: 30px;
+	text-align:center;
+	box-sizing:border-box;
+	border:none;	
+}
+.bt_box button{
+	box-sizing:border-box;
+	border:none;
+	padding:20px;
+	margin:70px;
+	cursor:pointer;
+	font-size:30px;
+}
+	
+.bt_save,.board_list,.board_update,.board_delete{
+	background-color:royalblue;
+	color:white;
+	min-width: 200px;
+    min-height: 70px;
+	border:none;
+	border-radius:1000px;
+	position:relative;
+	cursor:pointer;
+	margin-left: 44%;
+	text-align:center;
+	font-size:23px;
+	font-weight: 700;
+    transition: 0.3s;
+	animation: fadein 3s;
+ 	-webkit-animation: fadein 3s; /* Safari and Chrome */
+}
+.bt_save:hover, .board_list:hover, .board_update:hover, .board_delete:hover	{
+	background-color:#526fcf;
+	color:yellow;
+	transform: scale(1.2);
 }
 
-
+.widthLine{
+	background-color:green;
+	width:100px;
+	padding:2px;
+	margin-bottom:20px;
+}
 
 /* 댓글 관련 */
+.reply_page fieldset{
+	width:1000px;
+	margin: 0 auto;
+	display:table;
+}
+.reply_page legend{
+	text-align:center;
+	padding: 30px;
+	font-size: 22px;
+	font-weight: 600;
+	margin: 20px;
+}
+
+.rep_box{
+	text-align:center;
+}
 
 #modDiv{
 	width:400px;
@@ -1085,88 +1156,6 @@ img {
 	margin-bottom: 5px;
 }
 
-/* AI운동추천 사진 슬라이드 */
-#slider-wrap{
-  width:600px;
-  height:650px;
-  position:relative;
-  overflow:hidden;
-  margin-left: -20px;
-}
-	
-#slider-wrap ul#slider{
-  width:100%;
-  height:100%;
-  position:absolute;
-  top:0;
-  left:0;   
-}
-
-#slider-wrap ul#slider li{
-  float:left;
-  position:relative;
-  width:600px;
-  height:400px; 
-}
-
-#slider-wrap ul#slider li > div{
-  position:absolute;
-  top:20px;
-  left:35px;  
-}
-
-#slider-wrap ul#slider li img{
-  display:block;
-  width:100%;
-  height: 100%;
-}
-
-
-/*btns*/
-.btns{
-  position:absolute;
-  width:50px;
-  height:60px;
-  top:50%;
-  margin-top:-25px;
-  line-height:57px;
-  text-align:center;
-  cursor:pointer; 
-  background:rgba(0,0,0,0.1);
-  z-index:100;
-  
-  
-  -webkit-user-select: none;  
-  -moz-user-select: none; 
-  -khtml-user-select: none; 
-  -ms-user-select: none;
-  
-  -webkit-transition: all 0.1s ease;
-  -moz-transition: all 0.1s ease;
-  -o-transition: all 0.1s ease;
-  -ms-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-}
-
-.btns:hover{
-  background:rgba(0,0,0,0.3); 
-}
-
-#next{right:-50px; border-radius:7px 0px 0px 7px;}
-#previous{left:-50px; border-radius:0px 7px 7px 7px;}
-
-#slider-wrap.active #next{right:0px;}
-#slider-wrap.active #previous{left:0px;}
-
-
-/*ANIMATION*/
-#slider-wrap ul, #pagination-wrap ul li{
-  -webkit-transition: all 0.3s cubic-bezier(1,.01,.32,1);
-  -moz-transition: all 0.3s cubic-bezier(1,.01,.32,1);
-  -o-transition: all 0.3s cubic-bezier(1,.01,.32,1);
-  -ms-transition: all 0.3s cubic-bezier(1,.01,.32,1);
-  transition: all 0.3s cubic-bezier(1,.01,.32,1); 
-}
 
 
 
@@ -1177,23 +1166,28 @@ img {
 .logBox{
 	text-align: center;
 	margin: auto;
-    width: 30%;
+    width: 300px;
     height: 450px;
 /*     border: 0.5px solid; */
     border-radious:5px;
 }
-
+.logInput label{
+	font-size:18px;
+}
 .logInput input{
-    width: 300px;
-    height: 30px;
+	text-align:center;
+    height: 35px;
     margin-bottom: 10px;
+    margin-top:20px;
 }
 
 .logBtn{
-    margin-top: 50px;
+    margin-top: 43px;
 }
 
+
 .logBtn input:hover{
+    transform: scale(1.2);
     background-color: rgba(31,57,141);
     cursor: pointer;
     color: white;
@@ -1201,29 +1195,33 @@ img {
 
 .logBtn input{
 	background-color: white;
-    width: 30%;
+    width: 250px;
     height: 40px;
-    color: black;
+    color: royalblue;
     transition: all 0.2s;
-    border: solid 1px;
-    border-radius: 50px;
-    font-weight: 500;
-    font-size: 18px;
+    border: none;
+    border-radius: 500px;
+    border-left:1px solid royalblue;
+    border-right:1px solid royalblue;
+    font-weight: 800;
+    font-size: 20px;
     margin-top: -10px;
 }
 
-.login{
-    padding:20px 20px; 
+.logSub{
+    padding-top:30px;    
 }
-.login > a{
-    margin: 0 10px;
+.logSub a{
+	font-size:17px;
+    margin: 0 20px;
     color: black;
     text-decoration: none;
+    transition: all 0.2s;
 }
-.login>a:hover{
+.logSub a:hover{
     color: red;
+    transform: scale(1.2);
 }
-
 
 
 
@@ -1231,68 +1229,76 @@ img {
 
 .joinBox label{
     color:black;
+    font-size:18px;
+    font-weight:600;
 }
 
 .joinInput {
 /* 	border: 0.5px solid; */
 }
 
+.joinBox input[type=radio]{
+	cursor:pointer;
+}
+
 .joinBox input[type=text], 
 .joinBox input[type=password], 
 .joinBox input[type=date] {
+  text-align:center;
   width: 100%;
   padding: 12px 20px;
-  margin: 8px 0;
+  margin: 20px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 0.5px solid gray;
   border-radius: 4px;
   box-sizing: border-box;
 }
 /* .joinBox #userID{ */
 /*     width: 80%; */
 /* } */
-.joinBox select{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-.joinBox button{
-    width: 15%;
-    padding: 12px 1px;
-    margin: 8px 0;
-    margin-left:10px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    box-sizing: border-box;
-    cursor:pointer;
+/* .joinBox select{ */
+/*     width: 100%; */
+/*     padding: 12px 20px; */
+/*     margin: 8px 0; */
+/*     display: inline-block; */
+/*     border: 1px solid #ccc; */
+/*     border-radius: 4px; */
+/*     box-sizing: border-box; */
+/*     cursor:pointer; */
+/* } */
+/* .joinBox button{ */
+/*     width: 15%; */
+/*     padding: 12px 1px; */
+/*     margin: 8px 0; */
+/*     margin-left:10px; */
+/*     display: inline-block; */
+/*     border: 1px solid #ccc; */
+/*     border-radius: 15px; */
+/*     box-sizing: border-box; */
+/*     cursor:pointer; */
     
-}
+/* } */
 
-.joinBox button:hover{
-	background-color: aqua;
-}
+/* .joinBox button:hover{ */
+/* 	background-color: aqua; */
+/* } */
 
-.joinBox input[type=submit] {
-  width: 50%;
-  background-color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  margin-top: 20px;
-  border: solid 1px;
-  border-radius: 50px;
-  cursor: pointer;
-  font-size: 15px;
-}
+/* .joinBox input[type=submit] { */
+/*   width: 50%; */
+/*   background-color: white; */
+/*   padding: 14px 20px; */
+/*   margin: 8px 0; */
+/*   margin-top: 20px; */
+/*   border: solid 1px; */
+/*   border-radius: 50px; */
+/*   cursor: pointer; */
+/*   font-size: 15px; */
+/* } */
 
-.joinBox input[type=submit]:hover {
-  background-color: rgba(31,57,141);
-  color:white;
-}
+/* .joinBox input[type=submit]:hover { */
+/*   background-color: rgba(31,57,141); */
+/*   color:white; */
+/* } */
 
 .joinBox div {
   border-radius: 5px;
@@ -1325,15 +1331,17 @@ img {
 .findAccountBox {
 	text-align: center;
 	margin: auto;
-    width: 30%;
+    width: 300px;
     height: 400px;
-    border: 0.5px solid;
+    border: none;
 }
 
 .findAccount input{
     width: 300px;
     height: 30px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom:10px;
+    text-align:center;
 }
 
 
@@ -1448,7 +1456,6 @@ img {
 
 .rcText{
     margin: 20px;
-    /* background-color: red; */
 }
 .rcText > ul > label{
 	margin-top: 5px;
@@ -1683,7 +1690,7 @@ img {
 	margin: 0 auto;
 	margin-top: 40px;
 	box-sizing:border-box;
-	border:2px solid black;
+	border:none;
 	animation: fadein 5s;
  	-webkit-animation: fadein 5s; /* Safari and Chrome */
 
@@ -1857,15 +1864,6 @@ img {
  	-webkit-animation: fadein 5s; /* Safari and Chrome */
 	
 }
-/*
-.consult_page1 fieldset{
-	margin:auto;
-	text-align:center;
-}
-.consult_page1 legend{
-	padding: 250px;
-	font-size: 27px;	
-}*/
 
 /* #customers {
   margin: 50px auto;
@@ -1909,20 +1907,20 @@ img {
  	border:none;
  	border-radius:50px; */
 .consult_page1 textarea:hover {
-    transform: scale(1.2);
+    transform: scale(1.07);
 }
 
 	
 .consult_page1 input[type=button]{
-	background-color:white;
-	color:black;
+	background-color:royalblue;
+	color:white;
 	min-width: 200px;
-    min-height: 100px;
+    min-height: 70px;
 	border:none;
 	border-radius:1000px;
 	position:relative;
 	cursor:pointer;
-	margin-left: 46%;
+	margin-left: 44%;
 	text-align:center;
 	font-size:23px;
 	font-weight: 700;
@@ -1931,8 +1929,8 @@ img {
  	-webkit-animation: fadein 3s; /* Safari and Chrome */
 }
 .consult_page1 input[type=button]:hover{
-	background-color:royalblue;
-	color:white;
+	background-color:#526fcf;
+	color:yellow;
 	transform: scale(1.2);
 }
 

@@ -170,9 +170,9 @@ section:nth-child(odd) {
 	-ms-flex: 75%;
 	IE10 flex: 75%;
 	/*   background-color: white; */
-	padding: 20px;
-	text-align: center;
+/* 	padding: 20px; */
 	margin-top: 100px;
+	text-align: center;
 }
 
 .footer {

@@ -16,30 +16,30 @@
 			<form role="form" method="post">
 				<input type="hidden" name="userNum" value="${routineDTO.userNum }">
 			</form>
+			<h4 style="text-align: left; position: absolute;">* Click Routine Name</h4>
 				<table id="customers" style="width:1000px;">
 		             <tr>
 		           		<th>Routine Number</th>
-		             	<th>Routine Name</th>
-		             	<th>Selected Exercise</th>
+		             	<th style="width:200px;">Routine Name</th>
+		             	<th style="width:700px;">Selected Exercise</th>
 		             </tr>
 		         <c:forEach items="${list}" var="routineDTO">			         
 		             <tr>
 			            <td>${routineDTO.routineNum}</td>
-			            <td><a style="text-decoration:none;" href='/project/user/routine/detail?routineNum=${routineDTO.routineNum}'>${routineDTO.routineName}</a></td>
+			            <td><a style="text-decoration:none; color:black;" href='/project/user/routine/detail?userNum=${userNum}&routineNum=${routineDTO.routineNum}'>${routineDTO.routineName}</a></td>
 			            <td>${routineDTO.routineEx}</td>
 		             </tr>
                  </c:forEach>
                  </table>
 			</div>
 		</div>
-		${list.get(0).routineNum }
 	</div>
 		
 		<hr style="width: 1300px; margin:auto;"><br>
                 
         <div class="bt_box">
 			<button id="myBtn1" type="submit" class="routine_insert">입력</button>
-			<button id="myBtn1" class="routine_update">AI 루틴 추천 받기</button>
+			<button id="myBtn1" onclick="location.href='/project/content/ex_recomm/ex_recomm'">AI 루틴 추천 받기</button>
 		</div>        
 </div>
 	<%@include file="../../include/footer.jsp"%>

@@ -198,14 +198,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </insert>
 
 <delete id="routineDelete"> 
-	delete * 
+	delete 
 	from 
 		routineBox
 	where 
 		routineNum = #{routineNum} 
 </delete>
 
-<update id="routineUpdate"> 
+<update id="routineUpdate">
 	update 
 		routineBox 
 	set 

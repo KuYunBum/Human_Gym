@@ -8,7 +8,7 @@
 
 	<div class="ins_page">
 		<h1>✍ &nbsp;글 쓰기</h1>
-		<h2 style align="center">만드는중</h2>
+<!-- 		<h2 style align="center">만드는중</h2> -->
 		<!-- action에 경로가 없으면 현재 페이지 주소로 이동한다.-->
 		<form role="form" method="post">
 			<table id="write_main" border="1">
@@ -16,7 +16,7 @@
 					<th>작성자</th>
 				</tr>
 				<tr>
-					<td><input type="text" name="writer" style="width: 100%" placeholder="내용 입력"	style="width: 100%; height: 30px;"></td>
+					<td><input type="text" name='writer' value="${userDTO.userName}"></td>
 				</tr>
 				<tr>
 					<th>제목</th>

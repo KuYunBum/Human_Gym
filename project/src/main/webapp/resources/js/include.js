@@ -1,8 +1,6 @@
 /**
  * 
  */
-	$(document).ready(function(){
-		
 
 		var formObj = $("form[role='form']");
 
@@ -14,9 +12,7 @@
 			self.location = "/project/board/list";
 		});
 		
-		$(".board_insert").on("click", function() {
-			location.href = "/project/board/insert"
-		});
+		
 		
 		$(".board_delete").on("click", function(){
 			formObj.attr("action", "/project/board/delete");
@@ -79,18 +75,9 @@
 			$("#videoProgress").html(playtime + " / " + total);
 			}, false);
 		};
-			
-	    function start_time() {
-	    	SetTime = 60;
-	    	tid=setInterval('msg_time()',1000);
-	    	$("#ViewTimer").show();
-	    };
-	    function stop_time() {
-	    	clearInterval(tid);
-	    	$("#ViewTimer").hide();
-	    };
-    	 
- 		
+
+		
+		
     	 
 //		tr_matching
 		 $( '.tr_content_p1_1' ).animate( {
@@ -114,4 +101,3 @@
 		        });
 	          });
 	        });
-	});
