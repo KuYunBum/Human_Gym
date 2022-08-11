@@ -148,14 +148,19 @@ function getPageList(page){
 		if(data.pageMaker.prev){
 			str+="<a href='"+(data.pageMaker.startPage-1)+"'> << </a>";
 		}
-		
+		if(data.pageMaker.page !=1){
+			str+="<a href='"+((data.pageMaker.page)-1)+"'> < </a>";
+		}
 		for(var i=data.pageMaker.startPage;i<=data.pageMaker.endPage;i++){
 			var strClass=data.pageMaker.page==i?'class=active':'';
 			
 			str+="<a "+strClass+" href='"+i+"'>"+i+"</a>";
 		}
+		if(data.pageMaker.page != data.pageMaker.totalEndPage){
+			str+="<a href='"+(data.pageMaker.page+1)+"'> > </a>";
+		}
 		if(data.pageMaker.next){
-			str+="<a href='"+(data.pageMaker.endPage+1)+"'> << </a>";
+			str+="<a href='"+(data.pageMaker.endPage+1)+"'> >> </a>";
 		}
 		//alert(str);
 		$(".pagination").html(str);
@@ -244,5 +249,6 @@ function getPageList(page){
 			<div class="pagination"></div>
 			</fieldset>
 		</div>
+	</div>
 		
 	<%@include file="../include/footer.jsp"%>
