@@ -219,7 +219,7 @@ function getPageList(page){
 				<button type="button" id="closeBtn">닫기</button>
 			</div>
 		</div>
-		<div class=widthLine></div>
+		<div class=widthLine2></div>
 		<div class=reply_page>
 			<fieldset>
 				<legend>Reply</legend>

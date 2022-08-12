@@ -10,8 +10,9 @@
 		<div class="re_tr"><h2><%out.print(String.valueOf(session.getAttribute("user"))+" 님"); %></h2>의 추천 트레이너</div>
 	
 		<div class="re_tr_box">
+		
 			<div class="re_trainer">
-				<img src="/project/resources/image/kimegg.jpeg" style="width: 390px;height: 400px;">
+				<img src="/project/resources/image/kimegg.jpeg" style="width: 390px;height: 400px;border-radius:70%;" >
 						<br><br><h2><i>Kim Egg</i></h2>
 						<div class="trainer_info"><br>
 							<p><h4>💪 3대 600</h4></p>
@@ -24,13 +25,13 @@
 						</div>
 			</div>
 		</div>
-		
-		<div class="other_tr"><h2>다른 트레이너 알아보기 🔍</h2></div>	
-		
+		<div class="widthLine2"></div>
+		<div class="other_tr"><h2></h2></div>	
+		<div class="widthLine2"></div>
 		<div class="trainer">
 			<div class="trainer_1">
 				<img src="/project/resources/image/arnold.jpeg" style="width: 305px;height: 300px;">
-				<br><br><h2>arnold</h2>
+				<br><br><h2>Arnold</h2>
 				<div class="trainer_info"><br>
 					<p>1967 미스터유니버스 우승</p>
 					<p>1968 미스터유니버스 우승</p>
@@ -42,7 +43,7 @@
 			</div>	
 			<div class="trainer_2">
 				<img src="/project/resources/image/bigRamy.jpeg" style="width: 305px;height: 300px;">
-				<br><br><h2>bigRamy</h2>
+				<br><br><h2>BigRamy</h2>
 				<div class="trainer_info"><br>
 					<p>2017 아놀드 클래식 유럽 – 1위</p>
 					<p>2018 미스터 올림피아 – 6위</p>
@@ -66,7 +67,7 @@
 			</div>	
 			<div class="trainer_4">
 				<img src="/project/resources/image/ronnieWidth.jpeg" style="width: 305px;height: 300px;">
-				<br><br><h2>ronnie</h2>
+				<br><br><h2>Ronnie</h2>
 				<div class="trainer_info"><br>
 					<p>2007 미스터 올림피아 - 4위</p>
 					<p>2006 미스터 올림피아 - 2위</p>
