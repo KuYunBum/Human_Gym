@@ -11,7 +11,7 @@
  		<form role="form" method="post">
 			<input type='hidden' name='userNum' value="${userDTO.userNum}">
 		</form>
-			<table id='customers' border="1" style="width: 500px;">
+			<table id='members' border="1" style="width: 500px;">
 				<tr>
 					<th>회원번호</th>
 				</tr>
@@ -62,9 +62,9 @@
 				</tr>
 			</table>
 		<div class="bt_box">
-			<button type="submit" class="admin_update">수정</button>
-			<button type="submit" class="admin_delete">삭제</button>
-			<button type="button" class="admin_list">목록</button>
+			<button type="submit" id="myBtn1" class="admin_update">수정</button>
+			<button type="submit" id="myBtn1" class="admin_delete">삭제</button>
+			<button type="button" id="myBtn1" class="admin_list">목록</button>
 		</div>
 	</div>
 	

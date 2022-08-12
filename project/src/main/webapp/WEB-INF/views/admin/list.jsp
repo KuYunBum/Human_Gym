@@ -9,7 +9,7 @@
 
 	<div class="main">
 		<h1>회원 목록</h1><br><br>
-		<table id='customers' border="1">
+		<table id='members' border="1">
 			<tr>
 				<th style="width: 80px">회원번호</th>
 				<th style="width: 100px">아이디</th>
