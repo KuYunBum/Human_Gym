@@ -27,10 +27,9 @@
 
 		<div class="rightContainer">
 			<div class="rcText">
-			<p style="text-align: right;">※ 번호를 누르면 수정가능합니다.</p>
+			<p style="text-align: right;">※ 날짜를 누르면 수정가능합니다.</p>
 				<table id='record_tb' border="1">
 					<tr>
-						<td><h4>번호</h4></td>
 						<td><h4>운동 날짜</h4></td>
 						<td><h4>운동 시간</h4></td>
 						<td><h4>시작 시간</h4></td>
@@ -38,10 +37,8 @@
 					</tr>
 					<c:forEach items="${list}" var="RecordDTO">
 						<tr>
-							<td><a href="/project/user/record/update?userNum=${RecordDTO.userNum}&recordNum=${RecordDTO.recordNum}">
-								${RecordDTO.recordNum }</a></td>
-							<td><fmt:formatDate pattern="yyyy-MM-dd"
-									value="${RecordDTO.useDate}" /></td>
+							<td><a href="/project/user/record/update?userNum=${RecordDTO.userNum}&recordNum=${RecordDTO.recordNum}" style="text-decoration:none;">
+								<fmt:formatDate pattern="yyyy-MM-dd" value="${RecordDTO.useDate}" /></a></td>
 							<td>${RecordDTO.playTime}</td>
 							<td>${RecordDTO.startHour}시 ${RecordDTO.startMinute}분</td>
 							<td>${RecordDTO.endHour}시 ${RecordDTO.endMinute}분</td>

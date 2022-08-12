@@ -162,6 +162,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	group by AA.USERNUM, AA.SETCOUNT, AA.EXPART
 </select>
 
+<insert id="chartInsert" >
+		insert into
+		userEX ( userNum, exDate, exid , exname, setCount,recordNum)
+		values (#{userNum}, #{useDate}, #{exid}, #{exname}, #{setCount},#{recordNum})
+</insert>
+
+<update id="chartUpdate">
+	update 
+		userEx 
+	set 
+		exid= #{exid}, exname = #{exname}, setCount = #{setCount}
+	where 
+		userNum = #{userNum} and recordNum=#{recordNum}
+</update>
+
+<select id="exidSelect" resultType="com.spring.dto.ExerciseChartDTO">
+		select exid from exercise where exname=#{exname}
+</select>
+
 <select id="routineList" resultType="routineDTO">
 	select * 
 	from

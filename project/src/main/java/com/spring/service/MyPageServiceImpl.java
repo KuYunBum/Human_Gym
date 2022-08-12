@@ -90,6 +90,20 @@ public class MyPageServiceImpl implements MyPageService{
 		
 	}
 
+	@Override
+	public ExerciseChartDTO exidSelect(String exname) throws Exception {
+		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+		ExerciseChartDTO dto = dao.exidSelect(exname);
+		return dto;
+	}
+	
+	@Override
+	public void chartUpdate(ExerciseChartDTO dto) throws Exception {
+		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+		dao.chartUpdate(dto);
+		
+	}
+
 //	@Override
 //	public List<UserRecordDTO> listCriteria(PageMaker pm) throws Exception {
 //		MyPageDAO dao=sqlSession.getMapper(MyPageDAO.class);
