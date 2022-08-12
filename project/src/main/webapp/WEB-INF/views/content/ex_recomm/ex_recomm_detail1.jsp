@@ -46,27 +46,27 @@
 								</div>
 								<div class="item">
 									<img src="/project/resources/image/ex/health_8.jpg"><br>
-										<p>1. 자신에게 맞는 무게를 설정합니다.<br><br>
+										<p>1. 자신에게 맞는 무게를 설정한다.<br><br>
 											2. 가슴을 닫을 때 호흡을 내쉬고<br>
-												가슴을 열 때 호흡을 들이 마십니다.<br><br>
-											3. 가슴을 닫고 1초 정ㅇ도 유지한 후 다시 반복합니다.<br><br>
-											4. 10~12회 실시 후 30~40초간 휴식합니다.</p><br>
+												가슴을 열 때 호흡을 들이 마신다.<br><br>
+											3. 가슴을 닫고 1초 정도 유지한 후 다시 반복한다.<br><br>
+											4. 10~12회 실시 후 30~40초간 휴식한다.</p><br>
 								</div>
 								<div class="item">
 									<img src="/project/resources/image/ex/health_10.jpg"><br>
-									<p>1. 자신에게 맞는 무게를 설정합니다.<br><br>
+									<p>1. 자신에게 맞는 무게를 설정한다.<br><br>
 										2. 올라가면서 호흡을 내쉬고<br>
-											내려올 때 호흡을 들이 마십니다.<br><br>
-										3. 10~12회 실시 후 30~40초간 휴식합니다.</p><br>
+											내려올 때 호흡을 들이 마신다.<br><br>
+										3. 10~12회 실시 후 30~40초간 휴식한다.</p><br>
 								</div>
 								<div class="item">
 									<img src="/project/resources/image/ex/health_11.jpg"><br>
 										<p>1. 밑 부분 발패드에 발목을 걸고<br>
-												허벅지가 윗부분 패드에 평평하게 닿도록 합니다.<br><br>
-											2. 골반 아랫부분만 밀착하여 윗부분 패드의 높낮이를 조절합니다.<br><br>
-											3. 팔을 X자 모양으로 겹쳐 가슴에 붙이고 허리를 일자로 폅니다.<br><br>
-											4. 고개와 등을 일자상태로 유지하면서 천천히 허리를 굽혔다 올라옵니다.<br><br>
-											5. 15~20회의 1세트를 실시한 후 5세트 반복합니다.</p><br>
+												허벅지가 윗부분 패드에 평평하게 닿도록 한다.<br><br>
+											2. 골반 아랫부분만 밀착하여 윗부분 패드의 높낮이를 조절한다.<br><br>
+											3. 팔을 X자 모양으로 겹쳐 가슴에 붙이고 허리를 일자로 편다.<br><br>
+											4. 고개와 등을 일자상태로 유지하면서 천천히 허리를 굽혔다 올라온다.<br><br>
+											5. 15~20회의 1세트를 실시한 후 5세트 반복한다.</p><br>
 								</div>
 						</div>
 						<a class="left carousel-control" href="#myCarousel" data-slide="prev"></a>
@@ -74,8 +74,8 @@
 					</div>
 				</div><br><br>
 				<div id="ViewTimer"></div>
-				<button onclick="start_time();">타이머 시작</button>
-				<button onclick="stop_time();">타이머 종료</button>
+				<button onclick="start_time();">타이머</button>
+				<button onclick="reset_time();">초기화</button>
 				<button onclick="self.location='ex_recomm_stretching?userNum=${userNum}'">뒤로</button>
 			</div>
 		</div>
@@ -83,7 +83,8 @@
 
 
 <script>
-	var SetTime = 0;		// 최초 설정 시간(기본 : 초)
+	var SetTime = 60;		// 최초 설정 시간(기본 : 초)
+	var toggle = false;
 	function msg_time() {	// 1초씩 카운트
 		m = (Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초");	// 남은 시간 계산
 		var msg = "<h2>" + m + "</h2>";
@@ -91,19 +92,22 @@
 		SetTime--;					// 1초씩 감소
 		if (SetTime < 0) {			// 시간이 종료 되었으면..
 			clearInterval(tid);		// 타이머 해제
-// 			$("#ViewTimer").hide();
-//				alert("종료");
 		}
 	};
 
 	function start_time() {
-		SetTime = 60;
-		tid=setInterval('msg_time()',1000);
-		$("#ViewTimer").show();
+        if(toggle==false){
+            // 반복 재개(재시작)
+            tid=setInterval('msg_time()',1000);
+            toggle = true;
+        }else{
+            // 반복 중단
+            clearInterval(tid);
+            toggle = false;
+        }
 	};
-	function stop_time() {
-		clearInterval(tid);
-		$("#ViewTimer").hide();
+	function reset_time() {
+		SetTime = 60;
 	};
 </script>
 

@@ -3,13 +3,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <script>
-	window.onload = function() {
+	$(document).ready(function () {
 		var date = new Date();
 		var year = date.getFullYear();
 		var month = date.getMonth();
 		document.getElementById("schedule").href = "/project/user/schedule/schedule?userNum=${userNum}&year="
 				+ year + "&month=" + month;
-	}
+	 })
 </script>
 
 <div class="myPageNav">
