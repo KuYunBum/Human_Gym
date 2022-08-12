@@ -12,18 +12,19 @@
 		        <a href="/project/">
 	                <img src="/project/resources/image/logo.png" style="width:200px;height:200px;"> <!-- 로고 -->
 	            </a>
-		        <form  action="/project/user/joinForm" method="post">
+		        <form role="form" method="post">
 		            <label id="labelID" for="userID"> 아이디 </label><br>
 		            <input type="text" name="userID" id="userID" placeholder="사용할 아이디를 입력해주세요.">
+		            <input type="hidden" name="checked_id" value="">
 		            <input type="button" id="btnCheck" value="중복검사"/><br>
             		<span id="result"></span><br>
-<!-- 		            <button> 중복확인 </button><br> -->
 		            
 		            <label id="labelID" for="userPW"> 비밀번호 </label>
-		            <input type="password" name="userPW" placeholder="8~20자리 사이의 비밀번호를 입력해주세요.">
+		            <input type="password" id="userPW" name="userPW" placeholder="8~20자리 사이의 비밀번호를 입력해주세요.">
 		            
-<!-- 		            <label for="userPWCheck"> 비밀번호 확인 </label> -->
-<!-- 		            <input type="password" id="userPWCheck" name="userPWCheck" placeholder="비밀번호를 다시 한 번 입력해주세요."> -->
+		            <label for="userPWCheck"> 비밀번호 확인 </label>
+		            <input type="password" id="userPWCheck" name="userPWCheck" onchange="check_pw()" placeholder="비밀번호를 다시 한 번 입력해주세요.">
+		            <span id="check"></span><br>
 		            
 		            <label id="labelID" for="userName"> 이름 </label>
 		            <input type="text" name="userName" placeholder="이름을 입력해주세요.">
@@ -41,37 +42,9 @@
 		            <label id="labelID" for="userEmail"> 이메일 </label><br>
 		            <input type="text" name="userEmail" placeholder="이메일을 입력해주세요.">
 		
-<!-- 		            <div class="sBox">fieldset/ legend 로 변경 -->
-<!-- 			            <div> -->
-<!-- 			                <label for="howJoin">가입경로</label><br> -->
-<!-- 			                <select id="howJoin" name="howJoin"> -->
-<!-- 			                <option value="지인추천"> 지인추천 </option> -->
-<!-- 			                <option value="블로그"> 블로그 </option> -->
-<!-- 			                <option value="현수막"> 현수막 </option> -->
-<!-- 			                </select> -->
-<!-- 			            </div> -->
-<!-- 			            <div> -->
-<!-- 			                <label for="joinPp"> 운동 목적 </label><br> -->
-<!-- 			                <select id="joinPp" name="joinPp"> -->
-<!-- 			                <option value="다이어트"> 다이어트 </option> -->
-<!-- 			                <option value="근육질몸매"> 근육질 몸매 </option> -->
-<!-- 			                <option value="건강관리"> 건강관리 </option> -->
-<!-- 			                </select> -->
-<!-- 			            </div> -->
-<!-- 			            <div class="cb"> -->
-<!-- 			                <label for="ex"> 원하는 운동부위 </label><br> -->
-<!-- 			                <input type="checkbox" value="list1"> 가슴 -->
-<!-- 			                <input type="checkbox" value="list2"> 어깨 -->
-<!-- 			                <input type="checkbox" value="list3"> 복부 -->
-<!-- 			                <input type="checkbox" value="list4"> 등 -->
-<!-- 			                <input type="checkbox" value="list5"> 팔 -->
-<!-- 			                <input type="checkbox" value="list5"> 허벅지 -->
-<!-- 			                <input type="checkbox" value="list5"> 종아리  -->
-<!-- 			            </div> -->
-<!-- 		            </div> -->
-						<div class="logBtn">
-		                	<input type="submit" value="가입하기" >
-		                </div>
+					<div class="logBtn">
+			           	<input type="button" onclick="YN();" value="가입하기" >
+			        </div>
 		        </form>
 	        </div>
 	    </div>
@@ -80,7 +53,7 @@
 	
 	<script>
 	$('#btnCheck').click(function () {
-			
+		$("input[name=checked_id]").val('y');	
 	    if ($('#userID').val() != '') {
 	   				
 	        // 아이디를 서버로 전송 > DB 유효성 검사 > 결과 반환받기
@@ -106,6 +79,29 @@
 	        $('#userID').focus();
 	    }
 	});
+	
+	function YN() {
+		if($("input[name='checked_id']").val()==''){
+	        alert('아이디중복 확인을 해주세요.');
+	    }else{
+			formObj.submit();
+	    }
+	}
+	
+    function check_pw(){
+        if(document.getElementById('userPW').value !='' && document.getElementById('userPWCheck').value!=''){
+            if(document.getElementById('userPW').value==document.getElementById('userPWCheck').value){
+                document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
+                document.getElementById('check').style.color='blue';
+            }
+            else{
+                document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
+                document.getElementById('check').style.color='red';
+            }
+        }
+    }
+	
+	
 	</script>
 
 	<%@include file="../include/footer.jsp"%>

@@ -93,6 +93,7 @@ public class UserController {
 				UserDTO dtos = service.idCheck(userID);
 				if (dtos!=null) {
 					rttr.addFlashAttribute("msg", "overlap");
+					return "redirect:/user/joinForm";
 				} else {
 					service.userJoin(dto);
 					rttr.addFlashAttribute("msg", "success");
