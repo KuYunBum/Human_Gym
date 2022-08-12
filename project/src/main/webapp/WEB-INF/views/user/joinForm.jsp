@@ -14,7 +14,9 @@
 	            </a>
 		        <form  action="/project/user/joinForm" method="post">
 		            <label id="labelID" for="userID"> 아이디 </label><br>
-		            <input type="text" name="userID" placeholder="사용할 아이디를 입력해주세요.">
+		            <input type="text" name="userID" id="userID" placeholder="사용할 아이디를 입력해주세요.">
+		            <input type="button" id="btnCheck" value="중복검사"/><br>
+            		<span id="result"></span><br>
 <!-- 		            <button> 중복확인 </button><br> -->
 		            
 		            <label id="labelID" for="userPW"> 비밀번호 </label>
@@ -74,5 +76,36 @@
 	        </div>
 	    </div>
 	</div>
+	
+	
+	<script>
+	$('#btnCheck').click(function () {
+			
+	    if ($('#userID').val() != '') {
+	   				
+	        // 아이디를 서버로 전송 > DB 유효성 검사 > 결과 반환받기
+	        $.ajax({
+	   					
+	            type: 'GET',
+	            url: '/project/user/idcheck',
+	            data: 'userID=' + $('#userID').val(),
+	            dataType: 'json',
+	            success: function(result) {
+	                if (result == '0') {
+	                    $('#result').text('사용 가능한 아이디입니다.');
+	                } else {
+	                    $('#result').text('이미 사용중인 아이디입니다.');
+	                }
+	            },
+	            error: function(a, b, c) {
+	                console.log(a, b, c);
+	            }
+	        });
+	    } else {
+	        alert('아이디를 입력하세요.');
+	        $('#userID').focus();
+	    }
+	});
+	</script>
 
 	<%@include file="../include/footer.jsp"%>
