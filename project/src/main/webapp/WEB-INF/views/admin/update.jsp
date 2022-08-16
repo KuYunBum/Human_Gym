@@ -10,7 +10,7 @@
 	<div class="main">
 		<h1>내용 수정</h1>
 		<form role="form" method="post">
-			<table id='customers' border="1" style="width: 500px;">
+			<table id='members' border="1" style="width: 500px;">
 				<tr>
 					<th>회원번호</th>
 				</tr>
@@ -62,8 +62,8 @@
 			</table>
 		</form>
 		<div class="bt_box">
-			<button type="submit" class="bt_save">저장</button>
-			<button type="submit" class="admin_list">목록</button>
+			<button type="submit" id="myBtn1" class="bt_save">저장</button>
+			<button type="submit" id="myBtn1" class="admin_list">목록</button>
 		</div>
 	</div>
 	

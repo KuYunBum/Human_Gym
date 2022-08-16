@@ -34,6 +34,13 @@ public class UserServiceImpl implements UserService{
 		
 		return dao.idCheck(userID);
 	}
+	
+	@Override
+	public int checkId(String userID) throws Exception {
+		UserDAO dao = sqlSession.getMapper(UserDAO.class);
+		
+		return dao.checkId(userID);
+	};
 
 	@Override
 	public List<UserDTO> userList() throws Exception {

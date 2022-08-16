@@ -30,6 +30,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		userID=#{userID}
 </select>
 
+<select id="checkId" parameterType="String" resultType="Integer">
+    select count(*) from users where userID = #{ userID }
+</select>
+
 
 <select id="findAccount" resultType="UserDTO">
 	select
