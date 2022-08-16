@@ -4,32 +4,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-
-	const checkboxes = document.querySelectorAll('input[type="checkbox"]')
-
-	let lastChecked; //keep track of last checked box
-
-function handleCheck(e){
-  let inBetween = false; 
-  if (e.shiftKey === true){
-    checkboxes.forEach(item => {
-       //keep track of in between boxes by toggling inBetween to be true for all boxes in between, and then toggle it back to false after. If you dont understand, go through line by line what happen to each box when click and shift.
-       if (item === this || item === lastChecked){
-         inBetween = !inBetween;
-       }
-       //check every box in between
-       if (inBetween){
-         item.checked = true;
-       }
-    })
-  }
-  
-  lastChecked = this //keep track of last checked box
-}
-
-checkboxes.forEach(item => item.addEventListener('click', handleCheck));
-</script>
 
 <script>
         $(document).ready(function () {
@@ -97,8 +71,10 @@ checkboxes.forEach(item => item.addEventListener('click', handleCheck));
 
 <%@include file="../../include/header.jsp"%>
 <div class="main">
-	<h1>내 루틴 커스텀</h1>
-	<br> <br>
+	<h2 style="
+		font-family: 'Lato', sans-serif;">
+		Input Routine</h2>
+		<br><br>
 	<%@include file="../../include/myPageNav.jsp"%>
 
 	<hr style="width: 1300px; margin: auto;">
@@ -286,7 +262,7 @@ checkboxes.forEach(item => item.addEventListener('click', handleCheck));
 </script>
 		<button id="myBtn1" class="submit">저장</button>
 		<button id="myBtn1" type="button"
-			onclick="location.href='/project/user/routine/routineBox?userNum=${userNum}'">뒤로</button>
+			onclick="location.href='/project/user/routine/routineBox?userNum=${userNum}'">취소</button>
 	</div>
 </div>
 

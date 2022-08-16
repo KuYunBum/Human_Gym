@@ -7,9 +7,10 @@
 <%@include file="../../include/header.jsp"%>
 
 <div class="main">
-	<h1>마이페이지</h1>
-	<br>
-	<br>
+		<h2 style="
+		font-family: 'Lato', sans-serif;">
+		Exercise Record</h2>
+		<br><br>
 
 	<%@include file="../../include/myPageNav.jsp"%>
 
@@ -27,6 +28,7 @@
 
 		<div class="rightContainer">
 			<div class="rcText">
+			<p style="text-align: right;">※ 번호를 누르면 수정가능합니다.</p>
 				<table id='record_tb' border="1">
 					<tr>
 						<td><h4>번호</h4></td>
@@ -35,17 +37,15 @@
 						<td><h4>시작 시간</h4></td>
 						<td><h4>끝난 시간</h4></td>
 					</tr>
-					<c:forEach items="${list}" var="userRecordDTO">
+					<c:forEach items="${list}" var="RecordDTO">
 						<tr>
-							<td>${userRecordDTO.recordNum }</td>
+							<td><a href="/project/user/record/update?userNum=${RecordDTO.userNum}&recordNum=${RecordDTO.recordNum}">
+								${RecordDTO.recordNum }</a></td>
 							<td><fmt:formatDate pattern="yyyy-MM-dd"
-									value="${userRecordDTO.useDate}" /></td>
-							<td><fmt:formatDate pattern="hh:mm:ss"
-									value="${userRecordDTO.totalTime}" /></td>
-							<td><fmt:formatDate pattern="hh:mm:ss"
-									value="${userRecordDTO.startTime}" /></td>
-							<td><fmt:formatDate pattern="hh:mm:ss"
-									value="${userRecordDTO.endTime}" /></td>
+									value="${RecordDTO.useDate}" /></td>
+							<td>${RecordDTO.playTime}</td>
+							<td>${RecordDTO.startHour}시 ${RecordDTO.startMinute}분</td>
+							<td>${RecordDTO.endHour}시 ${RecordDTO.endMinute}분</td>
 						</tr>
 					</c:forEach>
 				</table>
@@ -62,7 +62,6 @@
 
 	<div class="bt_box">
 		<button id="myBtn1" type="submit" class="inbody_insert">입력</button>
-		<button id="myBtn1" type="button" class="inbody_update">수정</button>
 		<button id="myBtn1" onclick="location.href='/project/'">홈</button>
 	</div>
 <%-- data 가져오는지 확인용  	

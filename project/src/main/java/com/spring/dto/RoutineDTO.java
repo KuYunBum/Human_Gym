@@ -3,7 +3,6 @@ package com.spring.dto;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
 public class RoutineDTO {
 	
@@ -48,6 +47,7 @@ public class RoutineDTO {
 	}
 	
 @Override
+
 public String toString() {
 	return "RoutineDTO [routineNum=" + routineNum + ", userNum=" + userNum + ", routineName=" + routineName
 			+ ", routineEx=" + routineEx + "]";

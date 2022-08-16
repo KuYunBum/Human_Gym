@@ -53,12 +53,12 @@
     .routineItem-child {
       border-bottom: 0;
     }
-    input:checked + p {
+    .routineItem input:checked + p {
 /* 	  color:#fff; */
 /*       background: black; */
       text-decoration: line-through;
     }
-    input[type="checkbox"] {
+    .routineItem input[type="checkbox"] {
       margin: 20px;
     }
     #checkP {

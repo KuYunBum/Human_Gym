@@ -5,6 +5,7 @@ import java.util.List;
 import com.spring.dto.BoardDTO;
 import com.spring.dto.ExerciseChartDTO;
 import com.spring.dto.InbodyDTO;
+import com.spring.dto.RecordDTO;
 import com.spring.dto.RoutineDTO;
 import com.spring.dto.UserRecordDTO;
 
@@ -18,13 +19,15 @@ public interface MyPageService {
 	public void inbodyUpdate(InbodyDTO dto) throws Exception;
 	
 	//운동기록
-	public void recordInsert(UserRecordDTO dto) throws Exception;
+	public void recordInsert(RecordDTO dto) throws Exception;
 	
-	public void recordUpdate(UserRecordDTO dto) throws Exception;
+	public void recordUpdate(RecordDTO dto) throws Exception;
 	
 	public void recordDelete(int userNum) throws Exception;
 	
-	public List<UserRecordDTO> recordList(int userNum) throws Exception;
+	public RecordDTO recordDetail(RecordDTO dto) throws Exception;
+	
+	public List<RecordDTO> recordList(int userNum) throws Exception;
 	
 	public List<ExerciseChartDTO> chartData(int userNum) throws Exception;
 	

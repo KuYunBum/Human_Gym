@@ -5,29 +5,30 @@
 
 
 	<%@include file="../include/header.jsp"%>
-	
-	<div class="main">
-		<h1>글 쓰기</h1>
+
+	<div class="ins_page">
+		<h1>✍ &nbsp;글 쓰기</h1>
+		<h2 style align="center">만드는중</h2>
 		<!-- action에 경로가 없으면 현재 페이지 주소로 이동한다.-->
 		<form role="form" method="post">
-			<table id='customers' border="1">
+			<table id="write_main" border="1">
 				<tr>
 					<th>작성자</th>
 				</tr>
 				<tr>
-					<td><input type="text" name="writer" placeholder="내용 입력"	style="width: 100%; height: 30px;"></td>
+					<td><input type="text" name="writer" style="width: 100%" placeholder="내용 입력"	style="width: 100%; height: 30px;"></td>
 				</tr>
 				<tr>
 					<th>제목</th>
 				</tr>
 				<tr>
-					<td><input type="text" name='title' placeholder="내용 입력" style="width: 100%; height: 30px;"></td>
+					<td><input type="text" name='title' style="width: 100%" placeholder="제목을 입력해주세요." style="width: 100%; height: 30px;"></td>
 				</tr>
 				<tr>
 					<th>내용</th>
 				</tr>
 				<tr>
-					<td><textarea name="content" rows="8" style="width: 100%" placeholder="내용 입력"></textarea></td>
+					<td><textarea name="content" rows="15" style="width: 100%" placeholder="내용을 입력해주세요."></textarea></td>
 				</tr>
 			</table>
 		</form>

@@ -7,7 +7,10 @@
 	<%@include file="../../include/header.jsp"%>
 	
 	<div class="main">
-		<h1>마이페이지</h1><br><br>
+		<h2 style="
+		font-family: 'Lato', sans-serif;">
+		Insert Exercise</h2>
+		<br><br>
 		
 		<%@include file="../../include/myPageNav.jsp"%>
 		
@@ -27,6 +30,7 @@
 				
 			<div class="rightContainer" >
 				<div class="rcText" >
+				<p style="text-align: right;">※ 24시를 기준으로 입력해 주세요</p>
 					<table id='record_tb' border="1">
 						<tr>
 							<td><h4>운동 날짜</h4></td>
@@ -36,9 +40,9 @@
 							<tr>
 								<td><input type="date" name='useDate' placeholder="0000-00-00"></td>
 									<%-- <fmt:formatDate pattern="yyyy-MM-dd" value="${userRecordDTO.useDate}"/> --%>
-								<td><input type="datetime" name='startTime'></td>
-								<td><input type="time" name='endTime'></td>
-							</tr>					
+								<td><input type="number" name='startHour'>시<input type="number" name='startMinute'>분</td>
+								<td><input type="number" name='endHour'>시<input type="number" name='endMinute'>분</td>
+							</tr>				
 					</table>
 				</div>
 			</div>

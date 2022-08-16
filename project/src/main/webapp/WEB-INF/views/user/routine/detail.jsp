@@ -8,9 +8,10 @@
 <%@include file="../../include/header.jsp"%>
 
 <div class="main">
-	<h1>내 루틴 커스텀</h1>
-	<br>
-	<br>
+	<h2 style="
+		font-family: 'Lato', sans-serif;">
+		My Routine</h2>
+		<br><br>
 	<%@include file="../../include/myPageNav.jsp"%>
 	<hr style="width: 1300px; margin: auto;">
 
@@ -20,7 +21,7 @@
 				<input type="hidden" name="userNum" value="${routineDTO.userNum }">
 			</form>
 			<table id="customers" style="width: 1000px; color:black;">
-				<tr>
+				<tr class="board_title">
 					<th>Routine Number</th>
 					<th style="width:200px;">Routine Name</th>
 		            <th style="width:700px;">Selected Exercise</th>

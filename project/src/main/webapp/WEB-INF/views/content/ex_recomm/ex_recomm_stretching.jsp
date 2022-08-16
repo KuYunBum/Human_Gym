@@ -11,10 +11,15 @@
 		<div class="ex_content">
 			<div class="ex_content_title">
 				<p>운동 전 스트레칭</p>
-				<button type="button">...</button><br>
+				<button type="button" class="more_bt">...</button><br>
+					<ul class="ex_sub">
+						<li><button id="stretching1">다리 근육 스트레칭</button></li>
+						<li><button id="stretching2">목 주변 근육 스트레칭</button></li>
+						<li><button id="stretching3">트레드밀 러닝</button></li>
+					</ul>
 			</div>
 			<div class="ex_content_p3">
-				<video muted autoplay loop>
+				<video id='myVideo'>
 					<source src="/project/resources/videos/test1.mp4" type="video/mp4">
 				</video>
 			</div>
@@ -26,9 +31,12 @@
 				</table>
 			</div>
 			<div class="ex_content_p5">
-				<img src="/project/resources/image/ex/skip_button.jpg">
-				<img src="/project/resources/image/ex/play_button.jpg">
-				<a href="/project/content/ex_recomm/ex_recomm4"><img src="/project/resources/image/ex/skip2_button.jpg"></a>
+				<a href="/project/content/ex_recomm/ex_recomm_simple1?userNum=${userNum }">
+				<img src="/project/resources/image/ex/skip_button.jpg"></a>
+				<img src="/project/resources/image/ex/play_button.jpg" id="videoPlay">
+				<img src="/project/resources/image/ex/pause_button.jpg" id="videoStop">
+				<a href="/project/content/ex_recomm/ex_recomm_detail1?userNum=${userNum }">
+					<img src="/project/resources/image/ex/skip2_button.jpg"></a>
 			</div>
 		</div>
 	</div>

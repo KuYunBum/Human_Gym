@@ -20,6 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.spring.dto.BoardDTO;
 import com.spring.dto.ExerciseChartDTO;
 import com.spring.dto.InbodyDTO;
+import com.spring.dto.RecordDTO;
 import com.spring.dto.RoutineDTO;
 import com.spring.dto.UserDTO;
 import com.spring.dto.UserRecordDTO;
@@ -146,14 +147,8 @@ public class MyPageController {
 	public void routineUpdateGET(RoutineDTO dto, int routineNum, Model model) throws Exception {
 		
 		String rnroutineEx = ms.routineDetail(routineNum).getRoutineEx();
-		String ww[] = rnroutineEx.split(",");
-		List<String> newList = new ArrayList<String>();
-		for(String st : ww) {
-			newList.add(st);
-		}
-		System.out.println(newList);
 		
-		model.addAttribute("newList",newList);
+		model.addAttribute("newList",rnroutineEx);
 		model.addAttribute("list", ms.routineDetail(routineNum));
 	}
 
@@ -224,7 +219,7 @@ public class MyPageController {
 		}
 //		model.addAttribute("chartData", list);
 
-		System.out.println(ms.chartData(userNum));
+//		System.out.println(ms.chartData(userNum));
 	}
 	
 	@RequestMapping(value = "/record/insert", method = RequestMethod.GET)
@@ -234,13 +229,38 @@ public class MyPageController {
 	}
 
 	@RequestMapping(value = "/record/insert", method = RequestMethod.POST)
-	public String recordInsertPOST(UserRecordDTO dto) throws Exception {
-		
-		System.out.println(ms.recordList(dto.getUserNum()));
-		
+	public String recordInsertPOST(RecordDTO dto) throws Exception {
 		
 		ms.recordInsert(dto);
 
+		return "redirect:/user/record/record?userNum=" + dto.getUserNum();
+	}
+	
+	@RequestMapping(value = "/record/update", method = RequestMethod.GET)
+	public void recordUpdateGET(int userNum, int recordNum, Model model) throws Exception {
+
+		RecordDTO getDTO = new RecordDTO();
+		getDTO.setRecordNum(recordNum);
+		getDTO.setUserNum(userNum);
+		System.out.println(getDTO);
+//		RecordDTO aaa = ms.recordDetail(getDTO);
+//		System.out.println(aaa);
+		model.addAttribute(ms.recordDetail(getDTO));
+		
+	}
+
+	@RequestMapping(value = "/record/update", method = RequestMethod.POST)
+	public String recordUpdatePOST(RecordDTO dto, RedirectAttributes rttr) throws Exception {
+//		System.out.println(dto.getUserNum());
+//		System.out.println(dto.getRecordNum());
+//		System.out.println(dto.getStartHour());
+//		System.out.println(dto.getStartMinute());
+//		System.out.println(dto.getEndHour());
+//		System.out.println(dto.getEndMinute());
+		
+		
+		ms.recordUpdate(dto);
+		rttr.addFlashAttribute("msg", "success");
 		return "redirect:/user/record/record?userNum=" + dto.getUserNum();
 	}
 

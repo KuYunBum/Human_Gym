@@ -7,7 +7,10 @@
 	<%@include file="../../include/header.jsp"%>
 	
 	<div class="main">
-		<h1>인바디 입력</h1><br><br>
+		<h2 style="
+		font-family: 'Lato', sans-serif;">
+		Input Inbody</h2>
+		<br><br>
 		
 		<%@include file="../../include/myPageNav.jsp"%>
 	
@@ -23,11 +26,11 @@
 				</div>
 			</div>
 					
-			<div class="heightLine" ></div>
-				
+		<div class="heightLine" ></div>
 			<div class="rightContainer" >
 				<div class="rcText" >
-									
+				<h4 style="margin-left: 150px;">* 최초 1회만 입력하세요.</h4>
+				<br>
 					<div class="ab3p">
 						<div class="ab3q"><h4>성별</h4></div>
 						<input class="ab3t" type="text" name='userGender' value="${userDTO.userGender}">
@@ -89,13 +92,12 @@
 				</div>
 			</div>
 		</div>
-		
 		</form>
 			<hr style="width: 1300px; margin:auto;"><br>
 			
 		<div class="bt_box">
 			<button id="myBtn1" type="submit" class="bt_save">저장</button>
-			<button id="myBtn1" type="button" onclick="location.href='/project/user/inbody/detail?userNum=${userNum}'">뒤로</button>
+			<button id="myBtn1" type="button" onclick="location.href='/project/user/inbody/detail?userNum=${userNum}'">취소</button>
 		</div>
 	</div>
 	
