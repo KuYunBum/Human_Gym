@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@include file="../include/header.jsp"%>
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
 
 </style>
@@ -226,28 +226,31 @@ function getPageList(page){
 		</div>
 		<div class=widthLine2></div>
 		<div class=reply_page>
-			<fieldset>
-				<legend>Reply</legend>
+			
+				<legend>✍ 회원님의 의견을 달아주세요 !</legend>
 				<div class=rep_box>
 			<%
 				if(session.getAttribute("user")!=null){
 			%>
 					<div>
-						작성자 <input type='text' name='replyer' id='replyer'>
+						<span class="material-icons" style=font-size:30px;>account_circle</span> <input type='text' name='replyer' id='replyer' placeholder='작성자를 입력해주세요.' style=width:310px;height:30px;>
 					</div>
 					<div>
-						내용  &nbsp;&nbsp;&nbsp;<input type='text' name="replytext" id='replytext'>
+						<span class="material-icons" style=font-size:30px;>article</span><input type='text' name="replytext" id='replytext' placeholder='댓글 내용을 입력해주세요.(길게 쓰지마세요.)' style=width:300px;height:80px;margin-top:40px;padding:5px;>
 					</div><br>
-					<button id="replyAddBtn">확인</button>
+					<button id="replyAddBtn"><i>Commit</i></button>
 			<%
 				}
 			%>
 				</div>
-			<div class="reply_box">
-				<ul id="replies"></ul>
-			</div>
+			<fieldset style=width:60%;>
+					<legend> Comments </legend>
+					<div class="reply_box">
+						<ul id="replies"></ul>
+					</div>
+				</fieldset>
 			<div class="pagination"></div>
-			</fieldset>
+			
 		</div>
 	</div>
 		

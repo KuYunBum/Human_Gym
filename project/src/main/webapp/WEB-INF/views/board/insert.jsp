@@ -22,7 +22,7 @@
 					<th>제목</th>
 				</tr>
 				<tr>
-					<td><input type="text" name='title' style="width: 100%" placeholder="제목을 입력해주세요." style="width: 100%; height: 30px;"></td>
+					<td><input type="text" name='title' style="width: 100%" placeholder="제목을 입력해주세요."></td>
 				</tr>
 				<tr>
 					<th>내용</th>
