@@ -147,14 +147,8 @@ public class MyPageController {
 	public void routineUpdateGET(RoutineDTO dto, int routineNum, Model model) throws Exception {
 		
 		String rnroutineEx = ms.routineDetail(routineNum).getRoutineEx();
-		String ww[] = rnroutineEx.split(",");
-		List<String> newList = new ArrayList<String>();
-		for(String st : ww) {
-			newList.add(st);
-		}
-		System.out.println(newList);
 		
-		model.addAttribute("newList",newList);
+		model.addAttribute("newList",rnroutineEx);
 		model.addAttribute("list", ms.routineDetail(routineNum));
 	}
 

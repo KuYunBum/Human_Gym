@@ -10,13 +10,13 @@
         </p>
 
 
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     </div>
     <!-- 맨 위로 버튼 -->
     <div class="topBtn">
-        <a href="#">
-            <button class="btn">TOP</button>
+        <a href="#" >
+            <button class="btn1"><span class="topBottom">Back to Top &#8593;</span></button>
         </a>
     </div>
 

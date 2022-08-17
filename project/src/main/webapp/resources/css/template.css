@@ -25,7 +25,7 @@
 }
 
 .center-text_M{
-	margin-top: 100px;
+	margin-top: 1000px;
     width: 1300px;
 }
 
@@ -55,7 +55,7 @@
 
 .ct2{
     display: flex;
-    margin-top: 50px;
+    margin-top: 100px;
     width: auto;
     height: 300px;
 }
@@ -71,6 +71,18 @@
 .ct2-text span{
     color: black;
 }
+.ct3-text{
+    width: 400px;
+}
+.ct3-text li{
+    color:#fff;
+    list-style: none;
+    font-size: 18px;
+    margin: 8px 0;
+    text-align:left;
+    padding-left: 35px;
+}
+
 .ct ul{
      margin-top: 50px;
     display: flex;
@@ -110,6 +122,7 @@
 }
 
 .media_content {
+	text-align: center;
 	margin: auto;
 	display: flex;
 	width: 1300px;
@@ -125,21 +138,34 @@
 /* 	border: 0.5px solid; */
 	margin:10px;
 }
-.re_contetn{
+.re_content{
 	margin: auto;
 	margin-top: 40px;
 	width: 1000px;
 	height: 400px;
 }
+.reviewContent{
+	display:flex;
+	width: 500px;
+	height: 100%;
+	margin-bottom: 20px;
+}
+.reviewImg{
+	width: 400px;
+	height: 100%;
+	margin-bottom: 20px;
+	margin: 0 50px;
+}
+
 .media_content2{
 	margin: auto;
 	display: flex;
-	width: 1000px;
+	width: 950px;
 	height: 200px;
 }
 .content_m_right2,
 .content_m_left2 {
-	width:500px;
+	width:480px;
 	height:45%;
 	margin:10px;
 	margin-top: 0px;
@@ -255,7 +281,8 @@ img {
   margin-right: auto;
   margin-left: auto;
 }
-@media (min-width: 768px) {
+
+@media (min-width: 368px) {
   .container {
     width: 750px;
   }
@@ -268,7 +295,7 @@ img {
 @media (min-width: 1200px) {
   .container {
     width: 100%;
-  }
+  
 }
 .container-fluid {
   padding-right: 15px;
@@ -1413,6 +1440,12 @@ img {
     display: flex;
     text-align: center;
 }
+.myPageNav2_1 {
+    margin: auto;
+    width: 1300px;
+    display: flex;
+    text-align: center;
+}
 .myPageNav3 {
     margin: auto;
     width: 1300px;
@@ -1492,7 +1525,7 @@ img {
 .ab3t{
 	width: 30%;
 	height: 28px;
-	border: 1px solid gray;
+	border: 1px solid #b4b4b4;
 	text-align: center;
 }
 
@@ -2111,3 +2144,93 @@ img {
             transform: translateZ(0);
         }
     }
+    
+    /* 중간에 사진 3장 들어가는 부분 */
+.pic3{
+    width: 400px;
+    height: 700px;
+    background-image: url(/project/resources/image/main_1.jpg)
+
+}
+.pic3_22{
+    width: 400px;
+    height: 700px;
+    background-image: url(/project/resources/image/main_2_3.jpg)
+}
+.pic3_3_3{
+    width: 400px;
+    height: 700px;
+    background-image: url(/project/resources/image/main_3_1.jpg)
+}
+
+.pic3:hover{
+    transform: scale(1.07);
+    transform-origin:center;
+    transition: all 1s;
+/* 	background:#4bedd0; */
+}
+.pic3_22:hover{
+    transform: scale(1.07);
+    transform-origin:center;
+    transition: all 1s;
+/* 	background:#ffc500; */
+}
+.pic3_3_3:hover{
+    transform: scale(1.07);
+    transform-origin:center;
+    transition: all 1s;
+/* 	background:#301748; */
+}
+
+
+
+.pic3_3_3 >p111{
+    color: white;
+    display: flex;
+    padding-left: 120px;
+    text-align: center;
+    padding-top: 70px;
+    font-size: 30px;
+}
+.p3_3tt{
+    color: white;
+    display: flex;
+    padding-left: 30px;
+    padding-top: 80px;
+    font-size: 20px;
+}
+.pic3_22 > p11{
+
+    color: black;
+    display: flex;
+    padding-left: 120px;
+    text-align: center;
+    padding-top: 70px;
+    font-size: 30px;
+}
+.p3_2t{
+
+    color: black;
+    display: flex;
+    padding-left: 30px;
+    padding-top: 80px;
+    font-size: 20px;
+}
+
+
+.pic3 > p1{
+    color: white;
+    display: flex;
+    padding-left: 120px;
+    text-align: center;
+    padding-top: 70px;
+    font-size: 30px;
+}
+.p2_t{
+    color: white;
+    display: flex;
+    padding-left: 30px;
+    padding-top: 80px;
+    font-size: 20px;
+}
+/* 중간에 사진 3장 들어가는 부분 */

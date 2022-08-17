@@ -10,10 +10,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/project/resources/css/include_template.css">
 <link rel="stylesheet" href="/project/resources/css/template.css" />
 <link rel="stylesheet" href="/project/resources/css/slidenav.css" />
 <link rel="stylesheet" href="/project/resources/css/myBtn1.css" />
+<link rel="stylesheet" href="/project/resources/css/myPageTest.css" />
 <!-- <link rel="stylesheet" href="/project/resources/css/bootstrap.css"> -->
 <script src="/project/resources/js/bootstrap.js"></script>
 <script>

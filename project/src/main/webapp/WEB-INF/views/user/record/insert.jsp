@@ -7,7 +7,10 @@
 	<%@include file="../../include/header.jsp"%>
 	
 	<div class="main">
-		<h1>마이페이지</h1><br><br>
+		<h2 style="
+		font-family: 'Lato', sans-serif;">
+		Insert Exercise</h2>
+		<br><br>
 		
 		<%@include file="../../include/myPageNav.jsp"%>
 		

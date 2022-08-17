@@ -8,14 +8,17 @@
 	<%@include file="../../include/header.jsp"%>
 	
 	<div class="main">
-		<h1>인바디 수정</h1><br><br>
+		<h2 style="
+		font-family: 'Lato', sans-serif;">
+		Modify Inbody</h2>
+		<br><br>
 		
 		<%@include file="../../include/myPageNav.jsp"%>
 		
 		<hr style="width: 1300px; margin:auto;">
 		
 		<form role="form" method="post">
-			<div class="myPageNav2">
+			<div class="myPageNav2_1">
 				<div class="leftContainer" >
 					<h3>프로필 사진</h3>
 					<div class="profillePhoto">

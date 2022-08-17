@@ -116,35 +116,36 @@ public class MyPageServiceImpl implements MyPageService{
 //		return dao.listCount(pm);
 //	}
 
-//	루틴
-	@Override
-	public List<RoutineDTO> routineList(int userNum) throws Exception {
-		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
-		List<RoutineDTO> dtos = dao.routineList(userNum);
-		return dtos;
-	}
-	
-	@Override
-	public void routineInsert(RoutineDTO dto) throws Exception {
-		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
-		dao.routineInsert(dto);
-	}
-	@Override
-	public void routineDelete(int routineNum) throws Exception{
-		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
-		dao.routineDelete(routineNum);
-	}
-		
-	@Override
-	public void routineUpdate(RoutineDTO dto) throws Exception {
-		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
-		dao.routineUpdate(dto);
-	}
-	
-	@Override
-	public RoutineDTO routineDetail(int routineNum) throws Exception {
-		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
-		RoutineDTO dto = dao.routineDetail(routineNum);
-		return dto;
-	}
+//  루틴
+  @Override
+  public List<RoutineDTO> routineList(int userNum) throws Exception {
+     MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+     List<RoutineDTO> dtos = dao.routineList(userNum);
+     return dtos;
+  }
+  
+  @Override
+  public void routineInsert(RoutineDTO dto) throws Exception {
+     MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+     dao.routineInsert(dto);
+  }
+  
+  @Override
+  public void routineDelete(int routineNum) throws Exception{
+     MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+     dao.routineDelete(routineNum);
+  }
+     
+  @Override
+  public void routineUpdate(RoutineDTO dto) throws Exception {
+     MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+     dao.routineUpdate(dto);
+  }
+  
+  @Override
+  public RoutineDTO routineDetail(int routineNum) throws Exception {
+     MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+     RoutineDTO dto = dao.routineDetail(routineNum);
+     return dto;
+  }
 }

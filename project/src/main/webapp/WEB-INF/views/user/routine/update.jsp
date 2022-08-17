@@ -4,104 +4,92 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <script>
-var list = '${list}';
-
-const checkboxes = document.querySelectorAll('input[type="checkbox"]')
-
-let lastChecked;
-function handleCheck(e){
-  let inBetween = false; 
-  if (e.shiftKey === true){
-    checkboxes.forEach(item => {
-     if (item === this || item === lastChecked){
-         inBetween = !inBetween;
-       }
-       if (inBetween){
-         item.checked = true;
-       }
-    })
-  }
-  
-lastChecked = this
-}
-
-checkboxes.forEach(item => item.addEventListener('click', handleCheck));
+	$(document).ready(function() {
+		var rn = "${newList}";
+		rn = rn.split(",");
+		
+		var num = document.getElementsByTagName("input").length;
+		for (var i = 0; i < rn.length; i++) {
+			var targetrn = rn[i];
+			for (var j = 0; j < num; j++) {
+				var checkTarget = document.getElementsByTagName("input")[j].value;
+				if (checkTarget == targetrn) {
+					document.getElementsByTagName("input")[j].checked = true;
+				}
+			}
+		}
+		if ($("#cheast").click(function() {
+		})) {
+			$("#inputCheast").show();
+			$("#inputShoulder").hide();
+			$("#inputArm").hide();
+			$("#inputBack").hide();
+			$("#inputLeg").hide();
+			$("#inputAbs").hide();
+		}
+		$("#cheast").click(function() {
+			$("#inputCheast").show();
+			$("#inputShoulder").hide();
+			$("#inputArm").hide();
+			$("#inputBack").hide();
+			$("#inputLeg").hide();
+			$("#inputAbs").hide();
+		});
+		$("#shoulder").click(function() {
+			$("#inputShoulder").show();
+			$("#inputCheast").hide();
+			$("#inputArm").hide();
+			$("#inputBack").hide();
+			$("#inputLeg").hide();
+			$("#inputAbs").hide();
+		});
+		$("#back").click(function() {
+			$("#inputBack").show();
+			$("#inputCheast").hide();
+			$("#inputShoulder").hide();
+			$("#inputArm").hide();
+			$("#inputLeg").hide();
+			$("#inputAbs").hide();
+		});
+		$("#arm").click(function() {
+			$("#inputArm").show();
+			$("#inputCheast").hide();
+			$("#inputShoulder").hide();
+			$("#inputBack").hide();
+			$("#inputLeg").hide();
+			$("#inputAbs").hide();
+		});
+		$("#leg").click(function() {
+			$("#inputLeg").show();
+			$("#inputCheast").hide();
+			$("#inputShoulder").hide();
+			$("#inputArm").hide();
+			$("#inputBack").hide();
+			$("#inputAbs").hide();
+		});
+		$("#abs").click(function() {
+			$("#inputAbs").show();
+			$("#inputLeg").hide();
+			$("#inputCheast").hide();
+			$("#inputShoulder").hide();
+			$("#inputArm").hide();
+			$("#inputBack").hide();
+		});
+	});
 </script>
-
-<script>
-        $(document).ready(function () {
-            if ($("#cheast").click(function () {
-            })) {
-                $("#inputCheast").show();
-                $("#inputShoulder").hide();
-                $("#inputArm").hide();
-                $("#inputBack").hide();
-                $("#inputLeg").hide();
-                $("#inputAbs").hide();
-            }
-            $("#cheast").click(function () {
-                $("#inputCheast").show();
-                $("#inputShoulder").hide();
-                $("#inputArm").hide();
-                $("#inputBack").hide();
-                $("#inputLeg").hide();
-                $("#inputAbs").hide();
-            });
-            $("#shoulder").click(function () {
-                $("#inputShoulder").show();
-                $("#inputCheast").hide();
-                $("#inputArm").hide();
-                $("#inputBack").hide();
-                $("#inputLeg").hide();
-                $("#inputAbs").hide();
-            });
-            $("#back").click(function () {
-                $("#inputBack").show();
-                $("#inputCheast").hide();
-                $("#inputShoulder").hide();
-                $("#inputArm").hide();
-                $("#inputLeg").hide();
-                $("#inputAbs").hide();
-            });
-            $("#arm").click(function () {
-                $("#inputArm").show();
-                $("#inputCheast").hide();
-                $("#inputShoulder").hide();
-                $("#inputBack").hide();
-                $("#inputLeg").hide();
-                $("#inputAbs").hide();
-            });
-            $("#leg").click(function () {
-                $("#inputLeg").show();
-                $("#inputCheast").hide();
-                $("#inputShoulder").hide();
-                $("#inputArm").hide();
-                $("#inputBack").hide();
-                $("#inputAbs").hide();
-            });
-            $("#abs").click(function () {
-            	$("#inputAbs").show();
-                $("#inputLeg").hide();
-                $("#inputCheast").hide();
-                $("#inputShoulder").hide();
-                $("#inputArm").hide();
-                $("#inputBack").hide();
-            });
-        });
-    </script>
 
 <%@include file="../../include/header.jsp"%>
 <div class="main">
-	<h1>내 루틴 커스텀</h1>
-	<br>
-	<br>
+	<h2 style="font-family: 'Lato', sans-serif;">Modify Routine</h2>
+	<br> <br>
 	<%@include file="../../include/myPageNav.jsp"%>
 
 	<hr style="width: 1300px; margin: auto;">
 
 
-	<form role="form" method="post" style="height:500px">
+	<form role="form" method="post" style="height: 500px">
 		<input type="hidden" name="userNum" value="${list.userNum }">
 
 		<div class="myPageNav2">
@@ -126,11 +114,11 @@ checkboxes.forEach(item => item.addEventListener('click', handleCheck));
 					<ul id="inputCheast">
 						<div class="routineItem">
 							<input type="checkbox" name="routineEx" value="벤치 프레스">
-							<p  id="checkP">벤치 프레스</p>
+							<p id="checkP">벤치 프레스</p>
 						</div>
 						<div class="routineItem">
 							<input type="checkbox" name="routineEx" value="덤벨 프레스">
-							<p  id="checkP">덤벨 프레스</p>
+							<p id="checkP">덤벨 프레스</p>
 						</div>
 						<div class="routineItem">
 							<input type="checkbox" name="routineEx" value="인클라인 벤치 프레스">
@@ -152,7 +140,7 @@ checkboxes.forEach(item => item.addEventListener('click', handleCheck));
 							<p id="checkP">밀리터리 프레스</p>
 						</div>
 						<div class="routineItem">
-							<input type="checkbox" name="routineEx" value="덤벨 프레스">
+							<input type="checkbox" name="routineEx" value="숄더 덤벨 프레스">
 							<p id="checkP">덤벨 프레스</p>
 						</div>
 						<div class="routineItem">
@@ -260,20 +248,19 @@ checkboxes.forEach(item => item.addEventListener('click', handleCheck));
 							<p id="checkP">레그 레이즈</p>
 						</div>
 					</ul>
-					<br>
-					<br> Routine Name : <input class="ab3t" type="text"
+					<br> <br> Routine Name : <input class="ab3t" type="text"
 						name='routineName' value="${list.routineName}">
 				</div>
-				${newList }
 			</div>
 		</div>
 	</form>
 
-	<hr style="width: 1300px; margin: auto;"><br>
+	<hr style="width: 1300px; margin: auto;">
+	<br>
 	<div class="bt_box">
 		<button id="myBtn1" type="submit" class="bt_save">저장</button>
 		<button id="myBtn1" type="button"
-			onclick="location.href='/project/user/routine/routineBox?userNum=${userNum}'">뒤로</button>
+			onclick="location.href='/project/user/routine/routineBox?userNum=${userNum}'">취소</button>
 	</div>
 </div>
 
