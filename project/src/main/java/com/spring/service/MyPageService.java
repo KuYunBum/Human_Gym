@@ -7,7 +7,6 @@ import com.spring.dto.ExerciseChartDTO;
 import com.spring.dto.InbodyDTO;
 import com.spring.dto.RecordDTO;
 import com.spring.dto.RoutineDTO;
-import com.spring.dto.UserRecordDTO;
 
 public interface MyPageService {
 	

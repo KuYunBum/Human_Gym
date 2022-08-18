@@ -104,7 +104,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>	
 
 
-<select id="listCriteria" resultType="com.spring.dto.UserRecordDTO">
+<!-- <select id="listCriteria" resultType="com.spring.dto.UserRecordDTO">
 	<![CDATA[select recordNum, userNum, startTime, endTime, totalTime, useDate
 			 from (select rownum rn, a.*
    				 from (
@@ -113,14 +113,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			        where 1=1]]> 
 	<![CDATA[order by recordNum desc) a where rownum <= #{page}*(#{perPageNum})) b
     		 where rn>(#{page}-1)*#{perPageNum}]]> 
-</select>
+</select> -->
 
 	<select id="listCount" resultType="int">
 	<![CDATA[
 	select 
 	  count(recordNum) 
 	from 
-	  userrecord
+	 record
 	where 
 	  userNum =#{userNum} 
 	]]>
