@@ -10,7 +10,7 @@
 	<div class="main">
 		<h1>내용 수정</h1>
 		<form role="form" method="post">
-			<table id='customers' border="1">
+			<table id='update_main' border="1">
 				<tr>
 					<th>번호</th>
 				</tr>
@@ -27,13 +27,13 @@
 					<th>제목</th>
 				</tr>
 				<tr>
-					<td><input type="text" name='title'  style="width:100%" value="${boardDTO.title}"></td>
+					<td><input type="text" name='title'  style="width:700px;" value="${boardDTO.title}"></td>
 				</tr>
 				<tr>
 					<th>내용</th>
 				</tr>
 				<tr>
-					<td><textarea  style="width:100%" name="content" rows="3">${boardDTO.content}</textarea></td>
+					<td><textarea  style="text-align:center;font-size:30px;width:700px; height:400px; name="content" rows="3">${boardDTO.content}</textarea></td>
 				</tr>
 			</table>
 		</form>

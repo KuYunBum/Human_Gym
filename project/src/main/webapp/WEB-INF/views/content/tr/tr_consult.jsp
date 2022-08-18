@@ -17,19 +17,19 @@
 							<th>작성자</th>
 						</tr>
 						<tr>
-							<td><input type="text" name="writer" placeholder="내용 입력"	style="width: 100%; height: 30px;"></td>
+							<td><input type="text" name="writer" placeholder="내용 입력"	style="width:700px;"></td>
 						</tr>
 						<tr>
 							<th>제목</th>
 						</tr>
 						<tr>
-							<td><input type="text" name='title' placeholder="내용 입력" style="width: 100%; height: 30px;"></td>
+							<td><input type="text" name='title' placeholder="내용 입력" style="width:700px;"></td>
 						</tr>
 						<tr>
 							<th>내용</th>
 						</tr>
 						<tr>
-							<td><textarea name="content" rows="8" style="width: 100%" placeholder="상담할 내용을 입력해주세요."></textarea></td>
+							<td><textarea name="content" rows="8" style="text-align:center;font-size:30px;width:700px; height:400px;" placeholder="상담할 내용을 입력해주세요."></textarea></td>
 						</tr>
 					</table>
 					<input type="button" class="bt_save" value="commit"><!-- 누르면 게시판 글 작성 -->
