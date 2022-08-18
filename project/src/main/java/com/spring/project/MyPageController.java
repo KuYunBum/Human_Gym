@@ -231,13 +231,13 @@ public class MyPageController {
 	}
 
 	@RequestMapping(value = "/record/insert", method = RequestMethod.POST)
-	public String recordInsertPOST(RecordDTO dto,ExerciseChartDTO chartdto, String exname) throws Exception {
+	public String recordInsertPOST(RecordDTO dto,ExerciseChartDTO chartdto, String exName) throws Exception {
 //		System.out.println("post 들어옴");
 		
-		ExerciseChartDTO getExID = ms.exidSelect(exname);
-		int exid=(getExID.getExid());
+		ExerciseChartDTO getExID = ms.exidSelect(exName);
+		int exid=(getExID.getExId());
 //		System.out.println(exid);
-		chartdto.setExid(exid); 
+		chartdto.setExId(exid); 
 		
 //		System.out.println(chartdto);
 		ms.recordInsert(dto);
@@ -247,28 +247,28 @@ public class MyPageController {
 	}
 	
 	@RequestMapping(value = "/record/update", method = RequestMethod.GET)
-	public void recordUpdateGET(int userNum, int recordNum, Model model) throws Exception {
+	public void recordUpdateGET(int userNum, int recordNum, ExerciseChartDTO chartdto, Model model) throws Exception {
 
 		RecordDTO getDTO = new RecordDTO();
 		getDTO.setRecordNum(recordNum);
 		getDTO.setUserNum(userNum);
-//		System.out.println(getDTO);
+		System.out.println(getDTO);
 //		RecordDTO aaa = ms.recordDetail(getDTO);
 //		System.out.println(aaa);
 		model.addAttribute(ms.recordDetail(getDTO));
-		
-		model.addAttribute(ms.chartData(userNum));
+		System.out.println(chartdto);
+		model.addAttribute(ms.exNameCount(chartdto));
 		
 	}
 
 	@RequestMapping(value = "/record/update", method = RequestMethod.POST)
-	public String recordUpdatePOST(RecordDTO dto, ExerciseChartDTO chartdto, String exname, int recordNum, RedirectAttributes rttr) throws Exception {
+	public String recordUpdatePOST(RecordDTO dto, ExerciseChartDTO chartdto, String exName, int recordNum, RedirectAttributes rttr) throws Exception {
 //		System.out.println(exname);
-		ExerciseChartDTO getExID = (ms.exidSelect(exname));
-		int exid = getExID.getExid();
+		ExerciseChartDTO getExID = (ms.exidSelect(exName));
+		int exid = getExID.getExId();
 //		System.out.println(exid);
-		chartdto.setExid(exid);
-//		System.out.println(chartdto);
+		chartdto.setExId(exid);
+		System.out.println(chartdto);
 //		System.out.println(recordNum);
 		
 		

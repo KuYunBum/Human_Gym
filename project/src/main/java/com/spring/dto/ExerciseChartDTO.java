@@ -10,8 +10,8 @@ public class ExerciseChartDTO {
 	private int setCount;
 	private String expart;
 	private String expartCode;
-	private int exid;
-	private String exname;
+	private int exId;
+	private String exName;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date useDate;
 	private int recordNum;
@@ -32,20 +32,20 @@ public class ExerciseChartDTO {
 		this.useDate = useDate;
 	}
 
-	public int getExid() {
-		return exid;
+	public int getExId() {
+		return exId;
 	}
 
-	public void setExid(int exid) {
-		this.exid = exid;
+	public void setExId(int exId) {
+		this.exId = exId;
 	}
 
-	public String getExname() {
-		return exname;
+	public String getexName() {
+		return exName;
 	}
 
-	public void setExname(String exname) {
-		this.exname = exname;
+	public void setexName(String exName) {
+		this.exName = exName;
 	}
 
 	public int getUserNum() {
@@ -83,7 +83,7 @@ public class ExerciseChartDTO {
 	@Override
 	public String toString() {
 		return "ExerciseChartDTO [userNum=" + userNum + ", setCount=" + setCount + ", expart=" + expart
-				+ ", expartCode=" + expartCode + ", exid=" + exid + ", exname=" + exname + ", useDate=" + useDate
+				+ ", expartCode=" + expartCode + ", exId=" + exId + ", exName=" + exName + ", useDate=" + useDate
 				+ ", recordNum=" + recordNum + "]";
 	}	
 	

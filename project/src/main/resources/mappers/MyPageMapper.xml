@@ -162,23 +162,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	group by AA.USERNUM, AA.SETCOUNT, AA.EXPART
 </select>
 
+<!-- 운동이름과 세트횟수 읽기 -->
+<select id="exNameCount"  resultType="com.spring.dto.ExerciseChartDTO">
+	select * from userEX 
+	where userNum = ${userNum}
+ </select>
+
 <insert id="chartInsert" >
 		insert into
-		userEX ( userNum, exDate, exid , exname, setCount,recordNum)
-		values (#{userNum}, #{useDate}, #{exid}, #{exname}, #{setCount},#{recordNum})
+		userEX ( userNum, exDate, exId , exName, setCount,recordNum)
+		values (#{userNum}, #{useDate}, #{exId}, #{exName}, #{setCount},seq_record.nextval-1)
 </insert>
 
 <update id="chartUpdate">
 	update 
 		userEx 
 	set 
-		exid= #{exid}, exname = #{exname}, setCount = #{setCount}
+		exId= #{exId}, exName = #{exName}, setCount = #{setCount}
 	where 
 		userNum = #{userNum} and recordNum=#{recordNum}
 </update>
 
 <select id="exidSelect" resultType="com.spring.dto.ExerciseChartDTO">
-		select exid from exercise where exname=#{exname}
+		select exId from exercise where exName=#{exName}
 </select>
 
 <select id="routineList" resultType="routineDTO">
