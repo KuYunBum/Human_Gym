@@ -23,7 +23,6 @@ import com.spring.dto.InbodyDTO;
 import com.spring.dto.RecordDTO;
 import com.spring.dto.RoutineDTO;
 import com.spring.dto.UserDTO;
-import com.spring.dto.UserRecordDTO;
 import com.spring.service.BoardService;
 import com.spring.service.MyPageService;
 import com.spring.service.UserService;
