@@ -174,6 +174,7 @@ function getPageList(page){
 		<form role="form" method="post">
 			<input type='hidden' name='bno' value="${boardDTO.bno}">
 		</form>
+		<form action=""></form>
 			<table id='detail_main' border="1">
 				<tr>
 					<th>번호</th>
@@ -197,7 +198,7 @@ function getPageList(page){
 					<th>내용</th>
 				</tr>
 				<tr>
-					<td><textarea readonly="readonly"> ${boardDTO.content}</textarea></td>
+					<td><textarea readonly="readonly" style="text-align:center;font-size:30px;width:700px; height:400px;"> ${boardDTO.content}</textarea></td>
 				</tr>
 			</table>
 		<div class="bt_box">
@@ -228,6 +229,13 @@ function getPageList(page){
 		<div class=reply_page>
 			
 				<legend>✍ 회원님의 의견을 달아주세요 !</legend>
+			<%
+				if(session.getAttribute("user")==null){
+			%>
+				<p style="color:gray; text-align:center;">회원님만 작성이 가능합니다.</p>
+			<%
+				}
+			%>
 				<div class=rep_box>
 			<%
 				if(session.getAttribute("user")!=null){

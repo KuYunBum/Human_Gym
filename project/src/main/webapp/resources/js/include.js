@@ -7,6 +7,9 @@
 		$(".bt_save").on("click", function() {
 			formObj.submit();
 		});
+		$(".bt_save1").on("click", function() {
+			formObj.submit();
+		});
 		
 		$(".board_list").on("click", function(){
 			self.location = "/project/board/list";
@@ -101,3 +104,4 @@
 		        });
 	          });
 	        });
+
