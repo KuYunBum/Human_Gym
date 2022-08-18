@@ -51,6 +51,18 @@
     	$('.more_bt').on("click", function(){
     		$('.ex_sub').slideToggle();
     	});
+    	
+    	$('.ex_sub2').hide();
+
+    	$('.more_bt2').on("click", function(){
+    		$('.ex_sub2').slideToggle();
+    	});
+    	
+    	$('.ex_sub3').hide();
+
+    	$('.more_bt3').on("click", function(){
+    		$('.ex_sub3').slideToggle();
+    	});
         
     	//ex 비디오 start / stop
     	var video = document.getElementById("myVideo");
