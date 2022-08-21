@@ -25,6 +25,7 @@
 								<h1>누적 다운로드 1위👏</h1>
 								<h1>사용자 만족도 1위👏</h1>
 								<br>
+
 								<h3>
 									<span>감사합니다!!</span>
 								</h3>
@@ -49,6 +50,7 @@
 							<ul style="margin-top: 100px;">
 								<h1>한단계 한단계📈</h1>
 								<br>
+
 								<h3>
 									<span>처음부터 잘할수는 없죠!</span>
 								</h3>
@@ -122,172 +124,242 @@
 	</div>
 </div>
 
-
-<div class="main2">
-	<div class="center_content">
-		<div class="center-text">
-			<h1>You must be healthy.</h1>
-			<br> <br>
-			<p style="font-size: 18px;">
-				당신에게 딱 맞는 운동<br> 지금 바로 경험해보세요🤩
-			</p>
-			<div class="widthLine" style="margin-top: 30px;"></div>
-			<table style="margin: 120px auto;">
-
-				<tr>
-					<td><a href="/project/content/ex_recomm/ex_recomm?userNum=${userNum }" style="text-decoration: none;">
-							<div class="pic3s">
-								<div class="pic33">
-									<div class="pic3">
-										<div class="ct3-text">
-											<h2 style="color: #fff; text-align:center; padding-top:90px;">AI 운동 추천</h2>
-											<br />
-											<div style="margin-top:150px">
-												<li>
-													AI 인공지능 기반 많은 사람들의 <br />
-													데이터와 사용자의 인바디를 기반으로  <br />
-													A to Z 운동 추천!
-												</li>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-					</a></td>
-					<td><a href="/project/user/routine/routineBox?userNum=${userNum }" style="text-decoration: none;">
-							<div class="pic3_2">
-								<div class="pic3_22">
-									<div class="ct3-text">
-										<h2 style="color: #000;  text-align:center; padding-top:90px;">맞춤 루틴 기능</h2>
-										<br />
-										<div style="margin-top:150px">
-											<li>
-												무분할? 3분할? 5분할? <br />
-												어려운 루틴 설정!<br />
-												나만의 루틴 커스텀을 통해 <br />
-												지금부터 연습해 보세요!
-<!-- 												다양한 운동들을 직접 경험해보고 <br /> -->
-<!-- 												추후 혼자서도 루틴을 짤 수 있게끔 함. -->
-											</li>
-									</div>
-								</div>
-							</div>
-					</a></td>
-					<td><a href="/project/content/tr/tr_main" style="text-decoration: none;">
-							<div class="pic3_3_3">
-								<div class="ct3-text">
-									<h2 style="color: #fff;  text-align:center; padding-top:90px;">휴먼 헬스 트레이너</h2>
-									<br />
-									<div style="margin-top:150px">
-										<li>
-											현직 트레이너들의  <br />
-											다양한 피트니스 지식과 경험을 바탕으로 <br />
-											균형잡힌 식단, 나한테 맞는 보조제 등<br />
-											운동외의 정보 제공!
-										</li>
-									</div>
-								</div>
-							</div>
-					</a></td>
-				</tr>
-			</table>
-
-			<br><br>
-<!-- --------------------------------------------------------------------------------------- -->
-
-
-
-
-			<div class="center-text2">
-				<h1>처음이라 걱정인가요?</h1>
-				<br> <br>
-				<p style="font-size: 18px;">휴먼짐의 다양한 서비스를 통해 시작해보세요!</p>
+<!-- -------------------------------------- -->
+<div class="main2_1">
+	<hr class="test-about-line" style="width: 10%; margin: 0 auto 20px;" />
+	<div class="main-icons-title">
+		당신의 건강한 삶을 <span>휴먼짐</span>과 만들어보세요!
+	</div>
+	<div class="main-icons-container">
+		<div class="main-icons_list">
+			<div class="main-icons_1">
+				<li><img
+					src="/project/resources/image/main_icons/main_icons1.png">
+					<ul>
+						<p>Simple</p>
+						<span>어려운 사용법이 아닌 <br /> 사용자 눈높이에 맞게!
+						</span>
+					</ul></li>
 			</div>
-			<div class="widthLine" style="margin-top: 30px;"></div>
-
-			<div class="ct2">
-				<div class="ct2-text">
-					<h2>AI 운동 추천!</h2>
-					<br>
-					<li><img src="/project/resources/image/ex/2705.png"
-						style="width: 18px; height: 18px;"> 비슷한 사람들의 데이터를 분석<span>후
-							루틴 추천</span></li>
-					<li><img src="/project/resources/image/ex/2705.png"
-						style="width: 18px; height: 18px;"> <span>내가 다니는</span> 헬스장에
-						맞게 <span>운동 루틴 추천</span></li>
-					<li><img src="/project/resources/image/ex/2705.png"
-						style="width: 18px; height: 18px;"> <span>헬스장에 못간다면?</span>
-						홈트레이닝 <span>루틴 추천</span></li>
-					<li><img src="/project/resources/image/ex/2705.png"
-						style="width: 18px; height: 18px;"> <span>운동 시작 전,후 </span>스트레칭
-						<span>추천</span></li>
-					<li><img src="/project/resources/image/ex/2705.png"
-						style="width: 18px; height: 18px;"> <span>내 몸에 맞는 </span>
-						영양식단,보충제 <span>추천</span></li>
-				</div>
-				<div style="margin-left: 40px;">
-					<img src="/project/resources/image/ex/aiChu.png"
-						style="width: 430px; height: 300px; border: 1px solid #000;">
-					<img src="/project/resources/image/ex/letFull.png"
-						style="width: 430px; height: 300px; border: 1px solid #000; position: absolute;">
-				</div>
+			<div class="main-icons_1">
+				<li><img
+					src="/project/resources/image/main_icons/main_icons2.png">
+					<ul>
+						<p>My Routine</p>
+						<span>홈트도 내 취향대로<br /> 나만의 루틴 원픽!
+						</span>
+					</ul></li>
 			</div>
-
-			<div class="ct2">
-				<div class="ct2-text">
-					<h2>맞춤 루틴 기능!</h2>
-					<br>
-					<li><img src="/project/resources/image/ex/2705.png"
-						style="width: 18px; height: 18px;"> 나만의 루틴<span>을 만들어
-							보세요</span></li>
-					<li><img src="/project/resources/image/ex/2705.png"
-						style="width: 18px; height: 18px;"> <span>AI 루틴 추천과</span>
-						동시에 나만의 루틴 커스텀</li>
-					<li><img src="/project/resources/image/ex/2705.png"
-						style="width: 18px; height: 18px;"> <span>내 운동 기록 시작!</span>
-						스케쥴러 <span>로 시작해보세요</span></li>
-					<!-- 	                    <li> <img src="/project/resources/image/ex/2705.png" style="width: 18px;height: 18px;"> <span>운동 시작 전,후 </span>스트레칭 <span>추천</span></li> -->
-					<!-- 	                    <li> <img src="/project/resources/image/ex/2705.png" style="width: 18px;height: 18px;"> <span>내 몸에 맞는 </span> 영양식단,보충제 <span>추천</span></li> -->
-				</div>
-				<div style="margin-left: 40px;">
-					<img src="/project/resources/image/ex/aiRoutine.png"
-						style="width: 430px; height: 300px; border: 1px solid #000;">
-					<img src="/project/resources/image/ex/aiRoutineInsert.png"
-						style="width: 430px; height: 300px; border: 1px solid #000; position: absolute;">
-				</div>
+			<div class="main-icons_1">
+				<li><img
+					src="/project/resources/image/main_icons/main_icons3.png">
+					<ul>
+						<p>Review</p>
+						<span>많은 사용자들의<br />추천으로 증명한 휴먼짐!
+						</span>
+					</ul></li>
 			</div>
+			<div class="main-icons_1">
+				<li><img
+					src="/project/resources/image/main_icons/main_icons4.png">
+					<ul>
+						<p>Effective</p>
+						<span>효과 없는 운동은없다!<br />디양한 종류의 운동정보!
+						</span>
+					</ul></li>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- -------------------------------------- -->
 
-			<div class="ct2">
-				<div class="ct2-text">
-					<h2>실제 헬스장의 트레이너들과 연결!</h2>
-					<br>
-					<li><img src="/project/resources/image/ex/2705.png"
-						style="width: 18px; height: 18px;"> <span>AI추천을 통해</span>자신에게
-						꼭 맞는<span>트레이너 추천</span></li>
-					<li><img src="/project/resources/image/ex/2705.png"
-						style="width: 18px; height: 18px;"> <span>궁금한건 못참아! </span>
-						1:1 상담 <span>서비스</span></li>
-					<li><img src="/project/resources/image/ex/2705.png"
-						style="width: 18px; height: 18px;"> 친절함과 능력<span>모두
-							겸비한!!</span></li>
-					<li><img src="/project/resources/image/ex/2705.png"
-						style="width: 18px; height: 18px;"> <span>대회 수상 이력
-							다수!</span> 검증된 트레이너!</li>
-					<li><img src="/project/resources/image/ex/2705.png"
-						style="width: 18px; height: 18px;"> <span>재활부터
-							바디프로필까지</span> 분야별 전문가 <span>포섭</span></li>
+
+<div class="center_content">
+	<div class="center-text">
+		<h1>You must be healthy.</h1>
+		<br> <br>
+		<p style="font-size: 18px;">
+			당신에게 딱 맞는 운동<br> 지금 바로 경험해보세요🤩
+		</p>
+		<div class="widthLine" style="margin-top: 30px;"></div>
+
+		<div class="main2" style="margin-top: 150px;">
+
+			<!-- 	---------------------------------------------- -->
+
+			<div class="test-4cut-container">
+				<ul class="test-4cut-container__top">
+					<li><a
+						href="/project/content/ex_recomm/ex_recomm?userNum=${userNum }">
+							<div class="test-4cut__img">
+								<div class="test-4cut__img__img1">
+									<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+									<br /> <br /> <br /> <br /> <br />
+									<p>AI 루틴 추천 받기</p>
+								</div>
+								<ul>
+									<p>AI 운동 추천</p>
+								</ul>
+							</div>
+					</a></li>
+					<li><a
+						href="/project/user/routine/routineBox?userNum=${userNum }">
+							<div class="test-4cut__img">
+								<div class="test-4cut__img__img2">
+									<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+									<br /> <br /> <br /> <br /> <br />
+									<p>나만의 루틴 커스텀</p>
+								</div>
+								<ul>
+									<p>나만의 루틴 커스텀</p>
+								</ul>
+							</div>
+					</a></li>
+				</ul>
+				<ul class="test-4cut-container__top" style="margin-top: 150px;">
+					<li><a href="/project/content/tr/tr_main">
+							<div class="test-4cut__img">
+								<div class="test-4cut__img__img3">
+									<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+									<br /> <br /> <br /> <br /> <br />
+									<p>트레이너 추천</p>
+								</div>
+								<ul>
+									<p>AI 운동 추천</p>
+								</ul>
+							</div>
+					</a></li>
+					<li><a
+						href="/project/user/routine/routineBox?userNum=${userNum }">
+							<div class="test-4cut__img">
+								<div class="test-4cut__img__img4">
+									<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+									<br /> <br /> <br /> <br /> <br />
+									<p>인바디 관리하기</p>
+								</div>
+								<ul>
+									<p>인바디 관리하기</p>
+								</ul>
+							</div>
+					</a></li>
+				</ul>
+			</div>
+			<!-- 	---------------------------------------------- -->
+
+
+			<div class="main2" style="margin-top:150px;">
+				<div class="center-text2">
+					<h1>처음이라 걱정인가요?</h1>
+					<br> <br>
+					<p style="font-size: 18px;">휴먼짐의 다양한 서비스를 통해 시작해보세요!</p>
 				</div>
-				<div style="margin-left: 40px;">
-					<img src="/project/resources/image/ex/trainerMat.png"
-						style="width: 430px; height: 300px; border: 1px solid #000;">
-					<img src="/project/resources/image/ex/trainerChu.png"
-						style="width: 430px; height: 300px; border: 1px solid #000; position: absolute;">
+				<div class="widthLine" style="margin-top: 30px;"></div>
+
+
+
+	<script>
+        $(document).on("scroll", function () {
+            var pageTop = $(document).scrollTop();
+            var pageBottom = pageTop + $(window).height();
+            var tags = $(".ct2_tag");
+
+            for (var i = 0; i < tags.length; i++) {
+                var tag = tags[i];
+
+                if ($(tag).position().top < pageBottom) {
+                    $(tag).addClass("visible");
+                } else {
+                    $(tag).removeClass("visible");
+                }
+            }
+        });
+
+    </script>
+    	<div class="ct2_tag red">
+				<div class="ct2">
+					<div class="ct2-text">
+						<h2>AI 운동 추천!</h2>
+						<br>
+						<li><img src="/project/resources/image/ex/2705.png"
+							style="width: 18px; height: 18px;"> 비슷한 사람들의 데이터를 분석<span>후
+								루틴 추천</span></li>
+						<li><img src="/project/resources/image/ex/2705.png"
+							style="width: 18px; height: 18px;"> <span>내가 다니는</span>
+							헬스장에 맞게 <span>운동 루틴 추천</span></li>
+						<li><img src="/project/resources/image/ex/2705.png"
+							style="width: 18px; height: 18px;"> <span>헬스장에 못간다면?</span>
+							홈트레이닝 <span>루틴 추천</span></li>
+						<li><img src="/project/resources/image/ex/2705.png"
+							style="width: 18px; height: 18px;"> <span>운동 시작 전,후
+						</span>스트레칭 <span>추천</span></li>
+						<li><img src="/project/resources/image/ex/2705.png"
+							style="width: 18px; height: 18px;"> <span>내 몸에 맞는 </span>
+							영양식단,보충제 <span>추천</span></li>
+					</div>
+					<div style="margin-left: 40px;">
+						<img src="/project/resources/image/ex/aiChu.png"
+							style="width: 430px; height: 300px; border: 1px solid #000;">
+						<img src="/project/resources/image/ex/letFull.png"
+							style="width: 430px; height: 300px; border: 1px solid #000; position: absolute;">
+					</div>
+				</div>
+		</div>
+		<div class="ct2_tag blue">
+				<div class="ct2">
+					<div class="ct2-text">
+						<h2>맞춤 루틴 기능!</h2>
+						<br>
+						<li><img src="/project/resources/image/ex/2705.png"
+							style="width: 18px; height: 18px;"> 나만의 루틴<span>을
+								만들어 보세요</span></li>
+						<li><img src="/project/resources/image/ex/2705.png"
+							style="width: 18px; height: 18px;"> <span>AI 루틴 추천과</span>
+							동시에 나만의 루틴 커스텀</li>
+						<li><img src="/project/resources/image/ex/2705.png"
+							style="width: 18px; height: 18px;"> <span>내 운동 기록
+								시작!</span> 스케쥴러 <span>로 시작해보세요</span></li>
+					</div>
+					<div style="margin-left: 40px;">
+						<img src="/project/resources/image/ex/aiRoutine.png"
+							style="width: 430px; height: 300px; border: 1px solid #000;">
+						<img src="/project/resources/image/ex/aiRoutineInsert.png"
+							style="width: 430px; height: 300px; border: 1px solid #000; position: absolute;">
+					</div>
+				</div>
+		</div>
+		<div class="ct2_tag green">
+				<div class="ct2">
+					<div class="ct2-text">
+						<h2>실제 헬스장의 트레이너들과 연결!</h2>
+						<br>
+						<li><img src="/project/resources/image/ex/2705.png"
+							style="width: 18px; height: 18px;"> <span>AI추천을 통해</span>자신에게
+							꼭 맞는<span>트레이너 추천</span></li>
+						<li><img src="/project/resources/image/ex/2705.png"
+							style="width: 18px; height: 18px;"> <span>궁금한건 못참아!
+						</span> 1:1 상담 <span>서비스</span></li>
+						<li><img src="/project/resources/image/ex/2705.png"
+							style="width: 18px; height: 18px;"> 친절함과 능력<span>모두
+								겸비한!!</span></li>
+						<li><img src="/project/resources/image/ex/2705.png"
+							style="width: 18px; height: 18px;"> <span>대회 수상 이력
+								다수!</span> 검증된 트레이너!</li>
+						<li><img src="/project/resources/image/ex/2705.png"
+							style="width: 18px; height: 18px;"> <span>재활부터
+								바디프로필까지</span> 분야별 전문가 <span>포섭</span></li>
+					</div>
+					<div style="margin-left: 40px;">
+						<img src="/project/resources/image/ex/trainerMat.png"
+							style="width: 430px; height: 300px; border: 1px solid #000;">
+						<img src="/project/resources/image/ex/trainerChu.png"
+							style="width: 430px; height: 300px; border: 1px solid #000; position: absolute;">
+					</div>
+				</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
 <div class="main2">
 	<div class="center_content">
 		<div class="center-text">
@@ -382,62 +454,130 @@
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
+<!-- 		미디어 컨텐츠  제목-->
+<div class="center_content_M">
+	<div class="center-text_M">
+		<h1>더 많은 컨탠츠를 확인해보세요!!</h1>
+		<br> <br>
+	</div>
+	<div class="widthLine" style="margin-top: 30px;"></div>
 
-		<!-- 		미디어 컨텐츠  제목-->
-		<div class="center_content_M">
-			<div class="center-text_M">
-				<h1>휴먼짐의 인플루언서를 소개합니다!!</h1>
-				<br> <br>
-			</div>
-			<div class="widthLine" style="margin-top: 30px;"></div>
-
-
-			<div class="media_main">
-
-				<!-- 		미디어 컨텐츠 -->
-				<div class="media_content">
-					<div class="content_m_right">
-						<iframe width="560" height="315"
-							src="https://www.youtube.com/embed/aRz0QZc8TDE"
-							title="YouTube video player" frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen></iframe>
-						<p>로니쌤의 무겁지만 가볍게 드는법!!</p>
-					</div>
-
-					<div class="content_m_left">
-						<iframe width="560" height="315"
-							src="https://www.youtube.com/embed/itx3udN1HJ0"
-							title="YouTube video player" frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen></iframe>
-						<p>상급자를 위한 루틴 추천!</p>
-					</div>
-				</div>
-
-				<div class="media_content">
-					<div class="content_m_right">
-						<iframe width="560" height="315"
-							src="https://www.youtube.com/embed/qluZcZ7vfLQ"
-							title="YouTube video player" frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen></iframe>
-						<p>첫 헬스장 입문을 위한 현실적 조언!</p>
-					</div>
-
-					<div class="content_m_left">
-						<iframe width="560" height="315"
+	<!-- ------------------------------------------------------- -->
+	<div class="main2">
+		<div class="test-page">
+			<div class="test-about">
+				<div class="test-abuot-holder">
+					<div class="test-about__img-holer">
+						<iframe width="660" height="660"
 							src="https://www.youtube.com/embed/Iazno8QPDOg"
 							title="YouTube video player" frameborder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 							allowfullscreen></iframe>
-						<p>타락헬창표 루틴 대공개!</p>
+					</div>
+					<div class="test-about-info">
+						<div class="test-about-info__top">
+							<hr class="test-about-line" />
+							<p>QUESTIONS</p>
+						</div>
+
+						<div class="test-about-info__text">
+							<div class="test-about-title">
+								함께해서 더 든든한
+								<p>AI 휴먼짐</p>
+							</div>
+							<div class="test-about-tilte2">휴먼짐을 더 알고싶다면? 영상을 확인해 보세요!</div>
+							<div class="test-about-text">
+								<button type="button" class="more_bt"
+									style="border: none; width: 250px; height: 100%; font-size: 18px; background-color: transparent; cursor: pointer;">
+									<h2>
+										<img src="/project/resources/image/ex/2705.png"
+											style="width: 18px; height: 18px;"> 많이 묻는 질문
+									</h2>
+								</button>
+								<br>
+								<div style="margin-top: 25px;">
+									<ul class="ex_sub" id="test-about-ex_sub">
+										<div class="test-about__QnAbox">
+											<li>Q.운동이 처음인데 도움이 될까요?</li> <span>- 운동이 처음인 분들에게 더
+												추천드립니다!</span><br /> <span>- 이용자의 레벨에 눈높이에 맞춰 도움을 드립니다.</span>
+										</div>
+									</ul>
+								</div>
+								<div style="margin-top: 25px;">
+									<ul class="ex_sub" id="test-about-ex_sub">
+										<div class="test-about__QnAbox">
+											<li>Q.어떤식으로 추천해주나요?</li> <span>- 비슷한 사람들의 데이터를 분석 후
+												루틴을 추천해드려요!</span><br /> <span>- 기구를 이용한 헬스 & 홈트레이닝을 같이
+												추천해드려요.</span>
+										</div>
+									</ul>
+								</div>
+								<div style="margin-top: 25px;">
+									<ul class="ex_sub" id="test-about-ex_sub">
+										<div class="test-about__QnAbox">
+											<li>Q.무료로 이용할수있나요?</li> <span>- 현재 베타 서버를 운영중이여 무료 이용
+												가능합니다!</span><br /> <span>- 정식 런칭 이후에는 맴버쉽가입을 통해 이용 가능합니다.</span>
+										</div>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-
 			</div>
+		</div>
+	</div>
+</div>
+<!-- ------------------------------------------------------- -->
+
+<div class="media_main">
+
+	<!-- 		미디어 컨텐츠 -->
+	<div class="media_content">
+		<div class="content_m_right">
+			<iframe width="560" height="315"
+				src="https://www.youtube.com/embed/aRz0QZc8TDE"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen></iframe>
+			<p>로니쌤의 무겁지만 가볍게 드는법!!</p>
+		</div>
+
+		<div class="content_m_left">
+			<iframe width="560" height="315"
+				src="https://www.youtube.com/embed/itx3udN1HJ0"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen></iframe>
+			<p>상급자를 위한 루틴 추천!</p>
+		</div>
+	</div>
+
+	<div class="media_content">
+		<div class="content_m_right">
+			<iframe width="560" height="315"
+				src="https://www.youtube.com/embed/qluZcZ7vfLQ"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen></iframe>
+			<p>첫 헬스장 입문을 위한 현실적 조언!</p>
+		</div>
+
+		<div class="content_m_left">
+			<iframe width="560" height="315" 
+			src="https://www.youtube.com/embed/D7iZMIy0C5E" 
+			title="YouTube video player" frameborder="0" 
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+			allowfullscreen></iframe>
+			<p>초, 중급자 추천루틴영상</p>
+		</div>
+	</div>
+
+</div>
 
 
 
 
-			<%@include file="include/footer.jsp"%>
+<%@include file="include/footer.jsp"%>
