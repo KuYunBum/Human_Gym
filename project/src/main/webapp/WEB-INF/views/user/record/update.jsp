@@ -49,8 +49,8 @@
 								<input type="number" name='startMinute' value="${recordDTO.startMinute }">분</td>
 							<td><input type="number" name='endHour' value="${recordDTO.endHour }">시
 								<input type="number" name='endMinute' value="${recordDTO.endMinute }">분</td>
-							<td><label for="exname" id="ex" value="${exerciseChartDTO.exname }" >운동 이름</label>
-									<select name="exname">
+							<td><label for="exName" id="ex" value="${exerciseChartDTO.exname }" >운동 이름</label>
+									<select name="exName">
 										<optgroup label="전신">
 											<option value="brupeeJump">버피점프</option>
 											<option value="kettlebell">케틀벨</option>

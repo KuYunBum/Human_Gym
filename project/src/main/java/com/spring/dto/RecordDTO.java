@@ -24,8 +24,8 @@ public class RecordDTO {
 	public int getUserNum() {
 		return userNum;
 	}
-	public void setUserNum(int userNume) {
-		this.userNum = userNume;
+	public void setUserNum(int userNum) {
+		this.userNum = userNum;
 	}
 	public Date getUseDate() {
 		return useDate;

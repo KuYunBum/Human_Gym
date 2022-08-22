@@ -46,6 +46,18 @@
 						</tr>
 					</c:forEach>
 				</table>
+				<table id='record_tb' border="1">	
+					<tr>
+						<td ><h4>운동 이름</h4></td>
+						<td colspan="1"><h4>운동 횟수</h4></td>					
+					</tr>
+					<c:forEach items="${exlist}" var="el">
+						<tr>
+							<td colspan="1">${el.exName}</td>
+							<td colspan="1">${el.setCount}</td>
+						</tr>
+					</c:forEach>
+				</table>
 				<div class="container" style="width: 400px; height: 400px;">
 					<!--차트가 그려질 부분-->
 					<canvas id="myChart"></canvas>
