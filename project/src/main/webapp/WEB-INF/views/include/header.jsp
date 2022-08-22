@@ -25,6 +25,14 @@
 		var result = '${msg}';
 		var ID = '${findID}';
 		var PW = '${findPW}';
+		var st = '${exerciseChartDTO.exName}';
+		
+		for(var i = 0; i < document.getElementsByTagName("option").length; i++){
+	         if(st==document.getElementsByTagName("option")[i].value){
+	            document.getElementsByTagName("option")[i].selected = true;
+	         }
+	    }
+		 
 		if (result == 'success') {
 			alert("처리가 완료되었습니다.");
 		}

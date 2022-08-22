@@ -30,6 +30,8 @@ public interface MyPageService {
 	
 	public List<ExerciseChartDTO> chartData(int userNum) throws Exception;
 	
+	public List<ExerciseChartDTO> exList(int userNum) throws Exception;
+	
 	public ExerciseChartDTO exNameCount(ExerciseChartDTO chartdto) throws Exception;
 	
 	public void chartInsert(ExerciseChartDTO dto) throws Exception;

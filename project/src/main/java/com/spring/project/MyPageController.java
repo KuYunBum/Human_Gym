@@ -178,6 +178,7 @@ public class MyPageController {
 	@RequestMapping(value = "/record/record", method = RequestMethod.GET)
 	public void record(int userNum, Model model) throws Exception {
 		model.addAttribute("list", ms.recordList(userNum));
+		model.addAttribute("exlist",ms.exList(userNum));
 		int arm = 0;
 		int upper = 0;
 		int back = 0;
@@ -261,7 +262,8 @@ public class MyPageController {
 	}
 
 	@RequestMapping(value = "/record/update", method = RequestMethod.POST)
-	public String recordUpdatePOST(RecordDTO dto, ExerciseChartDTO chartdto, String exName, int recordNum, RedirectAttributes rttr) throws Exception {
+	public String recordUpdatePOST(RecordDTO dto, ExerciseChartDTO chartdto, String exName, int recordNum, 
+			RedirectAttributes rttr) throws Exception {
 //		System.out.println(exname);
 		ExerciseChartDTO getExID = (ms.exidSelect(exName));
 		int exid = getExID.getExId();
