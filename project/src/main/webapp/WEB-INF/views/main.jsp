@@ -146,7 +146,7 @@
 					src="/project/resources/image/main_icons/main_icons2.png">
 					<ul>
 						<p>My Routine</p>
-						<span>홈트도 내 취향대로<br /> 나만의 루틴 원픽!
+						<span>홈트도 내 취향대로<br /> 다양한 서비스 제공!
 						</span>
 					</ul></li>
 			</div>
@@ -175,89 +175,24 @@
 
 
 <div class="center_content">
-	<div class="center-text">
-		<h1>You must be healthy.</h1>
-		<br> <br>
-		<p style="font-size: 18px;">
-			당신에게 딱 맞는 운동<br> 지금 바로 경험해보세요🤩
-		</p>
-		<div class="widthLine" style="margin-top: 30px;"></div>
+
+
+	<div class="main2" style="margin-top: 150px;">
+
+
+
 
 		<div class="main2" style="margin-top: 150px;">
-
-			<!-- 	---------------------------------------------- -->
-
-			<div class="test-4cut-container">
-				<ul class="test-4cut-container__top">
-					<li><a
-						href="/project/content/ex_recomm/ex_recomm?userNum=${userNum }">
-							<div class="test-4cut__img">
-								<div class="test-4cut__img__img1">
-									<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
-									<br /> <br /> <br /> <br /> <br />
-									<p>AI 루틴 추천 받기</p>
-								</div>
-								<ul>
-									<p>AI 운동 추천</p>
-								</ul>
-							</div>
-					</a></li>
-					<li><a
-						href="/project/user/routine/routineBox?userNum=${userNum }">
-							<div class="test-4cut__img">
-								<div class="test-4cut__img__img2">
-									<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
-									<br /> <br /> <br /> <br /> <br />
-									<p>나만의 루틴 커스텀</p>
-								</div>
-								<ul>
-									<p>나만의 루틴 커스텀</p>
-								</ul>
-							</div>
-					</a></li>
-				</ul>
-				<ul class="test-4cut-container__top" style="margin-top: 150px;">
-					<li><a href="/project/content/tr/tr_main">
-							<div class="test-4cut__img">
-								<div class="test-4cut__img__img3">
-									<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
-									<br /> <br /> <br /> <br /> <br />
-									<p>트레이너 추천</p>
-								</div>
-								<ul>
-									<p>AI 운동 추천</p>
-								</ul>
-							</div>
-					</a></li>
-					<li><a
-						href="/project/user/routine/routineBox?userNum=${userNum }">
-							<div class="test-4cut__img">
-								<div class="test-4cut__img__img4">
-									<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
-									<br /> <br /> <br /> <br /> <br />
-									<p>인바디 관리하기</p>
-								</div>
-								<ul>
-									<p>인바디 관리하기</p>
-								</ul>
-							</div>
-					</a></li>
-				</ul>
+			<div class="center-text2">
+				<h1>처음이라 걱정인가요?</h1>
+				<br> <br>
+				<p style="font-size: 18px;">휴먼짐의 다양한 서비스를 통해 시작해보세요!</p>
 			</div>
-			<!-- 	---------------------------------------------- -->
-
-
-			<div class="main2" style="margin-top:150px;">
-				<div class="center-text2">
-					<h1>처음이라 걱정인가요?</h1>
-					<br> <br>
-					<p style="font-size: 18px;">휴먼짐의 다양한 서비스를 통해 시작해보세요!</p>
-				</div>
-				<div class="widthLine" style="margin-top: 30px;"></div>
+			<div class="widthLine" style="margin-top: 30px;"></div>
 
 
 
-	<script>
+			<script>
         $(document).on("scroll", function () {
             var pageTop = $(document).scrollTop();
             var pageBottom = pageTop + $(window).height();
@@ -275,7 +210,7 @@
         });
 
     </script>
-    	<div class="ct2_tag red">
+			<div class="ct2_tag red">
 				<div class="ct2">
 					<div class="ct2-text">
 						<h2>AI 운동 추천!</h2>
@@ -303,8 +238,8 @@
 							style="width: 430px; height: 300px; border: 1px solid #000; position: absolute;">
 					</div>
 				</div>
-		</div>
-		<div class="ct2_tag blue">
+			</div>
+			<div class="ct2_tag blue">
 				<div class="ct2">
 					<div class="ct2-text">
 						<h2>맞춤 루틴 기능!</h2>
@@ -326,8 +261,8 @@
 							style="width: 430px; height: 300px; border: 1px solid #000; position: absolute;">
 					</div>
 				</div>
-		</div>
-		<div class="ct2_tag green">
+			</div>
+			<div class="ct2_tag green">
 				<div class="ct2">
 					<div class="ct2-text">
 						<h2>실제 헬스장의 트레이너들과 연결!</h2>
@@ -355,8 +290,67 @@
 							style="width: 430px; height: 300px; border: 1px solid #000; position: absolute;">
 					</div>
 				</div>
-				</div>
 			</div>
+		</div>
+
+
+
+		<div class="center-text">
+			<h1>You must be healthy.</h1>
+			<br> <br>
+			<p style="font-size: 18px;">
+				당신에게 딱 맞는 운동<br> 지금 바로 경험해보세요🤩
+			</p>
+			<div class="widthLine" style="margin-top: 30px;"></div>
+
+			<!-- 	---------------------------------------------- -->
+
+			<div class="test-4cut-container">
+				<ul class="test-4cut-container__top">
+					<li><a
+						href="/project/content/ex_recomm/ex_recomm?userNum=${userNum }">
+							<div class="test-4cut__img">
+								<div class="test-4cut__img__img1">
+									<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+									<br /> <br /> <br /> <br /> <br />
+									<p>🦾AI 루틴 추천 받기</p>
+								</div>
+							</div>
+					</a></li>
+					<li><a
+						href="/project/user/routine/routineBox?userNum=${userNum }">
+							<div class="test-4cut__img">
+								<div class="test-4cut__img__img2">
+									<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+									<br /> <br /> <br /> <br /> <br />
+									<p>✍나만의 루틴 커스텀</p>
+								</div>
+							</div>
+					</a></li>
+				</ul>
+				<ul class="test-4cut-container__top" style="margin-top: 150px;">
+					<li><a href="/project/content/tr/tr_main">
+							<div class="test-4cut__img">
+								<div class="test-4cut__img__img3">
+									<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+									<br /> <br /> <br /> <br /> <br />
+									<p>🏃트레이너 추천</p>
+								</div>
+							</div>
+					</a></li>
+					<li><a href="/project/user/inbody/detail?userNum=${userNum }">
+							<div class="test-4cut__img">
+								<div class="test-4cut__img__img4">
+									<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+									<br /> <br /> <br /> <br /> <br />
+									<p>📊인바디 관리하기</p>
+								</div>
+							</div>
+					</a></li>
+				</ul>
+			</div>
+			<!-- 	---------------------------------------------- -->
+
 		</div>
 	</div>
 </div>
@@ -487,7 +481,7 @@
 								함께해서 더 든든한
 								<p>AI 휴먼짐</p>
 							</div>
-							<div class="test-about-tilte2">휴먼짐을 더 알고싶다면? 영상을 확인해 보세요!</div>
+							<div class="test-about-tilte2">👇휴먼짐을 더 알고싶다면? 클릭해주세요!</div>
 							<div class="test-about-text">
 								<button type="button" class="more_bt"
 									style="border: none; width: 250px; height: 100%; font-size: 18px; background-color: transparent; cursor: pointer;">
@@ -566,11 +560,11 @@
 		</div>
 
 		<div class="content_m_left">
-			<iframe width="560" height="315" 
-			src="https://www.youtube.com/embed/D7iZMIy0C5E" 
-			title="YouTube video player" frameborder="0" 
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-			allowfullscreen></iframe>
+			<iframe width="560" height="315"
+				src="https://www.youtube.com/embed/D7iZMIy0C5E"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen></iframe>
 			<p>초, 중급자 추천루틴영상</p>
 		</div>
 	</div>

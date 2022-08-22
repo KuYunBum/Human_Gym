@@ -1,6 +1,6 @@
 /* btn1 css */
    #myBtn1 {
-      margin-left: 20px;
+      margin-left: -20px;
       font-family: roboto;
       letter-spacing: 1px;
       padding: 0.4rem 5rem;

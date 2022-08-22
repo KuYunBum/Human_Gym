@@ -1,3 +1,6 @@
+tr {
+	border-bottom: 1.6px solid #ececec;
+}
 td {
 	font-size: 9pt;
 	color: #595959;
@@ -41,7 +44,9 @@ A:hover {
 	color: red;
 	text-decoration: none;
 }
-
+.scheduleTr{
+	border-bottom: 1.6px solid #8b8b8b;
+}
 .day {
 	width: 100px;
 	height: 30px;
@@ -139,7 +144,7 @@ A:hover {
 .calendar_body .normal_day {
 	border: 1px solid white;
 	height: 120px;
-	background-color: #EFEFEF;
+	background-color: #fff;
 	vertical-align: top;
 	text-align: left;
 }
