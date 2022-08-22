@@ -1506,10 +1506,11 @@ img {
 }
 
 .scheduleContainer {
-	width: 910px;
+	width: 1010px;
 	height: 100%;
 	text-align: left;
 	margin-top: -30px;
+	margin-left: -50px;
 }
 
 .rcText{
@@ -2374,6 +2375,7 @@ img {
 .test-about-tilte2 {
 	font-size: 20px;
 	font-weight: lighter;
+	margin-left:20px
 }
 
 .test-about-text {
@@ -2454,15 +2456,15 @@ img {
 }
 
 .test-4cut__img__img2 {
-	background-image: url(/project/resources/image/main_2_3.jpg);
+	background-image: url(/project/resources/image/main_2.jpg);
 }
 
 .test-4cut__img__img3 {
-	background-image: url(/project/resources/image/main_3_1.jpg);
+	background-image: url(/project/resources/image/main_3.jpg);
 }
 
 .test-4cut__img__img4 {
-	background-image: url(/project/resources/image/main_1.jpg);
+	background-image: url(/project/resources/image/main_4.jpg);
 }
 
 .test-4cut__img__img1 p, .test-4cut__img__img2 p, .test-4cut__img__img3 p,
@@ -2546,6 +2548,7 @@ img {
 .main-icons_1 p {
 	font-size: 30px;
 	font-weight: bold;
+	color: rgb(0, 177, 56);
 }
 
 .ct2_tag {
