@@ -177,6 +177,12 @@ public class MyPageController {
 	
 	@RequestMapping(value = "/record/record", method = RequestMethod.GET)
 	public void record(int userNum, Model model) throws Exception {
+		model.addAttribute("Main", ms.recordMain(userNum));
+		model.addAttribute("exMain", ms.exMain(userNum));
+	}
+	
+	@RequestMapping(value = "/record/listAll", method = RequestMethod.GET)
+	public void listAll(int userNum, Model model) throws Exception {
 		model.addAttribute("list", ms.recordList(userNum));
 		model.addAttribute("exlist",ms.exList(userNum));
 		int arm = 0;
@@ -248,36 +254,36 @@ public class MyPageController {
 	
 	@RequestMapping(value = "/record/update", method = RequestMethod.GET)
 	public void recordUpdateGET(int userNum, int recordNum, ExerciseChartDTO chartdto, Model model) throws Exception {
-
+//		System.out.println("updateGet에 진입"); 확인됨
 		RecordDTO getDTO = new RecordDTO();
 		getDTO.setRecordNum(recordNum);
 		getDTO.setUserNum(userNum);
-		System.out.println(getDTO);
-//		RecordDTO aaa = ms.recordDetail(getDTO);
-//		System.out.println(aaa);
-		model.addAttribute(ms.recordDetail(getDTO));
-		System.out.println(chartdto);
-		model.addAttribute(ms.exNameCount(chartdto));
-		
-	}
+//		System.out.println("mk" + getDTO); 확인됨
 
+		model.addAttribute(ms.recordDetail(getDTO));
+
+//		System.out.println(ms.exNameCount(chartdto));
+		model.addAttribute(ms.exNameCount(chartdto));
+
+	}
 	@RequestMapping(value = "/record/update", method = RequestMethod.POST)
-	public String recordUpdatePOST(RecordDTO dto, ExerciseChartDTO chartdto, String exName, int recordNum, 
+	public String recordUpdatePOST(RecordDTO dto, ExerciseChartDTO chartdto, String exName, int recordNum,
 			RedirectAttributes rttr) throws Exception {
-//		System.out.println(exname);
-		ExerciseChartDTO getExID = (ms.exidSelect(exName));
+
+//		System.out.println(exName);
+		ExerciseChartDTO getExID = ms.exidSelect(exName);
+		System.out.println(getExID);
 		int exid = getExID.getExId();
-//		System.out.println(exid);
+//		System.out.println(exId);
 		chartdto.setExId(exid);
 		System.out.println(chartdto);
 //		System.out.println(recordNum);
-		
-		
+
 		ms.recordUpdate(dto);
 		ms.chartUpdate(chartdto);
 		rttr.addFlashAttribute("msg", "success");
 		return "redirect:/user/record/record?userNum=" + dto.getUserNum();
 	}
 
-
 }
+

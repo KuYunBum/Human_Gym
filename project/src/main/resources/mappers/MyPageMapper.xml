@@ -78,6 +78,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		recordNum = #{recordNum} 
 </delete>
 
+<select id="recordMain" resultType="com.spring.dto.RecordDTO">
+	<![CDATA[
+	select *
+	from (
+		select 
+			RECORDNUM
+	        , USERNUM
+	        , USEDATE
+	        , STARTHOUR
+	        , STARTMINUTE
+	        , ENDHOUR
+	        , ENDMINUTE
+	        , CONCAT(
+	           CONCAT(TRUNC(((ENDHOUR*60+ENDMINUTE-STARTHOUR*60-STARTMINUTE)/60),0),'시간 '),
+	        	CONCAT( MOD((ENDHOUR*60+ENDMINUTE -STARTHOUR*60-STARTMINUTE),60),'분 ')
+	          ) as PLAYTIME
+		from record
+		where 
+			 userNum = #{userNum}
+		order by recordNum desc
+	) where rownum <= 1
+	]]>				
+</select>
 
 <select id="recordList" resultType="com.spring.dto.RecordDTO">
 	<![CDATA[
@@ -165,7 +188,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 운동이름과 세트횟수 읽기 -->
 <select id="exNameCount"  resultType="com.spring.dto.ExerciseChartDTO">
 	select * from userEX 
-	where userNum = ${userNum}
+	where userNum = ${userNum} and recordNum= #{recordNum}
  </select>
 
 <insert id="chartInsert" >
@@ -206,6 +229,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	) where rownum <= 10
 	]]>				
 </select>	
+
+<select id="exMain" resultType="com.spring.dto.ExerciseChartDTO">
+	<![CDATA[
+	select *
+	from (
+		select 
+			RECORDNUM
+	        , USERNUM
+	        , EXID
+	        , EXNAME
+	        , EXDATE
+	        , SETCOUNT
+	       
+		from userEx
+		where 
+			 userNum = #{userNum}
+		order by recordNum desc
+	) where rownum <= 1
+	]]>				
+</select>
 
 <select id="routineList" resultType="routineDTO">
 	select * 
