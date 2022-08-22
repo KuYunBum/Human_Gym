@@ -42,9 +42,7 @@
 						<tr>
 							<td>
 								<fmt:formatDate pattern="yyyy-MM-dd" value="${recordDTO.useDate}"/>
-								<%-- <input type="date" name='useDate' placeholder="0000-00-00" value="${recordDTO.useDate }"> --%>
 							</td>
-		
 							<td><input type="number" name='startHour' value="${recordDTO.startHour }">시
 								<input type="number" name='startMinute' value="${recordDTO.startMinute }">분</td>
 							<td><input type="number" name='endHour' value="${recordDTO.endHour }">시

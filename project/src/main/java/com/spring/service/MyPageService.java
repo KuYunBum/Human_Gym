@@ -44,9 +44,6 @@ public interface MyPageService {
 	
 	public void chartUpdate(ExerciseChartDTO dto)throws Exception;
 	
-//	public List<UserRecordDTO> listCriteria(PageMaker pm) throws Exception;
-//	  
-//	public int listCount(PageMaker pm) throws Exception;
 	
 	//루틴
 	public void routineInsert(RoutineDTO dto) throws Exception;
