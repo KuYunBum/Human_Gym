@@ -33,7 +33,7 @@
 					<th>내용</th>
 				</tr>
 				<tr>
-					<td><textarea  style="text-align:center;font-size:30px;width:700px; height:400px; name="content" rows="3">${boardDTO.content}</textarea></td>
+					<td><textarea name="content" style="text-align:center;font-size:30px;width:700px; height:400px;  rows="3">${boardDTO.content}</textarea></td>
 				</tr>
 			</table>
 		</form>

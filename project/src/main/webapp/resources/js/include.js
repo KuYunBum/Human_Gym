@@ -52,43 +52,107 @@
     		$('.ex_sub').slideToggle();
     	});
     	
-    	$('.ex_sub2').hide();
-
-    	$('.more_bt2').on("click", function(){
-    		$('.ex_sub2').slideToggle();
+    	//ex 비디오 start / stop
+    	var video1 = document.getElementById("myVideo1");
+    	var video2 = document.getElementById("myVideo2");
+    	var count = 1;
+    	
+    	$('.stretching_2').hide();
+    	
+    	$('#stretching1').on("click", function() {
+    		$('.ex_sub').slideUp();
+    		count = 1;
+    		$('.stretching_2').hide();
+			video2.pause();
+			$("#videoStop").hide();
+			$("#videoPlay").show();
+    		$('.stretching_1').show();
+    	});
+    	$('#stretching2').on("click", function() {
+    		$('.ex_sub').slideUp();
+    		count = 2;
+    		$('.stretching_1').hide();
+			video1.pause();
+			$("#videoStop").hide();
+			$("#videoPlay").show();
+    		$('.stretching_2').show();
     	});
     	
-    	$('.ex_sub3').hide();
-
-    	$('.more_bt3').on("click", function(){
-    		$('.ex_sub3').slideToggle();
-    	});
-        
-    	//ex 비디오 start / stop
-    	var video = document.getElementById("myVideo");
+    	window.onload = function(){
+    			video1.addEventListener('timeupdate', function(e){
+    				// 현재 재생 시간 (초 단위 절삭)     
+    				var playtime = Math.floor(video1.currentTime);
+    				var p_m = Math.floor(playtime/60);
+    				var p_s = playtime%60;
+    				// 전체 재생 시간 (초 단위 절삭)      
+    				var total = Math.floor(video1.duration); 
+    				var t_m = Math.floor(total/60);
+    				var t_s = total%60;
+    				// 상태 표시    
+    				$("#videoProgress1").html(p_m+":"+p_s + " / " + t_m+":"+t_s);
+    			}, false);
+    			video2.addEventListener('timeupdate', function(e){
+    				// 현재 재생 시간 (초 단위 절삭)     
+    				var playtime = Math.floor(video2.currentTime);
+    				var p_m = Math.floor(playtime/60);
+    				var p_s = playtime%60;
+    				// 전체 재생 시간 (초 단위 절삭)      
+    				var total = Math.floor(video2.duration); 
+    				var t_m = Math.floor(total/60);
+    				var t_s = total%60;
+    				// 상태 표시    
+    				$("#videoProgress2").html(p_m+":"+p_s + " / " + t_m+":"+t_s);
+    			}, false);
+    	};
     	
     	$("#videoStop").hide();
     	
 		$("#videoPlay").on("click", function() {
-			video.play();
+			if(count==1){
+				video1.play();
+			}else{
+				video2.play();
+			}
 			$(this).hide();
 			$("#videoStop").show();
 		});    
 		$("#videoStop").on("click", function() {
-			video.pause();
+			if(count==1){
+				video1.pause();
+			}else{
+				video2.pause();
+			}
 			$(this).hide();
 			$("#videoPlay").show();
 		});
 		 
-		window.onload = function(){
-			video.addEventListener('timeupdate', function(e){
-			// 현재 재생 시간 (초 단위 절삭)     
-			var playtime = Math.floor(video.currentTime);
-			// 전체 재생 시간 (초 단위 절삭)      
-			var total = Math.floor(video.duration); 
-			// 상태 표시    
-			$("#videoProgress").html(playtime + " / " + total);
-			}, false);
+		
+//		타이머
+		var SetTime = 60;		// 최초 설정 시간(기본 : 초)
+		var toggle = false;
+		function msg_time() {	// 1초씩 카운트
+			m = (Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초");	// 남은 시간 계산
+			var msg = "<h2>" + m + "</h2>";
+			document.all.ViewTimer.innerHTML = msg;		// div 영역에 보여줌 
+			SetTime--;					// 1초씩 감소
+			if (SetTime < 0) {			// 시간이 종료 되었으면..
+				clearInterval(tid);		// 타이머 해제
+			}
+		};
+
+		function start_time() {
+	        if(toggle==false){
+	            // 반복 재개(재시작)
+	            tid=setInterval('msg_time()',1000);
+	            toggle = true;
+	        }else{
+	            // 반복 중단
+	            clearInterval(tid);
+	            toggle = false;
+	        }
+		};
+		function reset_time() {
+			SetTime = 60;
 		};
 
 		

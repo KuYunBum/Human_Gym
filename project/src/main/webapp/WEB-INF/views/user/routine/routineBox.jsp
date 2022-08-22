@@ -43,7 +43,7 @@
                 
         <div class="bt_box">
 			<button id="myBtn1" type="submit" class="routine_insert">입력</button>
-			<button id="myBtn1" onclick="location.href='/project/content/ex_recomm/ex_recomm'">AI 루틴 추천 받기</button>
+			<button id="myBtn1" onclick="location.href='/project/content/ex_recomm/ex_recomm?userNum=${userNum}'">AI 루틴 추천 받기</button>
 		</div>        
 </div>
 	<%@include file="../../include/footer.jsp"%>

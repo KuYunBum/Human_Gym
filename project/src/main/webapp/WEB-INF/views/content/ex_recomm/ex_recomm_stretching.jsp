@@ -13,21 +13,32 @@
 				<p>운동 전 스트레칭</p>
 				<button type="button" class="more_bt">...</button><br>
 					<ul class="ex_sub">
-						<li><button id="stretching1">다리 근육 스트레칭</button></li>
-						<li><button id="stretching2">목 주변 근육 스트레칭</button></li>
-						<li><button id="stretching3">트레드밀 러닝</button></li>
+						<li><button id="stretching1">리클라이닝 트위스트</button></li>
+						<li><button id="stretching2">차일드 포즈</button></li>
 					</ul>
 			</div>
 			<div class="ex_content_p3">
-				<video id='myVideo'>
-					<source src="/project/resources/videos/test1.mp4" type="video/mp4">
-				</video>
+				<div class="stretching_1">
+					<video id='myVideo1'>
+							<source src="/project/resources/videos/stretching1.mp4" type="video/mp4">
+					</video>
+				</div>
+				<div class="stretching_2">
+					<video id='myVideo2'>
+							<source src="/project/resources/videos/stretching2.mp4" type="video/mp4">
+					</video>
+				</div>
 			</div>
 			<div class="ex_content_p4">
 				<table>
-					<tr><td><p>다리 근육 스트레칭</p></td><td><p><span id="videoProgress">0 / 0</span></p></td></tr>
-					<tr><td><p>목 주변 근육 스트레칭</p></td><td><p>&emsp;&emsp;0:00 / 5:00</p></td></tr>
-					<tr><td><p>트레드밀 러닝</p></td><td><p>&emsp;&emsp;0:00 / 10:00</p></td></tr>
+					<tr class="stretching_1">
+						<td><p>리클라이닝 트위스트</p></td>
+						<td><p><span id="videoProgress1">0:0 / 0:0</span></p></td>
+					</tr>
+					<tr class="stretching_2">
+						<td ><p>차일드 포즈</p></td>
+						<td><p><span id="videoProgress2">0:0 / 0:0</span></p></td>
+					</tr>
 				</table>
 			</div>
 			<div class="ex_content_p5">
