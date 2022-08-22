@@ -71,34 +71,4 @@
 	</div>
 
 
-<script>
-	var SetTime = 60;		// 최초 설정 시간(기본 : 초)
-	var toggle = false;
-	function msg_time() {	// 1초씩 카운트
-		m = (Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초");	// 남은 시간 계산
-		var msg = "<h2>" + m + "</h2>";
-		document.all.ViewTimer.innerHTML = msg;		// div 영역에 보여줌 
-		SetTime--;					// 1초씩 감소
-		if (SetTime < 0) {			// 시간이 종료 되었으면..
-			clearInterval(tid);		// 타이머 해제
-		}
-	};
-
-	function start_time() {
-        if(toggle==false){
-            // 반복 재개(재시작)
-            tid=setInterval('msg_time()',1000);
-            toggle = true;
-        }else{
-            // 반복 중단
-            clearInterval(tid);
-            toggle = false;
-        }
-	};
-	function reset_time() {
-		SetTime = 60;
-	};
-</script>
-
-
 	<%@include file="../../include/footer.jsp"%>
