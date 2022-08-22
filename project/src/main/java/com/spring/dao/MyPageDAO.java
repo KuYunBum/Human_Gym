@@ -25,11 +25,15 @@ public interface MyPageDAO {
 	
 	public RecordDTO recordDetail(RecordDTO dto) throws Exception;
 	
+	public List<RecordDTO> recordMain(int userNum) throws Exception;
+	
 	public List<RecordDTO> recordList(int userNum) throws Exception;
 
 	public List<ExerciseChartDTO> chartData(int userNum) throws Exception;
 	
 	public List<ExerciseChartDTO> exList(int userNum) throws Exception;
+	
+	public List<ExerciseChartDTO> exMain(int userNum) throws Exception;
 	
 	public ExerciseChartDTO exNameCount(ExerciseChartDTO chartdto) throws Exception;
 	

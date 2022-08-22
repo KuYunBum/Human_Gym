@@ -69,6 +69,14 @@ public class MyPageServiceImpl implements MyPageService{
 	}
 
 	@Override
+	public List<RecordDTO> recordMain(int userNum) throws Exception {
+		
+		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+		List<RecordDTO> dtos = dao.recordMain(userNum);
+		return dtos;
+	};
+	
+	@Override
 	public List<RecordDTO> recordList(int userNum) throws Exception {
 		
 		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
@@ -87,6 +95,13 @@ public class MyPageServiceImpl implements MyPageService{
 	public List<ExerciseChartDTO> exList(int userNum) throws Exception{
 		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
 		List<ExerciseChartDTO> dtos = dao.exList(userNum);
+		return dtos;
+	}
+	
+	@Override
+	public List<ExerciseChartDTO> exMain(int userNum) throws Exception{
+		MyPageDAO dao = sqlSession.getMapper(MyPageDAO.class);
+		List<ExerciseChartDTO> dtos = dao.exMain(userNum);
 		return dtos;
 	}
 	
