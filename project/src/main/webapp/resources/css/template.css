@@ -864,7 +864,7 @@ img {
 	font-size:30px;
 }
 	
-.bt_save,.board_cancel,.bt_save1,.board_list,.board_update,.board_delete{
+.board_cancel,.bt_save1,.board_list,.board_update,.board_delete{
 	background-color:royalblue;
 	color:white;
 	min-width: 200px;

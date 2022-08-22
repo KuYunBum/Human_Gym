@@ -78,6 +78,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		recordNum = #{recordNum} 
 </delete>
 
+<select id="recordMain" resultType="com.spring.dto.RecordDTO">
+	<![CDATA[
+	select *
+	from (
+		select 
+			RECORDNUM
+	        , USERNUM
+	        , USEDATE
+	        , STARTHOUR
+	        , STARTMINUTE
+	        , ENDHOUR
+	        , ENDMINUTE
+	        , CONCAT(
+	           CONCAT(TRUNC(((ENDHOUR*60+ENDMINUTE-STARTHOUR*60-STARTMINUTE)/60),0),'시간 '),
+	        	CONCAT( MOD((ENDHOUR*60+ENDMINUTE -STARTHOUR*60-STARTMINUTE),60),'분 ')
+	          ) as PLAYTIME
+		from record
+		where 
+			 userNum = #{userNum}
+		order by recordNum desc
+	) where rownum <= 1
+	]]>				
+</select>
 
 <select id="recordList" resultType="com.spring.dto.RecordDTO">
 	<![CDATA[
@@ -104,7 +127,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>	
 
 
-<select id="listCriteria" resultType="com.spring.dto.UserRecordDTO">
+<!-- <select id="listCriteria" resultType="com.spring.dto.UserRecordDTO">
 	<![CDATA[select recordNum, userNum, startTime, endTime, totalTime, useDate
 			 from (select rownum rn, a.*
    				 from (
@@ -113,14 +136,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			        where 1=1]]> 
 	<![CDATA[order by recordNum desc) a where rownum <= #{page}*(#{perPageNum})) b
     		 where rn>(#{page}-1)*#{perPageNum}]]> 
-</select>
+</select> -->
 
 	<select id="listCount" resultType="int">
 	<![CDATA[
 	select 
 	  count(recordNum) 
 	from 
-	  userrecord
+	 record
 	where 
 	  userNum =#{userNum} 
 	]]>
@@ -162,23 +185,69 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	group by AA.USERNUM, AA.SETCOUNT, AA.EXPART
 </select>
 
+<!-- 운동이름과 세트횟수 읽기 -->
+<select id="exNameCount"  resultType="com.spring.dto.ExerciseChartDTO">
+	select * from userEX 
+	where userNum = ${userNum} and recordNum= #{recordNum}
+ </select>
+
 <insert id="chartInsert" >
 		insert into
-		userEX ( userNum, exDate, exid , exname, setCount,recordNum)
-		values (#{userNum}, #{useDate}, #{exid}, #{exname}, #{setCount},#{recordNum})
+		userEX ( userNum, exDate, exId , exName, setCount,recordNum)
+		values (#{userNum}, #{useDate}, #{exId}, #{exName}, #{setCount},seq_record.nextval-1)
 </insert>
 
 <update id="chartUpdate">
 	update 
 		userEx 
 	set 
-		exid= #{exid}, exname = #{exname}, setCount = #{setCount}
+		exId= #{exId}, exName = #{exName}, setCount = #{setCount}
 	where 
 		userNum = #{userNum} and recordNum=#{recordNum}
 </update>
 
 <select id="exidSelect" resultType="com.spring.dto.ExerciseChartDTO">
-		select exid from exercise where exname=#{exname}
+		select exId from exercise where exName=#{exName}
+</select>
+
+<select id="exList" resultType="com.spring.dto.ExerciseChartDTO">
+	<![CDATA[
+	select *
+	from (
+		select 
+			RECORDNUM
+	        , USERNUM
+	        , EXID
+	        , EXNAME
+	        , EXDATE
+	        , SETCOUNT
+	       
+		from userEx
+		where 
+			 userNum = #{userNum}
+		order by recordNum desc
+	) where rownum <= 10
+	]]>				
+</select>	
+
+<select id="exMain" resultType="com.spring.dto.ExerciseChartDTO">
+	<![CDATA[
+	select *
+	from (
+		select 
+			RECORDNUM
+	        , USERNUM
+	        , EXID
+	        , EXNAME
+	        , EXDATE
+	        , SETCOUNT
+	       
+		from userEx
+		where 
+			 userNum = #{userNum}
+		order by recordNum desc
+	) where rownum <= 1
+	]]>				
 </select>
 
 <select id="routineList" resultType="routineDTO">

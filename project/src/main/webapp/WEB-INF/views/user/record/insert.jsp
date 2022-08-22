@@ -47,7 +47,7 @@
 								<td><label for="exName" id="ex" >운동 이름</label>
 									<select name="exName">
 										<optgroup label="전신">
-											<option value="brupeeJump">버피점프</option>
+											<option value="burpeeJump">버피점프</option>
 											<option value="kettlebell">케틀벨</option>
 											<option value="dumbbell">덤벨</option>
 										</optgroup>
