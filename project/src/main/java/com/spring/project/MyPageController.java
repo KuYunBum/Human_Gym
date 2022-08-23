@@ -205,7 +205,6 @@ public class MyPageController {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-
 	}
 	
 	@RequestMapping(value = "/record/insert", method = RequestMethod.GET)
@@ -221,7 +220,6 @@ public class MyPageController {
 		ExerciseChartDTO getExID = ms.exidSelect(exName);
 		int exid=(getExID.getExId());
 		chartdto.setExId(exid); 
-		
 		ms.recordInsert(dto);
 		ms.chartInsert(chartdto);
 
@@ -230,7 +228,6 @@ public class MyPageController {
 	
 	@RequestMapping(value = "/record/update", method = RequestMethod.GET)
 	public void recordUpdateGET(int userNum, int recordNum, ExerciseChartDTO chartdto, Model model) throws Exception {
-		
 		RecordDTO getDTO = new RecordDTO();
 		getDTO.setRecordNum(recordNum);
 		getDTO.setUserNum(userNum);
@@ -244,7 +241,6 @@ public class MyPageController {
 			RedirectAttributes rttr) throws Exception {
 
 		ExerciseChartDTO getExID = ms.exidSelect(exName);
-		System.out.println(getExID);
 		int exid = getExID.getExId();
 		chartdto.setExId(exid);
 		System.out.println(chartdto);
@@ -254,6 +250,5 @@ public class MyPageController {
 		rttr.addFlashAttribute("msg", "success");
 		return "redirect:/user/record/record?userNum=" + dto.getUserNum();
 	}
-
 }
 

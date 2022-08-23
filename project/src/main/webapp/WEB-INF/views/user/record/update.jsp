@@ -39,9 +39,7 @@
 						<tr>
 							<td>
 								<fmt:formatDate pattern="yyyy-MM-dd" value="${recordDTO.useDate}"/>
-								<%-- <input type="date" name='useDate' placeholder="0000-00-00" value="${recordDTO.useDate }"> --%>
 							</td>
-		
 							<td><input type="number" name='startHour' value="${recordDTO.startHour }">시
 								<input type="number" name='startMinute' value="${recordDTO.startMinute }">분</td>
 							<td><input type="number" name='endHour' value="${recordDTO.endHour }">시
@@ -49,7 +47,7 @@
 							<td><label for="exName" id="exID">운동 이름</label>
 									<select name="exName">
 										<optgroup label="전신">
-											<option value="brupeeJump">버피점프</option>
+											<option value="burpeeJump">버피점프</option>
 											<option value="kettlebell">케틀벨</option>
 											<option value="dumbbell">덤벨</option>
 										</optgroup>

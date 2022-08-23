@@ -56,7 +56,6 @@
 					</c:forEach>
 				</table>
 				<div class="container" style="width: 400px; height: 400px;">
-					<!--차트가 그려질 부분-->
 					<canvas id="myChart"></canvas>
 				</div>
 			</div>
@@ -70,12 +69,7 @@
 		<button id="myBtn1" type="submit" class="inbody_insert">입력</button>
 		<button id="myBtn1" onclick="location.href='/project/user/record/record?userNum=${userNum}'">뒤로</button>
 	</div>
-<%-- data 가져오는지 확인용  	
-	${arm}
-	${upper}
-	${back}
-	${lower}
-	${core} --%>
+
 </div>
 
 <%@include file="../../include/footer.jsp"%>
@@ -103,7 +97,7 @@
 
 	var ability = [ userArm, userUpper, userBack, userLower, userCore ];
 	var myChart = new Chart(context, {
-		type : 'radar', // 차트의 형태
+		type : 'radar', 
 		data : {
 			labels : labelNames,
 			datasets : [ {
@@ -119,14 +113,14 @@
 			responsive : true,
 			legend : {
 				display : false
-			}, // 차트 데이터 이름 숨기기
-			scale : { //// <= radar 타입 차트 처럼 축이 한개인 차트는 scales 를 쓰면 안됩니다.
+			}, 
+			scale : { 
 				ticks : {
 					beginAtZero : true,
-					min : 0, // 축 최소 값
-					max : 100, // 축 최대 값
-					stepSize : 20, // 그리드 간격 값
-					display : false, // 그리드 숫자 숨기기
+					min : 0, 
+					max : 100,
+					stepSize : 20,
+					display : false, 
 				},
 
 				pointLabels : {

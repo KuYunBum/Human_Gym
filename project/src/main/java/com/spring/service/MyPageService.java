@@ -2,7 +2,6 @@ package com.spring.service;
 
 import java.util.List;
 
-import com.spring.dto.BoardDTO;
 import com.spring.dto.ExerciseChartDTO;
 import com.spring.dto.InbodyDTO;
 import com.spring.dto.RecordDTO;
