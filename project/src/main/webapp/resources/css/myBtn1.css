@@ -1,6 +1,6 @@
 /* btn1 css */
    #myBtn1 {
-      margin-left: -20px;
+/*       margin-left: -20px; */
       font-family: roboto;
       letter-spacing: 1px;
       padding: 0.4rem 5rem;
@@ -8,7 +8,6 @@
       font-size: 1.5rem;
       color: #eaeaea;
       font-weight: bold;
-/*       background-color: #ff2e63; */
 	  background-color: #2c3ab4;
       box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.5);
       border: none;
@@ -54,8 +53,6 @@
       border-bottom: 0;
     }
     .routineItem input:checked + p {
-/* 	  color:#fff; */
-/*       background: black; */
       text-decoration: line-through;
     }
     .routineItem input[type="checkbox"] {

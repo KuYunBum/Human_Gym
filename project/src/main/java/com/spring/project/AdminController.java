@@ -23,7 +23,6 @@ public class AdminController {
 	@Inject
 	private UserService service;
 
-	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public void list(Model model) throws Exception {
 		
@@ -52,7 +51,6 @@ public class AdminController {
 	public String updatePOST(UserDTO dto, Model model, RedirectAttributes rttr) throws Exception {
 		
 		service.userUpdate(dto);
-		
 		rttr.addFlashAttribute("msg", "success");
 
 		return "redirect:/admin/list";

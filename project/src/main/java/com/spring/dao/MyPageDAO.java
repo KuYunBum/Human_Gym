@@ -43,11 +43,6 @@ public interface MyPageDAO {
 	
 	public void chartUpdate(ExerciseChartDTO dto)throws Exception;
 	
-//	public List<UserRecordDTO> listCriteria(PageMaker pm) throws Exception;
-//	  
-//	public int listCount(PageMaker pm) throws Exception;
-	
-	
 	//루틴	
 	public List<RoutineDTO> routineList(int userNum) throws Exception;
 	

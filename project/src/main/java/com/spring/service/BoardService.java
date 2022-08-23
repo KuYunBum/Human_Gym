@@ -16,8 +16,6 @@ public interface BoardService {
 	
 	public void delete(Integer bno) throws Exception;
 	
-//	public List<BoardDTO> select() throws Exception;
-	
 	public void viewcnt(Integer bno) throws Exception;
 	
 	public List<BoardDTO> listSearchCriteria(PageMaker pm) throws Exception;

@@ -1,14 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
 
 	<%@include file="../include/header.jsp"%>
     
@@ -29,12 +22,6 @@
 					</div>
 				</div>
 				
-<!-- 		        <div class="findAccount">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-<!-- 		        	<label for="userName">이름 :</label> -->
-<!-- 		     		<input type="text" name="userName" placeholder=" 이름 입력"><br> -->
-<!-- 		        	<label for="userPhone">전화번호 :</label> -->
-<!-- 		           	<input type="text" name="userPhone" placeholder=" 전화번호 입력"> -->
-<!-- 		        </div> -->
 		        <div class="logBtn">
 		        	<input type="submit" value="ID/PW찾기">
 		        </div>

@@ -1,15 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 
 	<%@include file="../include/header.jsp"%>
 
 	<div class="ins_page">
 		<h1>✍ &nbsp;글 쓰기</h1>
-<!-- 		<h2 style align="center">만드는중</h2> -->
-		<!-- action에 경로가 없으면 현재 페이지 주소로 이동한다.-->
 	</div>
 	<div class="ins_table">
 		<form role="form" method="post">

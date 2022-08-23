@@ -8,16 +8,7 @@ public class RoutineDTO {
 	private int userNum;
 	private String routineName;
 	private String routineEx;
-//	private List<RoutineDTO> routineEx;
 	
-	
-	
-//	public List<RoutineDTO> getRoutineEx() {
-//		return routineEx;
-//	}
-//	public void setRoutineEx(List<RoutineDTO> routineEx) {
-//		this.routineEx = routineEx;
-//	}
 	public int getRoutineNum() {
 		return routineNum;
 	}

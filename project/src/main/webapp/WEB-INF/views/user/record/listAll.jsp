@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 
 <%@include file="../../include/header.jsp"%>
 
@@ -99,33 +96,10 @@
 	var userLower = '${lower}';
 	var userCore = '${core}';
 
-	//var ability = [${userExDAO.userArm},${userExDAO.userUpper}, ${userExDAO.userBack}, ${userExDAO.userLower}, ${userExDAO.userCore}];
 	var getData = '${chartData}';
 	console.log(getData);
 
 	var arr = getData.split("],");
-
-	/*    
-	
-	for (var i=0; i<arr.length; i++){
-		if(arr.expartCode == "userArm"){
-			userArm = arr.setCount;
-		}
-		if(arr.expartCode == "userUpper"){
-			userUpper = arr.setCount;    		
-		}
-		if(arr.expartCode == "userBack"){
-			userBack == arr.setCount;
-		}
-		if(arr.expartCode == "userLower"){
-			userLower == arr.setCount;
-		}
-		if(arr.expartCode == "userCore"){
-			userCore == arr.setCount;
-		}    		
-	}
-	
-	 */
 
 	var ability = [ userArm, userUpper, userBack, userLower, userCore ];
 	var myChart = new Chart(context, {

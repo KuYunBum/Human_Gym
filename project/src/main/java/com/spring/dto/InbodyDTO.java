@@ -7,7 +7,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class InbodyDTO {
 	private	int userNum;
 	private	String userGender;
-//	private	Date userBirth;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private	Date inbodyDate;
 	private	double height;				//키
@@ -36,12 +35,6 @@ public class InbodyDTO {
 	public void setUserGender(String userGender) {
 		this.userGender = userGender;
 	}
-//	public Date getUserBirth() {
-//		return userBirth;
-//	}
-//	public void setUserBirth(Date userBirth) {
-//		this.userBirth = userBirth;
-//	}
 	public Date getInbodyDate() {
 		return inbodyDate;
 	}
