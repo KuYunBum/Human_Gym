@@ -5,7 +5,6 @@ import java.util.List;
 import com.spring.dto.ScheduleDto;
 
 public interface ScheduleDao {
-	
 	public List<ScheduleDto> read(int userNum) throws Exception;
 
 	public void create(ScheduleDto st) throws Exception;

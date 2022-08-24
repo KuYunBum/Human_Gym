@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <%@include file="../../include/header.jsp"%>
 
@@ -44,5 +48,6 @@
 	<button id="myBtn1" type="submit" onclick="location.href='/project/user/routine/delete?userNum=${userNum}&routineNum=${list.routineNum}'">삭제</button>
 	<button id="myBtn1" type="button"
 		onclick="location.href='/project/user/routine/routineBox?userNum=${userNum}'">뒤로</button>
+</div>
 </div>
 <%@include file="../../include/footer.jsp"%>

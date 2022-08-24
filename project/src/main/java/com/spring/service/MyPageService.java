@@ -2,6 +2,7 @@ package com.spring.service;
 
 import java.util.List;
 
+import com.spring.dto.BoardDTO;
 import com.spring.dto.ExerciseChartDTO;
 import com.spring.dto.InbodyDTO;
 import com.spring.dto.RecordDTO;
@@ -42,6 +43,10 @@ public interface MyPageService {
 	public ExerciseChartDTO exidSelect(String exname) throws Exception;
 	
 	public void chartUpdate(ExerciseChartDTO dto)throws Exception;
+	
+//	public List<UserRecordDTO> listCriteria(PageMaker pm) throws Exception;
+//	  
+//	public int listCount(PageMaker pm) throws Exception;
 	
 	//루틴
 	public void routineInsert(RoutineDTO dto) throws Exception;

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 
 <%@include file="../../include/header.jsp"%>
 
@@ -56,6 +59,7 @@
 					</c:forEach>
 				</table>
 				<div class="container" style="width: 400px; height: 400px;">
+					<!--차트가 그려질 부분-->
 					<canvas id="myChart"></canvas>
 				</div>
 			</div>
@@ -69,7 +73,12 @@
 		<button id="myBtn1" type="submit" class="inbody_insert">입력</button>
 		<button id="myBtn1" onclick="location.href='/project/user/record/record?userNum=${userNum}'">뒤로</button>
 	</div>
-
+<%-- data 가져오는지 확인용  	
+	${arm}
+	${upper}
+	${back}
+	${lower}
+	${core} --%>
 </div>
 
 <%@include file="../../include/footer.jsp"%>
@@ -90,14 +99,37 @@
 	var userLower = '${lower}';
 	var userCore = '${core}';
 
+	//var ability = [${userExDAO.userArm},${userExDAO.userUpper}, ${userExDAO.userBack}, ${userExDAO.userLower}, ${userExDAO.userCore}];
 	var getData = '${chartData}';
 	console.log(getData);
 
 	var arr = getData.split("],");
 
+	/*    
+	
+	for (var i=0; i<arr.length; i++){
+		if(arr.expartCode == "userArm"){
+			userArm = arr.setCount;
+		}
+		if(arr.expartCode == "userUpper"){
+			userUpper = arr.setCount;    		
+		}
+		if(arr.expartCode == "userBack"){
+			userBack == arr.setCount;
+		}
+		if(arr.expartCode == "userLower"){
+			userLower == arr.setCount;
+		}
+		if(arr.expartCode == "userCore"){
+			userCore == arr.setCount;
+		}    		
+	}
+	
+	 */
+
 	var ability = [ userArm, userUpper, userBack, userLower, userCore ];
 	var myChart = new Chart(context, {
-		type : 'radar', 
+		type : 'radar', // 차트의 형태
 		data : {
 			labels : labelNames,
 			datasets : [ {
@@ -113,14 +145,14 @@
 			responsive : true,
 			legend : {
 				display : false
-			}, 
-			scale : { 
+			}, // 차트 데이터 이름 숨기기
+			scale : { //// <= radar 타입 차트 처럼 축이 한개인 차트는 scales 를 쓰면 안됩니다.
 				ticks : {
 					beginAtZero : true,
-					min : 0, 
-					max : 100,
-					stepSize : 20,
-					display : false, 
+					min : 0, // 축 최소 값
+					max : 100, // 축 최대 값
+					stepSize : 20, // 그리드 간격 값
+					display : false, // 그리드 숫자 숨기기
 				},
 
 				pointLabels : {

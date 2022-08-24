@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 
 	<%@include file="../../include/header.jsp"%>
 	
@@ -38,6 +41,7 @@
 						</tr>			
 							<tr>
 								<td><input type="date" name='useDate' placeholder="0000-00-00"></td>
+									<%-- <fmt:formatDate pattern="yyyy-MM-dd" value="${userRecordDTO.useDate}"/> --%>
 								<td><input type="number" name='startHour'>시<input type="number" name='startMinute'>분</td>
 								<td><input type="number" name='endHour'>시<input type="number" name='endMinute'>분</td>
 								<td><label for="exName" id="ex" >운동 이름</label>

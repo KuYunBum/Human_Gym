@@ -20,6 +20,8 @@
 			<div class="board_nav">
 		    	<select name="searchType" class="search_sel">
 		    		<option value="n" <c:out value="${pageMaker.searchType==null?'selected':'' }"/>>주제를 선택하세요.</option>
+		    		<!-- <option value="n" selected>----</option>
+		    		<option value="n">----</option> -->
 		    		<option value="t" <c:out value="${pageMaker.searchType eq 't'?'selected':'' }"/>>제목만</option>
 		    		<option value="c" <c:out value="${pageMaker.searchType eq 'c'?'selected':'' }"/>>내용</option>
 		    		<option value="w" <c:out value="${pageMaker.searchType eq 'w'?'selected':'' }"/>>작성자</option>
@@ -31,6 +33,15 @@
 	    		<input type="text" name="keyword" id="keywordInput" value="${pageMaker.keyword}" placeholder="검색어를 입력하세요.">
 	    		<button id="searchBtn"> 검색하기</button>
 	    	</div>
+	    	<!-- 게시판 메인 이미지 
+	    	<div class="board_img">
+	    		<ul>
+		    		<li><img class="testgif" src="/project/resources/image/board/gif1.gif"></li>
+		    		<li><img class="testgif"  src="/project/resources/image/board/gif2.gif"></li>
+		    		<li><img class="testgif"  src="/project/resources/image/board/gif3.gif"></li>
+		    		<li><img class="testgif"  src="/project/resources/image/board/gif4.gif"></li>
+	    		</ul>
+	    	</div> -->
 	    	<div class="board_main">
 				<table id='customers' border="1">
 					<tr class="board_title">

@@ -49,6 +49,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		bno = #{bno} 
 </delete>
 
+
+<!-- <select id="select" resultType="com.spring.dto.BoardDTO">
+	<![CDATA[ 
+		select 
+ 			*  
+ 		from 
+ 			tbl_board  
+ 		where  
+ 			bno > 0  
+ 		order by  
+ 			bno desc, regdate desc  
+ 	]]> 
+</select> -->
+
+
+
 <sql id='search'>
 	<if test="searchType!=null">
 		<if test="searchType == 't'.toString()"> and title like '%'|| #{keyword}||'%' </if>
@@ -77,5 +93,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<include refid="search"/>
 	<![CDATA[ and bno > 0 ]]>
 </select>
+
+
 
 </mapper>

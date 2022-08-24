@@ -133,6 +133,18 @@ public class MyPageServiceImpl implements MyPageService{
 		
 	}
 
+//	@Override
+//	public List<UserRecordDTO> listCriteria(PageMaker pm) throws Exception {
+//		MyPageDAO dao=sqlSession.getMapper(MyPageDAO.class);
+//		return dao.listCriteria(pm);
+//	}
+//
+//	@Override
+//	public int listCount(PageMaker pm) throws Exception {
+//		MyPageDAO dao=sqlSession.getMapper(MyPageDAO.class);
+//		return dao.listCount(pm);
+//	}
+
 //  루틴
   @Override
   public List<RoutineDTO> routineList(int userNum) throws Exception {

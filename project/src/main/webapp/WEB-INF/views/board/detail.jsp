@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@include file="../include/header.jsp"%>
-
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+
+</style>
 
 <script>
 var bno="${boardDTO.bno}";
@@ -47,6 +50,7 @@ $(document).ready(function() {
 		var rno=$(this).parent().attr("data-rno");
 		var replytext=$(this).parent().text();
 		$(".modal-title").html(rno);
+// 		$("#replytext").val(replytext);
 		$("#modDiv").show("slow");
 	})
 	
@@ -138,6 +142,9 @@ function getPageList(page){
 		})
 		$("#replies").html(str);
 		str="";
+		/* console.log(data.pageMaker)
+		console.log(data)
+		alert(data.pageMaker.prev); */
 		if(data.pageMaker.prev){
 			str+="<a href='"+(data.pageMaker.startPage-1)+"'> << </a>";
 		}
@@ -155,6 +162,7 @@ function getPageList(page){
 		if(data.pageMaker.next){
 			str+="<a href='"+(data.pageMaker.endPage+1)+"'> >> </a>";
 		}
+		//alert(str);
 		$(".pagination").html(str);
 		
 	})

@@ -1,7 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 
 	<%@include file="../include/header.jsp"%>
     
@@ -24,7 +31,11 @@
 				    </div>
 	
 				</div>
-				
+						    
+<!-- 		        <div class="logInput"> -->
+<!-- 		            ID : <input type="text" name="userID" placeholder=" ID 입력"><br> -->
+<!-- 		            PW: <input type="password" name="userPW" placeholder=" PW 입력"> -->
+<!-- 		        </div> -->
 		        <div class="logBtn">
 		        	<input type="submit" value="로그인">
 		        </div>
@@ -35,5 +46,6 @@
 	        </div>
 	    </div>
 	</div>
+	
 	
 	<%@include file="../include/footer.jsp"%>

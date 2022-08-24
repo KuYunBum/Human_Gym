@@ -10,12 +10,15 @@ public class UserDTO {
 	private int userNum;
 	private String userID;
 	private String userPW;
+//	private String userPWCheck;
 	private String userName;
 	private String userGender;
 	private String userEmail;
 	private String userPhone;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date userBirth;
+//	private String membershipCode;
+	
 	
 	public int getUserNum() {
 		return userNum;
