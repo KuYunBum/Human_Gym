@@ -42,12 +42,10 @@
 				</table>
 			</div>
 			<div class="ex_content_p5">
-				<a href="/project/content/ex_recomm/ex_recomm_simple1?userNum=${userNum }">
-				<img src="/project/resources/image/ex/skip_button.jpg"></a>
+				<button class='stretchingBtn' onclick="history.back();"><img src="/project/resources/image/ex/skip_button.jpg"></button>
 				<img src="/project/resources/image/ex/play_button.jpg" id="videoPlay">
 				<img src="/project/resources/image/ex/pause_button.jpg" id="videoStop">
-				<a href="/project/content/ex_recomm/ex_recomm_detail1?userNum=${userNum }">
-					<img src="/project/resources/image/ex/skip2_button.jpg"></a>
+				<button class='stretchingBtn' onclick="location.href='/project/content/ex_recomm/ex_recomm_detail1?userNum=${userNum }'"><img src="/project/resources/image/ex/skip2_button.jpg"></button>
 			</div>
 		</div>
 	</div>

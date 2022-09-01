@@ -16,7 +16,8 @@
 						<li><button id="day3_1">코어운동</button></li>
 						<li><button id="day4_1">유산소운동</button></li>
 					</ul>
-				<p>상체운동</p>
+				<p>상체운동
+				</p>
 				<p>55분</p>
 			</div>
 			<div class="ex_content_p2">

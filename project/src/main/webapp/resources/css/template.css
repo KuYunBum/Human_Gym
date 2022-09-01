@@ -1035,7 +1035,10 @@ img {
 	border-radius: 50px;
 }
 
-.ex_content button:hover{
+.ex_content_bt:hover,
+.ex_sub button:hover,
+.ex_content_p2 button:hover,
+.ex_content_p6 button:hover{
 	color: yellow;
 	background-color: rgba(31,57,141);;
 	cursor: pointer;
@@ -1165,6 +1168,11 @@ img {
 	margin: 40px 30px;
 }
 
+.stretchingBtn {
+	border: 0px;
+	background: white;
+}
+
 .ex_content_p6 {
 	width: 550px;
 	height: 250px;
@@ -1191,6 +1199,12 @@ img {
 	color: white;
 	background-color: purple; 
 	margin-bottom: 5px;
+}
+
+.more_bt:hover {
+	color: yellow;
+	background-color: rgba(31,57,141);;
+	cursor: pointer;
 }
 
 

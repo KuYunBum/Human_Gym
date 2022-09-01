@@ -11,9 +11,6 @@
 			<div class="loader"></div>
 			<div class="ex_content_p1">
 				<p class="ex_content_p1_1">● <%out.print(String.valueOf(session.getAttribute("user"))+" 님"); %>의 정보를 분석 중입니다.</p><br>
-<!-- 				<p class=ex_content_p1_2>● 루틴 &amp; 운동 데이터를 읽고 있습니다.</p><br> -->
-<!-- 				<p class=ex_content_p1_3>● 운동 중량  &amp; 세트 데이터를 읽고 있습니다.</p><br> -->
-<!-- 				<p class=ex_content_p1_4>운동 추천 완료</p><br> -->
 
 				<div class="inputArea">
 					가슴<input type="checkbox" id="a" value="0">

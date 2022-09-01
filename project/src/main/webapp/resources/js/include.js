@@ -258,7 +258,7 @@
 		           	if(result[0][0]>0.5){
 		           		exNum = 1;
 		            	$('#resultAI').html(result[0][0].toFixed(2)+"의 확률로 상체운동이 추천되었습니다." +
-		            			"<br><button id='myBtn1' onclick='startAI();'>운동하기</button>");
+		            			"<br><button id='myBtn1' onclick='startEx();'>운동하기</button>");
 		           	}else if(result[0][1]>0.5){
 		           		exNum = 2;
 		            	$('#resultAI').html(result[0][1].toFixed(2)+"의 확률로 하체운동이 추천되었습니다." +
@@ -277,7 +277,7 @@
 		        }); 
 		    })
 		}
-
+		
 		function startEx() {
 			if(exNum==1){
 				self.location = "/project/content/ex_recomm/ex_recomm_simple1"
@@ -289,7 +289,6 @@
 				alert("다시");
 			}
 		}
-		
 		
     	 
 //		tr_matching
