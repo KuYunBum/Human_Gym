@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <%@include file="../../include/header.jsp"%>
@@ -37,7 +38,12 @@
                  </table>
 			</div>
 		</div>
+		
+		<div style="width: 880px; height: auto;"><canvas id="bar-chart-horizontal" width="600" height="250"></canvas></div>
 	</div>
+	
+	
+	
 		
 		<hr style="width: 1300px; margin:auto;"><br>
                 

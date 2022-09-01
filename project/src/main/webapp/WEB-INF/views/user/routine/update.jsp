@@ -20,6 +20,8 @@
 				}
 			}
 		}
+		alert(rn.length);
+		
 		if ($("#cheast").click(function() {
 		})) {
 			$("#inputCheast").show();

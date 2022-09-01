@@ -4,6 +4,131 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+<script>
+
+    var 보스톤_원인 = [
+
+      [0, 1, 0, 0, 1, 0, 30],
+
+      [0, 1, 0, 0, 1, 0, 30],
+
+      [0, 1, 0, 0, 1, 0, 30]
+
+
+
+    ];
+
+
+
+    var 보스톤_결과 = [
+
+      [20, 22, 22, 31],
+
+      [20, 22, 22, 31],
+
+      [20, 22, 22, 31]
+
+    ];
+
+  </script>
+  
+  <script>
+
+
+
+    // 1. 과거의 데이터를 준비합니다. 
+
+    var 원인 = tf.tensor(보스톤_원인);
+
+    var 결과 = tf.tensor(보스톤_결과);
+
+
+
+    // 2. 모델의 모양을 만듭니다. 
+
+    var X = tf.input({ shape: [7] });
+
+    var Y = tf.layers.dense({ units: 4 }).apply(X);
+
+    var model = tf.model({ inputs: X, outputs: Y });
+
+    var compileParam = { optimizer: tf.train.adam(), loss: tf.losses.meanSquaredError }
+
+    model.compile(compileParam);
+
+
+
+    // 3. 데이터로 모델을 학습시킵니다. 
+
+    //         var fitParam = {epochs: 100}
+
+    var fitParam = {
+
+      epochs: 12,
+
+      callbacks: {
+
+        onEpochEnd:
+
+          function (epoch, logs) {
+
+            console.log('epoch', epoch, logs, 'RMSE=>', Math.sqrt(logs.loss));
+
+          }
+
+      }
+
+    } // loss 추가 예제
+
+    var 원인1 = [
+
+      [0, 1, 0, 0, 1, 0, 30]
+
+    ];
+
+    var 원인1 = tf.tensor(원인1);
+
+
+
+    model.fit(원인, 결과, fitParam).then(function (result) {
+
+
+
+      // 4. 모델을 이용합니다. 
+
+      // 4.1 기존의 데이터를 이용
+
+      var 예측한결과 = model.predict(원인1);
+
+      예측한결과.print();
+
+      console.log(예측한결과.arraySync())
+
+      var result = 예측한결과.arraySync();
+
+      console.log(result)
+
+//       document.write(result[0][0])
+//       document.write(result[0][1])
+//       document.write(result[0][2])
+//       document.write(result[0][3])
+      
+      var str1 = document.getElementById("text1");
+      str1.innerHTML = result[0][0]
+      var str2 = document.getElementById("text2");
+      str2.innerHTML = result[0][1]
+      var str3 = document.getElementById("text3");
+      str3.innerHTML = result[0][2]
+      var str4 = document.getElementById("text4");
+      str4.innerHTML = result[0][3]
+
+
+
+
+    });
+
+  </script>
 	<%@include file="../../include/header.jsp"%>
 	
 	<div class="main">
