@@ -992,20 +992,36 @@ img {
 	height: 50px;	
 }
 
-.ex_content_p1_1,
-.ex_content_p1_2,
-.ex_content_p1_3,
-.ex_content_p1_4{
+.ex_content_p1_1 {
 	opacity: 0;
 }
 
-
-.ex_content_p1 > p {
-	position: absolute;
-	font-size: 30px;
-	color: white;
-	margin-top: -100px;
+.ex_content_p1_2 {
+	font-size: 20px;
+    position: relative;
+    top: 200px;
 }
+
+.ex_content_p1 > button {
+    top: 300px;
+}
+
+#resultAI {
+	top: 180px;
+    position: relative;
+    font-size: 30px;
+    color: blue;
+}
+
+.inputArea {
+	position: relative;
+	top: 350px;
+}
+
+.inputArea input[type=text] {
+	width: 50px;
+}
+
 
 .ex_content_bt {
 	position: relative;
@@ -1025,12 +1041,13 @@ img {
 	cursor: pointer;
 }
 
-.ex_content_p1 p{
+.ex_content_p1_1{
 	color: black;
 	position: relative;
 	margin: auto;
 	top: 200px;
 	margin-bottom: 50px;
+	font-size: 30px;
 }
 
 .ex_content_title {
@@ -1569,7 +1586,7 @@ img {
 /* 매칭 로딩 */
 .loader {
 	 position: absolute;
-	 left: 47%;
+	 left: 46%;
 	 top: 25%;
 	 border: 16px solid #f3f3f3;
 	 border-radius: 50%;

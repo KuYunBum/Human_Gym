@@ -154,7 +154,141 @@
 		function reset_time() {
 			SetTime = 60;
 		};
+		
+		
+		
+		var exNum = 0;
+		
+		$('#resultAI').html("이곳에 추천운동이 표시됩니다.");
+		function startAI() {
+			$( '.ex_content_p1_1' ).animate( {
+			    opacity: '1'
+			  },1000);
+//		     self.location='ex_recomm_start?userNum=${userNum}';
+		//dfd는 danfojs의 모듈의 이름이다. read_csv를 이용하여 해당 링크의 데이터를 읽어온다.
+		  //웹에서 제공하는 분꽃 데이터를 읽어오는 부분이다.  
+		dfd.read_csv('/project/resources/file/data4.csv').then(function(data){
+		       // console.log(data);
+		        //data.print(); //읽어온 데이터를 표형태로 출력한다.
+			//종속변수 컬럼 선정
+		        //상품,성별,나이
+		        독립변수 = data.loc({columns:['가슴','어깨','등','팔','하체','복근']});
+		       // 독립변수.print(); //선정한 독립변수 출력
+		     
+		//하나의 종속변수를 여러개로 분리 0과 1의 데이터를 넣는다.
+		       
+		        종속변수 = data.loc({columns:['상체운동','하체운동','코어운동']});
+		        //data['품종'].print();// 종속변인 품종 1개의 컬럼 출력
+		        //종속변수.print();// 하나의 칼럼을 여러 개의 컬럼으로 01의 값을 넣어 분리한 컬럼 출력 
+		//입력층 4개의 컬럼 설정
 
+		  console.log(독립변수)
+		  console.log(종속변수)
+		var X = tf.input({ shape: [6]});
+		        	//딥러닝을 위한 히든 레이어
+		        var H = tf.layers.dense({ units: 6, activation:'relu'}).apply(X);
+
+		      	//출력층 3개의 컬럼 설정
+		        var Y = tf.layers.dense({ units: 3, activation:'softmax'}).apply(H);   
+
+			//모델 생성
+		        model = tf.model({ inputs: X, outputs: Y });
+		        var compileParam = { optimizer: tf.train.adam(), loss: 'categoricalCrossentropy', metrics:['accuracy'] }
+		        model.compile(compileParam);   
+		//결과 출력    
+		       // tfvis.show.modelSummary({name:'요약', tab:'모델'}, model);
+		  // 3. 데이터로 모델을 학습시킵니다. 
+		  _history = [];
+		        var fitParam = { 
+		          epochs: 500, //몇번 학습할 것인가
+		          callbacks:{
+		            onEpochEnd:
+		              function(epoch, logs){
+		                console.log('epoch', epoch, logs, 'RMSE=>', Math.sqrt(logs.loss));
+		                // _history.push(logs);
+		                // tfvis.show.history({name:'loss', tab:'역사'}, _history, ['loss']);
+		                // tfvis.show.history({name:'accuracy', tab:'역사'}, _history, ['acc']);
+		              }
+		          }
+		        }        
+			//학습결과 확인
+		        model.fit(독립변수.tensor, 종속변수.tensor, fitParam).then(function (result) {
+		        	if($('#a').is(":checked") == true){
+		        		$('#a').attr("value", 1);
+		        	}
+		        	if($('#b').is(":checked") == true){
+		        		$('#b').attr("value", 1);
+		        	}
+		        	if($('#c').is(":checked") == true){
+		        		$('#c').attr("value", 1);
+		        	}
+		        	if($('#d').is(":checked") == true){
+		        		$('#d').attr("value", 1);
+		        	}
+		        	if($('#e').is(":checked") == true){
+		        		$('#e').attr("value", 1);
+		        	}
+		        	if($('#f').is(":checked") == true){
+		        		$('#f').attr("value", 1);
+		        	}
+					var a = $('#a').val();
+					var b = $('#b').val();
+					var c = $('#c').val();
+					var d = $('#d').val();
+					var e = $('#e').val();
+					var f = $('#f').val();
+		            // 4. 모델을 이용합니다. 
+		            // 4.1 기존의 데이터를 이용
+		            var New상품 = [[]]
+		            New상품[0][0]=Number(a);
+		            New상품[0][1]=Number(b);
+		            New상품[0][2]=Number(c);
+		            New상품[0][3]=Number(d);
+		            New상품[0][4]=Number(e);
+		            New상품[0][5]=Number(f);
+		            var New상품 = tf.tensor(New상품);
+		            예측한결과 = new dfd.DataFrame(model.predict(New상품));
+		            
+		            var result = 예측한결과.data;
+		            console.log(result);
+		            console.log(result[0]);
+		            console.log(result[0][0]);
+		            
+
+		           	if(result[0][0]>0.5){
+		           		exNum = 1;
+		            	$('#resultAI').html(result[0][0].toFixed(2)+"의 확률로 상체운동이 추천되었습니다." +
+		            			"<br><button id='myBtn1' onclick='startAI();'>운동하기</button>");
+		           	}else if(result[0][1]>0.5){
+		           		exNum = 2;
+		            	$('#resultAI').html(result[0][1].toFixed(2)+"의 확률로 하체운동이 추천되었습니다." +
+		            			"<br><button id='myBtn1' onclick='startEx();'>운동하기</button>");
+		           	}else if(result[0][2]>0.5){
+		           		exNum = 3;
+		            	$('#resultAI').html(result[0][2].toFixed(2)+"의 확률로 코어운동이 추천되었습니다." +
+		            			"<br><button id='myBtn1' onclick='startEx();'>운동하기</button>");
+		           	}else{
+		           		$('#resultAI').html("다시 시도해주세요.");
+		           	}
+		           	
+		            //예측한결과.print();
+		          //  종속변수.print();
+		            
+		        }); 
+		    })
+		}
+
+		function startEx() {
+			if(exNum==1){
+				self.location = "/project/content/ex_recomm/ex_recomm_simple1"
+			}else if(exNum==2){
+				self.location = "/project/content/ex_recomm/ex_recomm_simple2"
+			}else if(exNum==3){
+				self.location = "/project/content/ex_recomm/ex_recomm_simple1"
+			}else{
+				alert("다시");
+			}
+		}
 		
 		
     	 

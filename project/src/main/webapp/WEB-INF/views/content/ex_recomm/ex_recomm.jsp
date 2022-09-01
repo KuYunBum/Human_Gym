@@ -3,7 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-
 	<%@include file="../../include/header.jsp"%>
 	
 
@@ -29,6 +28,5 @@
 				<button class="ex_content_bt" type="button" onclick="self.location='ex_recomm_start?userNum=${userNum}'">시작하기</button>
 		</div>
 	</div>
-
 
 	<%@include file="../../include/footer.jsp"%>

@@ -20,6 +20,9 @@
 <link rel="stylesheet" href="/project/resources/css/myPageTest.css" />
 <!-- <link rel="stylesheet" href="/project/resources/css/bootstrap.css"> -->
 <script src="/project/resources/js/bootstrap.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/danfojs@0.1.2/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.4.0/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
 
 </head>
 
@@ -201,27 +204,7 @@
 		});
 
 	
-		$( '.ex_content_p1_1' ).animate( {
-		    opacity: '1'
-		  }, 1000, function() {
-		    $( '.ex_content_p1_2' ).animate( {
-		      opacity: '1'
-		    }, 1000, function() {
-		      $( '.ex_content_p1_3' ).animate( {
-		        opacity: '1'
-		      }, 1000, function() {
-		        $( '.ex_content_p1_4' ).animate( {
-		      	opacity: '1'
-		        }, 1000, function(){
-		      	  $( '.ex_content_p1' ).animate( {
-			        	opacity: '0'
-			          }, 1000, function(){ 
-			        	  self.location = "ex_recomm_simple1?userNum=${userNum}"
-			          });
-		        });
-		      });
-		    });
-		  });
+
 		
     	$('#day1_1,#day3_1').on("click", function() {
     		self.location = "ex_recomm_simple1?userNum=${userNum}";
