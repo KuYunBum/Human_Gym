@@ -10,7 +10,6 @@
 	<br> <br>
 
 	<%@include file="../../include/myPageNav.jsp"%>
-
 	<hr style="width: 1300px; margin: auto;">
 
 	<div class="myPageNav2">

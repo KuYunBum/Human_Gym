@@ -11,7 +11,6 @@
 		font-family: 'Lato', sans-serif;">
 		Exercise Record</h2>
 		<br><br>
-
 	<%@include file="../../include/myPageNav.jsp"%>
 
 	<hr style="width: 1300px; margin: auto;">
