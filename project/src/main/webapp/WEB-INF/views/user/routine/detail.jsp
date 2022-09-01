@@ -126,7 +126,8 @@ var Exercise_Results = [
 					<h4><p>%  감소!</p></h4>
 					<h4><p>%  감소!</p></h4>
 				</div>
-				<div class="container" style="width: 400px; height: 400px;"><canvas id="myChart"></canvas></div>
+				
+				<div class="container" style="width: 400px; height: 400px;">신체 변화 그래프<canvas id="myChart"></canvas></div>
 
 	<script type="text/javascript">
 
@@ -147,7 +148,7 @@ var Exercise_Results = [
             
     var fitParam = {
 //     		학습량
-    		epochs: 2000,
+    		epochs: 20,
                 callbacks: {
                     onEpochEnd:
                         function (epoch, logs) {
