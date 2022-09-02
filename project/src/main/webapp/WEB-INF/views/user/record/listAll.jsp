@@ -3,17 +3,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-
 <%@include file="../../include/header.jsp"%>
 
 <div class="main">
-		<h2 style="
-		font-family: 'Lato', sans-serif;">
-		Exercise Record</h2>
-		<br><br>
+	<h2 style="font-family: 'Lato', sans-serif;">Exercise Record</h2>
+	<br> <br>
 
 	<%@include file="../../include/myPageNav.jsp"%>
-
 	<hr style="width: 1300px; margin: auto;">
 
 	<div class="myPageNav2">
@@ -23,13 +19,20 @@
 				<img src="/project/resources/image/arnold.jpeg">
 			</div>
 		</div>
-
 		<div class="heightLine"></div>
 
 		<div class="rightContainer">
 			<div class="rcText">
-			<p style="text-align: right;">※ 날짜를 누르면 수정가능합니다.</p>
-				<table id='record_tb' border="1" style="float:left;">
+				<div style="text-align: right;">
+					<p>
+						부상 위험 정도는 __<b id="danger"></b>__입니다.
+					</p>
+					<p>
+						※<b style="color: #1E90FF"> 날짜</b>를 누르면 수정가능합니다.
+					</p>
+					<!-- <div id="view"></div> -->
+				</div>
+				<table id='record_tb' border="1" style="float: left;">
 					<tr>
 						<td><h4>운동 날짜</h4></td>
 						<td><h4>운동 시간</h4></td>
@@ -37,19 +40,21 @@
 						<td><h4>끝난 시간</h4></td>
 					</tr>
 					<c:forEach items="${list}" var="RecordDTO">
-						<tr>	
-							<td><a href="/project/user/record/update?userNum=${RecordDTO.userNum}&recordNum=${RecordDTO.recordNum}" style="text-decoration:none;">
-								<fmt:formatDate pattern="yyyy-MM-dd" value="${RecordDTO.useDate}" /></a></td>
+						<tr>
+							<td><a
+								href="/project/user/record/update?userNum=${RecordDTO.userNum}&recordNum=${RecordDTO.recordNum}"
+								style="text-decoration: none;"> <fmt:formatDate
+										pattern="yyyy-MM-dd" value="${RecordDTO.useDate}" /></a></td>
 							<td>${RecordDTO.playTime}</td>
-							<td>${RecordDTO.startHour}시 ${RecordDTO.startMinute}분</td>
-							<td>${RecordDTO.endHour}시 ${RecordDTO.endMinute}분</td>
+							<td>${RecordDTO.startHour}시${RecordDTO.startMinute}분</td>
+							<td>${RecordDTO.endHour}시${RecordDTO.endMinute}분</td>
 						</tr>
 					</c:forEach>
 				</table>
-				<table id='record_tb' border="1" style="width:40%;">	
+				<table id='record_tb' border="1" style="width: 40%;">
 					<tr>
-						<td ><h4>운동 이름</h4></td>
-						<td colspan="1"><h4>운동 횟수</h4></td>					
+						<td><h4>운동 이름</h4></td>
+						<td colspan="1"><h4>운동 횟수</h4></td>
 					</tr>
 					<c:forEach items="${exlist}" var="el">
 						<tr>
@@ -71,14 +76,9 @@
 
 	<div class="bt_box">
 		<button id="myBtn1" type="submit" class="inbody_insert">입력</button>
-		<button id="myBtn1" onclick="location.href='/project/user/record/record?userNum=${userNum}'">뒤로</button>
+		<button id="myBtn1"
+			onclick="location.href='/project/user/record/record?userNum=${userNum}'">뒤로</button>
 	</div>
-<%-- data 가져오는지 확인용  	
-	${arm}
-	${upper}
-	${back}
-	${lower}
-	${core} --%>
 </div>
 
 <%@include file="../../include/footer.jsp"%>
@@ -99,33 +99,10 @@
 	var userLower = '${lower}';
 	var userCore = '${core}';
 
-	//var ability = [${userExDAO.userArm},${userExDAO.userUpper}, ${userExDAO.userBack}, ${userExDAO.userLower}, ${userExDAO.userCore}];
 	var getData = '${chartData}';
 	console.log(getData);
 
 	var arr = getData.split("],");
-
-	/*    
-	
-	for (var i=0; i<arr.length; i++){
-		if(arr.expartCode == "userArm"){
-			userArm = arr.setCount;
-		}
-		if(arr.expartCode == "userUpper"){
-			userUpper = arr.setCount;    		
-		}
-		if(arr.expartCode == "userBack"){
-			userBack == arr.setCount;
-		}
-		if(arr.expartCode == "userLower"){
-			userLower == arr.setCount;
-		}
-		if(arr.expartCode == "userCore"){
-			userCore == arr.setCount;
-		}    		
-	}
-	
-	 */
 
 	var ability = [ userArm, userUpper, userBack, userLower, userCore ];
 	var myChart = new Chart(context, {
@@ -166,4 +143,98 @@
 			}
 		}
 	});
+</script>
+<script
+	src="https://cdn.jsdelivr.net/npm/danfojs@0.1.2/dist/index.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.4.0/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
+
+<script>
+	dfd.read_csv('/project/resources/csv/data2.csv').then(
+			function(data) {
+				console.log(data);
+				data.print();
+				부위 = data.loc({
+					columns : [ '상체', '등', '팔', '하체', '코어' ]
+				});
+				부위.print();
+				var encoder = new dfd.OneHotEncoder();
+				종속변수 = encoder.fit(data['부상']);
+				/*  data['부상'].print();// 종속변인 품종 1개의 컬럼 출력 */
+				종속변수.print();// 하나의 칼럼을 여러 개의 컬럼으로 01의 값을 넣어 분리한 컬럼 출력 
+
+				var X = tf.input({
+					shape : [ 5 ]
+				});
+				var H = tf.layers.dense({
+					units : 5,
+					activation : 'relu'
+				}).apply(X);
+
+				//출력층 컬럼 설정>> 출력되는 컬럼의 가지수=units
+				var Y = tf.layers.dense({
+					units : 3,
+					activation : 'softmax'
+				}).apply(H);
+
+				//모델 생성
+				model = tf.model({
+					inputs : X,
+					outputs : Y
+				});
+				var compileParam = {
+					optimizer : tf.train.adam(),
+					loss : 'categoricalCrossentropy',
+					metrics : [ 'accuracy' ]
+				}
+				model.compile(compileParam);
+				//결과 출력    
+				_history = [];
+				var fitParam = {
+					epochs : 1000, //몇번 학습할 것인가
+					callbacks : {
+						onEpochEnd : function(epoch, logs) {
+							console.log('epoch', epoch, logs, 'RMSE=>', Math
+									.sqrt(logs.loss));
+						}
+					}
+				}
+				//학습결과 확인
+
+				var userArm = parseInt('${arm}');
+				var userUpper = '${upper}';
+				userUpper = parseInt(userUpper);
+				var userBack = '${back}';
+				var userLower = '${lower}';
+				var userCore = '${core}';
+				model.fit(부위.tensor, 종속변수.tensor, fitParam).then(
+						function(result) {
+							var New = [ [ userUpper, '${arm}', '${back}',
+									'${lower}', '${core}' ] ];
+							var New = tf.tensor(New);
+							예측한결과 = new dfd.DataFrame(model.predict(New));
+							var result = 예측한결과.data;
+							console.log(result);
+							console.log(result[0]);
+
+							for (var i = 0; i < 3; i++) {
+								if (result[0][i] > 0.5) {
+									$("#view").text(result[0][i]);
+								}
+							}
+
+							for (var i = 0; i < 3; i++) {
+								if (result[0][i] > 0.5) {
+									if (i == 0) {
+										$("#danger").text("좋음");
+									} else if (i == 1) {
+										$("#danger").text("주의");
+									} else {
+										$("#danger").text("위험");
+									}
+								}
+							}
+						});
+			})
 </script>

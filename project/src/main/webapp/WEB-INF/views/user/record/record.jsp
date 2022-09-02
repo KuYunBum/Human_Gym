@@ -11,7 +11,6 @@
 		font-family: 'Lato', sans-serif;">
 		Exercise Record</h2>
 		<br><br>
-
 	<%@include file="../../include/myPageNav.jsp"%>
 
 	<hr style="width: 1300px; margin: auto;">
@@ -28,7 +27,7 @@
 
 		<div class="rightContainer">
 			<div class="rcText">
-			<p style="text-align: right;">※ 날짜를 누르면 전체보기가 가능합니다.</p>
+			<p style="text-align: right;">※ <b style="color: #1E90FF"> 날짜</b>를 누르면 전체보기가 가능합니다.</p>
 				<table id='customers' border="1" style="width: 60%;float: left;">
 					<tr class="board_title">
 						<th>운동 날짜</th>

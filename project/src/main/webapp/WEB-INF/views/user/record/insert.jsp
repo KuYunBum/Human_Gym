@@ -113,11 +113,10 @@
 				
 		<div class="bt_box">
 			<button id="myBtn1" type="submit" class="bt_save">저장</button>
-			<button id="myBtn1" type="button" onclick="location.href='/project/user/record/record?userNum=${userNum}'">뒤로</button>
+			<button id="myBtn1" type="button" onclick="location.href='/project/user/record/listAll?userNum=${userNum}'">뒤로</button>
 		</div>
 		
 	</div>
 	
 	<%@include file="../../include/footer.jsp"%>
-	
 				
