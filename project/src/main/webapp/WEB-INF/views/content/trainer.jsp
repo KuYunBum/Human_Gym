@@ -2,13 +2,17 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
+<script src="https://cdn.jsdelivr.net/npm/danfojs@0.1.2/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.4.0/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
 
 	<%@include file="../include/header.jsp"%>
 	
 	<div class="main">
-		<div class="re_tr"><img src="/project/resources/image/trainer/basicprofile.jpeg" style="width:60px;height:60px;border-radius:70%;"><h2><%out.print(String.valueOf(session.getAttribute("user"))+" 님"); %></h2>의 추천 트레이너</div>
-		
+		<div class="re_tr"><img src="/project/resources/image/trainer/basicprofile.jpeg" style="width:60px;height:60px;border-radius:70%;"><h2><%out.print(String.valueOf(session.getAttribute("user"))+" 님"); %></h2></div>
+		<button onclick="retr();" class="resBtn" style="width:350px;height:70px;font-size:25px;"> 분석결과 확인하기 </button>
+		<div id="trResult"><input type="text" id="trResult" style="font-size:12px;text-align:center;width:350px;border:none;"placeholder="분석중입니다. 잠시만 기다려주세요.⚠"></div>
+		<div class="widthLine2"></div>
 		<div class="re_tr_box">
 			<div class="re_trainer">
 				<img src="/project/resources/image/kimegg.jpeg" style="width: 390px;height: 400px;border-radius:70%;" >
@@ -23,7 +27,7 @@
 							
 						</div>
 			</div>
-		</div>
+		</div> 
 		<div class="left_re_tr_box">
 			<div class="another_trainer">
 				<img src="/project/resources/image/trainer/random.jpg" style="width: 390px;height: 400px;border-radius:70%;" >
@@ -64,7 +68,7 @@
 					<p>2018 미스터 올림피아 – 6위</p>
 					<p>2020 아놀드 클래식 오하이오 – 3위</p>
 					<p>2020 미스터 올림피아 – 1위</p>
-					
+					 
 					<button class="tr_btn" onclick="location.href='/project/content/tr/tr_consult'">상담하기</button>
 				</div>
 			</div>	
@@ -94,6 +98,99 @@
 			</div>	
 		</div>
 	</div>
+	
+<script>
+	function retr(){
+		dfd.read_csv('/project/resources/csv/re_trainer.csv').then(function(data){
+       	 독립변수 = data.loc({columns:['골격근량','체지방률','BMI','복부지방률']});
+       	 종속변수 = data.loc({columns:['트레이너0','트레이너1','트레이너2','트레이너3','트레이너4']});
+        
+	  console.log(독립변수)
+	  console.log(종속변수)
+		var X = tf.input({ shape: [4]});
+ 
+        var H = tf.layers.dense({ units: 4, activation:'relu'}).apply(X);
 
+ 
+        var Y = tf.layers.dense({ units: 5, activation:'softmax'}).apply(H);   
 
+	//모델 생성
+        model = tf.model({ inputs: X, outputs: Y });
+        var compileParam = { optimizer: tf.train.adam(), loss: 'categoricalCrossentropy', metrics:['accuracy'] }
+        model.compile(compileParam);   
+	//결과 출력    
+  	_history = [];
+        var fitParam = { 
+          epochs: 200, //몇번 학습할 것인가
+          callbacks:{
+            onEpochEnd:
+              function(epoch, logs){
+                console.log('epoch', epoch, logs, 'RMSE=>', Math.sqrt(logs.loss));
+             }
+          }
+        }
+
+	//학습결과 확인
+        model.fit(독립변수.tensor, 종속변수.tensor, fitParam).then(function (result) {
+            var NewRecord = [            
+        [85,49,30,36]
+              ]
+            var NewRecord = tf.tensor(NewRecord);
+            예측한결과 = new dfd.DataFrame(model.predict(NewRecord));
+            
+            var result = 예측한결과.data;
+            console.log(result);
+            console.log(result[0]);
+            console.log(result[0][0]);
+            $('#trResult').html(result);
+            
+            if(result[0][0]>result[0][1]){
+            	if(result[0][0]>result[0][2]){
+            		if(result[0][0]>result[0][3]){
+            			if(result[0][0]>result[0][4]){
+                        	$('#trResult').html("Kim Egg 님을 추천해드립니다.");
+            			}
+            		}
+            	}
+            }
+            if(result[0][1]>result[0][0]){
+            	if(result[0][1]>result[0][2]){
+            		if(result[0][1]>result[0][3]){
+            			if(result[0][1]>result[0][4]){
+                        	$('#trResult').html("Arnold 님을 추천해드립니다.");
+            			}
+            		}
+            	}
+            }
+            if(result[0][2]>result[0][0]){
+            	if(result[0][2]>result[0][1]){
+            		if(result[0][2]>result[0][3]){
+            			if(result[0][2]>result[0][4]){
+                        	$('#trResult').html("BigRamy 님을 추천해드립니다.");
+            			}
+            		}
+            	}
+            }
+            if(result[0][3]>result[0][0]){
+            	if(result[0][3]>result[0][1]){
+            		if(result[0][3]>result[0][2]){
+            			if(result[0][3]>result[0][4]){
+                        	$('#trResult').html("Billy 님을 추천해드립니다.");
+            			}
+            		}
+            	}
+            }
+            if(result[0][4]>result[0][0]){
+            	if(result[0][4]>result[0][1]){
+            		if(result[0][4]>result[0][2]){
+            			if(result[0][4]>result[0][3]){
+                        	$('#trResult').html("Ronnie 님을 추천해드립니다.");
+            			}
+            		}
+            	}
+            }
+        });  
+    })
+}
+</script>
 	<%@include file="../include/footer.jsp"%>

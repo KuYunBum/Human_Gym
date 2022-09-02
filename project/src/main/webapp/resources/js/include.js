@@ -167,7 +167,7 @@
 //		     self.location='ex_recomm_start?userNum=${userNum}';
 		//dfd는 danfojs의 모듈의 이름이다. read_csv를 이용하여 해당 링크의 데이터를 읽어온다.
 		  //웹에서 제공하는 분꽃 데이터를 읽어오는 부분이다.  
-		dfd.read_csv('/project/resources/file/data4.csv').then(function(data){
+		dfd.read_csv('/project/resources/csv/ex.csv').then(function(data){
 		       // console.log(data);
 		        //data.print(); //읽어온 데이터를 표형태로 출력한다.
 			//종속변수 컬럼 선정

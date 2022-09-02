@@ -1764,6 +1764,18 @@ img {
 	text-shadow: 2px 2px 7px white;
 }
 
+.resBtn{
+	border:none;
+	background-color:white;
+	margin-top:30px;
+	margin-bottm:30px;
+	cursor:pointer;
+}
+.resBtn:hover{
+	background-color:royalblue;
+	color:yellow;
+}
+
 .trainer {
 	width: 1300px;
 	margin: auto;
