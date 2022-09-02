@@ -170,9 +170,11 @@ public class MyPageController {
 	
 	@RequestMapping(value = "/routine/detail", method = RequestMethod.GET)
 	public void detail(@RequestParam("routineNum")int routineNum, Model model) throws Exception {
-		System.out.println(ms.routineDetail(routineNum).getRoutineNum());
+		
+		String rnroutineEx = ms.routineDetail(routineNum).getRoutineEx();
+		
+		model.addAttribute("newList",rnroutineEx);
 		model.addAttribute("list", ms.routineDetail(routineNum));
-		System.out.println(ms.routineDetail(routineNum));
 	}
 	
 	@RequestMapping(value = "/record/record", method = RequestMethod.GET)

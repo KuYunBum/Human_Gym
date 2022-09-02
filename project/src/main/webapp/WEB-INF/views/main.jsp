@@ -210,7 +210,7 @@
         });
 
     </script>
-			<div class="ct2_tag red">
+			<div class="">
 				<div class="ct2">
 					<div class="ct2-text">
 						<h2>AI 운동 추천!</h2>
