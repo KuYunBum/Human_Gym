@@ -159,8 +159,8 @@
 		
 		var exNum = 0;
 		
-		$('#resultAI').html("이곳에 추천운동이 표시됩니다.");
 		function startAI() {
+			$('#resultAI').html("이곳에 추천운동이 표시됩니다.");
 			$( '.ex_content_p1_1' ).animate( {
 			    opacity: '1'
 			  },1000);
@@ -177,7 +177,7 @@
 		     
 		//하나의 종속변수를 여러개로 분리 0과 1의 데이터를 넣는다.
 		       
-		        종속변수 = data.loc({columns:['상체운동','하체운동','코어운동']});
+		        종속변수 = data.loc({columns:['상체운동','하체운동','코어운동','유산소운동']});
 		        //data['품종'].print();// 종속변인 품종 1개의 컬럼 출력
 		        //종속변수.print();// 하나의 칼럼을 여러 개의 컬럼으로 01의 값을 넣어 분리한 컬럼 출력 
 		//입력층 4개의 컬럼 설정
@@ -189,7 +189,7 @@
 		        var H = tf.layers.dense({ units: 6, activation:'relu'}).apply(X);
 
 		      	//출력층 3개의 컬럼 설정
-		        var Y = tf.layers.dense({ units: 3, activation:'softmax'}).apply(H);   
+		        var Y = tf.layers.dense({ units: 4, activation:'softmax'}).apply(H);   
 
 			//모델 생성
 		        model = tf.model({ inputs: X, outputs: Y });
@@ -200,7 +200,7 @@
 		  // 3. 데이터로 모델을 학습시킵니다. 
 		  _history = [];
 		        var fitParam = { 
-		          epochs: 500, //몇번 학습할 것인가
+		          epochs: 300, //몇번 학습할 것인가
 		          callbacks:{
 		            onEpochEnd:
 		              function(epoch, logs){
@@ -213,59 +213,46 @@
 		        }        
 			//학습결과 확인
 		        model.fit(독립변수.tensor, 종속변수.tensor, fitParam).then(function (result) {
-		        	if($('#a').is(":checked") == true){
-		        		$('#a').attr("value", 1);
-		        	}
-		        	if($('#b').is(":checked") == true){
-		        		$('#b').attr("value", 1);
-		        	}
-		        	if($('#c').is(":checked") == true){
-		        		$('#c').attr("value", 1);
-		        	}
-		        	if($('#d').is(":checked") == true){
-		        		$('#d').attr("value", 1);
-		        	}
-		        	if($('#e').is(":checked") == true){
-		        		$('#e').attr("value", 1);
-		        	}
-		        	if($('#f').is(":checked") == true){
-		        		$('#f').attr("value", 1);
-		        	}
-					var a = $('#a').val();
-					var b = $('#b').val();
-					var c = $('#c').val();
-					var d = $('#d').val();
-					var e = $('#e').val();
-					var f = $('#f').val();
+					var i1 = $('#i1').val();
+					var i2 = $('#i2').val();
+					var i3 = $('#i3').val();
+					var i4 = $('#i4').val();
+					var i5 = $('#i5').val();
+					var i6 = $('#i6').val();
 		            // 4. 모델을 이용합니다. 
 		            // 4.1 기존의 데이터를 이용
 		            var New상품 = [[]]
-		            New상품[0][0]=Number(a);
-		            New상품[0][1]=Number(b);
-		            New상품[0][2]=Number(c);
-		            New상품[0][3]=Number(d);
-		            New상품[0][4]=Number(e);
-		            New상품[0][5]=Number(f);
+		            New상품[0][0]=Number(i1);
+		            New상품[0][1]=Number(i2);
+		            New상품[0][2]=Number(i3);
+		            New상품[0][3]=Number(i4);
+		            New상품[0][4]=Number(i5);
+		            New상품[0][5]=Number(i6);
 		            var New상품 = tf.tensor(New상품);
 		            예측한결과 = new dfd.DataFrame(model.predict(New상품));
 		            
 		            var result = 예측한결과.data;
 		            console.log(result);
-		            console.log(result[0]);
-		            console.log(result[0][0]);
-		            
+		            const arr = result[0];
+		            const maxValue = Math.max.apply(null, arr);
+//		            const minValue = Math.min.apply(null, arr);
+//	           		$('#resultAI').html("MAX : "+maxValue+"  MIN : "+minValue);
 
-		           	if(result[0][0]>0.5){
+		           	if(result[0][0]==maxValue){
 		           		exNum = 1;
 		            	$('#resultAI').html(result[0][0].toFixed(2)+"의 확률로 상체운동이 추천되었습니다." +
 		            			"<br><button id='myBtn1' onclick='startEx();'>운동하기</button>");
-		           	}else if(result[0][1]>0.5){
+		           	}else if(result[0][1]==maxValue){
 		           		exNum = 2;
 		            	$('#resultAI').html(result[0][1].toFixed(2)+"의 확률로 하체운동이 추천되었습니다." +
 		            			"<br><button id='myBtn1' onclick='startEx();'>운동하기</button>");
-		           	}else if(result[0][2]>0.5){
+		           	}else if(result[0][2]==maxValue){
 		           		exNum = 3;
 		            	$('#resultAI').html(result[0][2].toFixed(2)+"의 확률로 코어운동이 추천되었습니다." +
+		            			"<br><button id='myBtn1' onclick='startEx();'>운동하기</button>");
+		           	}else if(result[0][3]==maxValue){
+		           		exNum = 4;
+		            	$('#resultAI').html(result[0][3].toFixed(2)+"의 확률로 유산소운동이 추천되었습니다." +
 		            			"<br><button id='myBtn1' onclick='startEx();'>운동하기</button>");
 		           	}else{
 		           		$('#resultAI').html("다시 시도해주세요.");
